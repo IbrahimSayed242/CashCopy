@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/shared/Container.astro";
+import Pricing from "../components/sections/Pricing.astro";
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("username");
+    const email = data.get("email");
+    const password = data.get("password");
+    // post to api
+    const response = await fetch("https://flagedu.com/lp/api/api/leads/create_lead_with_analytics/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    
+    
+    }
+  }
+}
+---
+
+<Layout title="Register">
+<Container className="py-10">
+
+<form class="py-20" method="POST">
+  <label>
+    Username:
+    <input type="text" name="username" required />
+  </label>
+  <label>
+    Email:
+    <input type="email" name="email" required />
+  </label>
+  <label>
+    Password:
+    <input type="password" name="password" required minlength="6" />
+  </label>
+  <button>Submit</button>
+</form>
+
+</Container>
+
+<Container>
+<Pricing/>
+</Container>
+
+</Layout>
