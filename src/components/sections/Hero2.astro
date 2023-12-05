@@ -1,0 +1,68 @@
+---
+import Button from "../shared/Button.astro";
+import Paragraph from "../shared/Paragraph.astro";
+
+
+
+---
+
+
+<div class="text-2 text-center">
+
+
+<h1 class="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600 ">
+    ابدأ بنسخ الصفقات وعيش أسلوب حياتك الذي تريده
+</h1>
+
+
+
+<button class=" transition ease-in-out delay-150 rounded-full px-7 bg-slate-100 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300 m-5">
+  أبدأ الآن
+   </button>
+
+</div>
+<img  class="img-hero shadow-lg" src="https://s6.imgcdn.dev/VlMkT.webp"> 
+
+<style>
+    body{
+background-image: url('https://s6.imgcdn.dev/VUo1B.webp');
+background-size: contain;
+background-repeat: no-repeat;
+    }
+
+
+    .img-hero{
+        width:100% ;
+        height: auto;
+        position: relative;
+        z-index: -1;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text-2{
+ 
+     z-index: 1;
+   position: absolute;
+        right: 30%;
+         top:20%
+     
+    }
+    @media screen and (max-width: 908px) {
+      
+    .text-2{
+ 
+font-size: 23px;
+    right: 10%;
+     top:20%  
+        
+    }}
+
+    @media screen and (max-width: 1024px) {
+      
+    .img-hero{
+   
+    }
+
+    }
+</style>
