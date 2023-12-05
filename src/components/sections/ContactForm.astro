@@ -1,0 +1,63 @@
+---
+export interface Props {
+  className?: string
+
+}
+---
+<form id="myForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+
+  <button type="button" onclick="submitForm()">Submit</button>
+
+</form>
+
+<script is:inline>
+  
+function submitForm() {
+  const form = document.getElementById('myForm');
+  const formData = new FormData(form);
+  formData.append("interest", "Contact us"); 
+  formData.append("country", "don't know"); 
+  formData.append("afp", "CopyCoupon");
+  const jsonData = {
+  };
+
+  formData.forEach((value, key) => {
+    jsonData[key] = value;
+  });
+
+
+  
+
+  // Send the data to API
+  fetch('https://alltargeting.com/api/method/heero.api.flagedu_lead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(jsonData),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Handle the success response from the API
+      console.log('API response:', data);
+      // Show success message or redirect to another page
+
+
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('Error sending data to API:', error);
+      // Show an error message to the user
+    });
+}
+</script>
