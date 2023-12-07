@@ -1,0 +1,338 @@
+---
+export interface Props {
+  className?: string
+
+}
+import Container from '../shared/Container.astro';
+---
+<Container>
+<form id="myForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+
+  <button type="button" onclick="submitForm()">Submit</button>
+
+</form>
+</Container>
+
+<Container>
+<form id="signup_form" novalidate="" style="box-sizing: border-box">
+    <div
+      data-id="first_name"
+      style="box-sizing: border-box; margin-bottom: 16px"
+    >
+      <label
+        for="full_name"
+        style="
+          box-sizing: border-box;
+          text-align: right;
+          display: block;
+          color: rgb(55, 55, 55);
+          font-size: 15px;
+          line-height: 18px;
+          margin-bottom: 2px;
+          font-weight: 400;
+        "
+        >الاسم بالكامل</label
+      >
+      <div style="box-sizing: border-box; position: relative">
+        <input
+          name="first_name"
+          type="text"
+          placeholder="سامر فهمي"
+          style="
+            box-sizing: border-box;
+            overflow: visible;
+            outline: rgb(0, 0, 0) none 0px;
+            font-family: Tajawal, sans-serif;
+            font-size: 13px;
+            line-height: 14.95px;
+            margin: 0px;
+            text-align: right;
+            height: 32px;
+            border: 1px solid rgb(180, 179, 179);
+            max-width: 100%;
+            border-radius: 5px;
+            width: 100%;
+            padding: 6px;
+            color: rgb(0, 0, 0);
+          "
+        />
+      </div>
+    </div>
+    <div
+      data-id="email"
+      style="box-sizing: border-box; margin-bottom: 16px"
+    >
+      <label
+        for="user_email"
+        style="
+          box-sizing: border-box;
+          text-align: right;
+          display: block;
+          color: rgb(55, 55, 55);
+          font-size: 15px;
+          line-height: 18px;
+          margin-bottom: 2px;
+          font-weight: 400;
+        "
+        >بريد إلكتروني</label
+      >
+      <div style="box-sizing: border-box; position: relative">
+        <input
+          name="email"
+          placeholder="sample@gmail.com"
+          autocomplete="off"
+          tabindex="0"
+          style="
+            box-sizing: border-box;
+            overflow: visible;
+            outline: rgb(0, 0, 0) none 0px;
+            font-family: Tajawal, sans-serif;
+            font-size: 13px;
+            line-height: 14.95px;
+            margin: 0px;
+            text-align: right;
+            height: 32px;
+            border: 1px solid rgb(180, 179, 179);
+            max-width: 100%;
+            border-radius: 5px;
+            width: 100%;
+            padding: 6px;
+            color: rgb(0, 0, 0);
+          "
+        />
+      </div>
+    </div>
+    <div
+      data-id="phone"
+      style="box-sizing: border-box; margin-bottom: 16px"
+    >
+      <label
+        for="phone"
+        style="
+          box-sizing: border-box;
+          text-align: right;
+          display: block;
+          color: rgb(55, 55, 55);
+          font-size: 15px;
+          line-height: 18px;
+          margin-bottom: 2px;
+          font-weight: 400;
+        "
+        >رقم الهاتف </label
+      >
+      <div style="box-sizing: border-box; position: relative">
+        <input
+          name="phone"
+          type="text"
+          placeholder="975123456" "
+          style="
+            box-sizing: border-box;
+            overflow: visible;
+            outline: rgb(0, 0, 0) none 0px;
+            font-family: Tajawal, sans-serif;
+            font-size: 13px;
+            line-height: 14.95px;
+            margin: 0px;
+            text-align: right;
+            height: 32px;
+            border: 1px solid rgb(180, 179, 179);
+            max-width: 100%;
+            border-radius: 5px;
+            width: 100%;
+            padding: 6px;
+            color: rgb(0, 0, 0);
+          "
+        />
+      </div>
+    </div>
+    <div
+      data-id="submit"
+      style="box-sizing: border-box; margin-bottom: 16px"
+    >
+      <div
+        style="
+          box-sizing: border-box;
+          position: relative;
+          display: inline-flex;
+          width: 100%;
+        "
+      >
+        <div
+          data-editable="true"
+          data-name="main-form-submit-btn"
+          style="box-sizing: border-box"
+        >
+          <div
+            data-ce-tag="bkgimg"
+            style="box-sizing: border-box"
+          ></div>
+        </div>
+        <button
+          type="submit"
+          style="
+            box-sizing: border-box;
+            appearance: button;
+            text-transform: none;
+            overflow: visible;
+            outline: rgb(255, 255, 255) none 0px;
+            font-family: Tajawal, sans-serif;
+            font-size: 20px;
+            line-height: 24px;
+            margin: 0px;
+            width: 100%;
+            height: 56px;
+            cursor: pointer;
+            background: rgb(236, 28, 36) none repeat scroll 0%
+              0% / auto padding-box border-box;
+            border-radius: 10px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-weight: 700;
+            padding: 16px;
+            transition: all 0.3s ease 0s;
+            border: 0px none rgb(255, 255, 255);
+          "
+        >
+          <div
+            data-editable="true"
+            data-name="form__buttonText"
+            style="box-sizing: border-box"
+          >
+            <p style="box-sizing: border-box; margin: 0px">
+              معلومات اكثر
+            </p>
+          </div>
+        </button>
+        <div id="error_msg" style="margin-top: 20px;">
+
+        </div>
+      </div>
+    </div>
+  </form>
+</Container>
+
+<script is:inline>
+  
+function submitForm() {
+  const form = document.getElementById('myForm');
+  const formData = new FormData(form);
+  formData.append("interest", "Contact us"); 
+  formData.append("country", "don't know"); 
+  formData.append("afp", "CopyCoupon");
+  const jsonData = {
+  };
+
+  formData.forEach((value, key) => {
+    jsonData[key] = value;
+  });
+
+
+  
+
+  // Send the data to API
+  fetch('https://alltargeting.com/api/method/heero.api.flagedu_lead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(jsonData),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Handle the success response from the API
+      console.log('API response:', data);
+      // Show success message or redirect to another page
+
+
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('Error sending data to API:', error);
+      // Show an error message to the user
+    });
+}
+</script>
+<script is:inline>
+        
+      $(function () {
+        $("#signup_form").on("submit", function (e) {
+          e.preventDefault();
+          var first_name = $("input[name='first_name']").val();
+          var email = $("input[name='email']").val();
+          var phone = $("input[name='phone']").val();
+          var formdata = {
+            firstName: first_name,
+            lastName: "flagedu",
+            email: email,
+            phone: phone,
+            password: "Flagedu2023!@",
+            
+            user_ip: "{{ user_ip }}",
+            ci: "{{ ci }}",
+            uai: "{{ uai }}",
+            ani: "{{ ani }}",
+           
+            
+          };
+          console.log(formdata);
+
+          var brand = "{{ brand }}";
+          var url = "";
+          if (brand == "evest") {
+            url = "https://flagedu.com/api/v1/affiliate/public/evest/signup/";
+          } else if (brand == "flagedu") {
+            url = "https://flagedu.com/lp/api/api/leads/create_lead_with_analytics/";
+          } else if (brand == "astro") {
+            url = "https://flagedu.com/api/v1/affiliate/public/evest/signup/";
+          } else if (brand == "exness") {
+            url = "https://flagedu.com/api/v1/affiliate/public/exness/signup/";
+            formdata["usa_citizen"] = false;
+          }
+
+          $.ajax({
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(formdata),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            url: url,
+            success: function (response) {
+              var login_url = response.login_url;
+              var thank_you_url = `https://affiliate.flagedu.com/thanks2?redirect_uri=${login_url}`;
+              location.href = response.login_url;
+            },
+            error: function (data, textStatus, xhr) {
+              var err_msg = [];
+              var status = data.status;
+              console.log(data);
+
+              if (status == 400) {
+                for (const [key, value] of Object.entries(data.responseJSON)) {
+                  err_msg.push(`<p style='color: red;'>${value}</p>`);
+                }
+              }
+              if (status == 500) {
+                var msg =
+                  "<p style='color: red;'>Something went wrong! Try again!</p>";
+                err_msg.push(msg);
+              }
+              for (var i = 0; i < err_msg.length; i++) {
+                $("#error_msg").html(err_msg[i]);
+              }
+            },
+          });
+        });
+      });
+    </script>
