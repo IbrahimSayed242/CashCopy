@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero3 from "../components/sections/Hero3.astro";
 import Cards1 from  "../components/sections/Cards1.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
-import Swip from "../components/sections/Swip.vue";
+import Button from "../components/shared/Button.astro";
 import About_card from "../components/sections/About_card.astro";
 ---
 
@@ -17,35 +17,44 @@ import About_card from "../components/sections/About_card.astro";
 
 
 <div class=" w-full  flex justify-center m-3  mt-10" dir="rtl"> 
-    <form class="max-w-lg bg-gray-100 px-8 pt-6 pb-8 mb-4  rounded  shadow-lg">
-        <div class="flex  mb-6 justify-center ">
+  <form class="w-2/3 bg-gray-100 px-8 pt-6 pb-8 mb-4  rounded  shadow-lg text-lg">
+      <div class="flex  flex-col md:flex-row mb-6 justify-center ">
 
-          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0   ">
-        
-            <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder=" الاسم الاول">
-           
-          </div>
-          <div class="w-full md:w-1/2 px-3">
+        <div class="w-full md:w-1/2 px-1 mb-6 md:mb-0   ">
+      
+          <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder=" الاسم الاول">
          
-            <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder=" الاسم الاخير">
-          </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-1">
+       
+          <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder=" الاسم الاخير">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+        
+          <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
+        
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-3">
           <div class="w-full px-3">
-          
-            <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
-          
+          <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder=" البريد الالكتروني">
+
           </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-3">
-            <div class="w-full px-3">
-            <input class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder=" البريد الالكتروني">
+      </div>
 
-            </div>
-        </div>
-      </form>
+      <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10">
+
+
+      <Button variant={"primary"}   >
+          <span class="text-white relative z-[5]">  انضم الينا</span>
+        </Button>
+
+
+  </div>
+    </form>
 </div>
-
 
 
 

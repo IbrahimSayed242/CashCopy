@@ -42,14 +42,15 @@ import Title from "../shared/Title.astro";
                 <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"></div>
                 
                 <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
-                <img src={"/images/hero.webp"} alt="banner image" 
+                <img src="/images/hero.webp" alt="banner image" 
                 width="1240" height="1385"
                 class=" w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
             </div>
         </div>
-        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col  m-auto py-20" data-aos="fade-up"
+        data-aos-anchor-placement="center-center">
             <h1 class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
-            font-bold text-heading-1">
+            font-bold text-heading-1 ">
       اختر الحساب المناسب لك  
           
         
@@ -157,10 +158,10 @@ import Title from "../shared/Title.astro";
   
 
    
-    <div class="w-full flex justify-center" >
+    <div class="w-full flex justify-center " >
 
 
-    <div class="pt-8 grid grid-cols-3 items-center gap-10 max-w-3xl m-10">
+    <div class="pt-8 grid grid-row-3 md:grid-cols-3  items-center gap-10 max-w-3xl m-10">
         <Info description="لتحصل علي مكافأة 1200 $ من دعوة صديق" title="ادعو الاصدقاء">
             <span slot="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
