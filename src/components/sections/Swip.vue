@@ -17,13 +17,7 @@
     class="mySwiper"
    
   >
-  <div class="flex justify-center">
-
- 
-  <h2 class="mt-8 text-center  text-indigo-600">
-  سجل مع افضل الوسطاء في الشرق الاوسط
-</h2>
-</div> 
+  
 
 
 
