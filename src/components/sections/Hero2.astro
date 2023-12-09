@@ -1,204 +1,186 @@
 ---
 import Button from "../shared/Button.astro";
 
-
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Info from "../cards/Info.astro";
 
 import Title from "../shared/Title.astro";
-
 ---
 
-
-
-
 <section class="relative pt-32 lg:pt-36" dir="rtl">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
-        <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0  lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-            <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"></div>
-                <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"></div>
-                
-                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
-                <img src="https://s6.imgcdn.dev/V2gpv.webp" alt="banner image" 
-                width="1240" height="1385"
-                class=" w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
-            </div>
+  <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
+    <div
+      class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto"
+    >
+      <div class="w-full h-80 sm:h-96 midmd:h-full relative">
+        <div
+          class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"
+        >
         </div>
-        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col  m-auto py-20" data-aos="fade-up"
-        data-aos-anchor-placement="center-center">
-            <h1 class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
-            font-bold text-heading-1  drop-shadow-md">
-      اختر الحساب المناسب لك  
-          
-        
-        <span class="text-transparent bg-clip-text bg-gradient-to-br from-amber-900 from-20% via-yallow-400 via-30% to-amber-600">   مجموعة فريدة  </span> من العروض
-       
-       </h1>
+        <div
+          class="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"
+        >
+        </div>
 
+        <span
+          class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"
+        ></span>
+        <img
+          src="https://s6.imgcdn.dev/V2gpv.webp"
+          alt="banner image"
+          width="1240"
+          height="1385"
+          class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full"
+        />
+      </div>
+    </div>
+    <div
+      class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col m-auto py-20"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-center"
+    >
+      <h1
+        class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
+            font-bold text-heading-1 drop-shadow-md"
+      >
+        اختر الحساب المناسب لك
 
-       <h1 class="
-       font-bold text-heading-1">
- اختر الحساب المناسب لك  
-     
-   
-   <span class="text-transparent bg-clip-text bg-gradient-to-br from-amber-900 from-20% via-yallow-400 via-30% to-amber-600">   مجموعة فريدة  </span> من العروض
-  
-  </h1>
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-br from-amber-900 from-20% via-yallow-400 via-30% to-amber-600"
+        >
+          مجموعة فريدة
+        </span> من العروض
+      </h1>
 
+      <h1 class="font-bold text-heading-1">
+        اختر الحساب المناسب لك
 
-<div class="w-full m-5 text-center justify-center">
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-br from-amber-900 from-20% via-yallow-400 via-30% to-amber-600"
+        >
+          مجموعة فريدة
+        </span> من العروض
+      </h1>
 
+      <div class="w-full m-5 text-center justify-center">
+        <Button
+          variant={"amber-900"}
+          className={" min-w-max  text-white   text-md p-10 "}
+        >
+          <span class="hidden sm:flex relative z-[5]"> ابدأ الان</span>
+          <span class="flex sm:hidden relative z-[5]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+              ></path>
+            </svg>
+          </span>
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>
 
+<container class="w-full">
+  <div class="w-full flex justify-center">
+    <h1
+      class="sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
+        font-bold text-heading-1 text-center"
+    >
+      ما الذي
 
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-br from-amber-900 from-20% via-yallow-400 via-30% to-amber-600"
+      >
+        يميزنا ؟</span
+      >
+    </h1>
+  </div>
 
-
-
-       <Button variant={"amber-900"} className={" min-w-max  text-white   text-md p-10 "}>
-        <span class="hidden sm:flex relative z-[5]"> ابدأ الان </span>
-        <span class="flex sm:hidden relative z-[5]">
+  <div class="w-full flex justify-center">
+    <div
+      class="pt-8 grid grid-row-3 md:grid-cols-3 items-center gap-10 max-w-3xl m-10"
+    >
+      <Info
+        description="لتحصل علي مكافأة 1200 $ من دعوة صديق"
+        title="ادعو الاصدقاء"
+      >
+        <span slot="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            width="30"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-5 h-5"
+            class="w-4 h-4 sm:w-5 sm:h-5"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+              d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
             ></path>
           </svg>
         </span>
-      </Button> 
-           
-        </div>
+      </Info>
+
+      <Info
+        description=" استمتع ب 150 يوم من نسخ الصفقات "
+        title="انسخ الصفقات"
+      >
+        <span slot="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 sm:w-5 sm:h-5"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13.583 5.445h.01M8.86 16.71l-6.573-6.63a.993.993 0 0 1 0-1.4l7.329-7.394A.98.98 0 0 1 10.31 1l5.734.007A1.968 1.968 0 0 1 18 2.983v5.5a.994.994 0 0 1-.316.727l-7.439 7.5a.975.975 0 0 1-1.385.001Z"
+            ></path>
+          </svg>
+        </span>
+      </Info>
+
+      <Info
+        description=" استمتع ببونص ترحيبي يصل الي 90% "
+        title="احصل علي بونص"
+      >
+        <span slot="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 sm:w-5 sm:h-5"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+            ></path>
+          </svg>
+        </span>
+      </Info>
     </div>
-
-   
-    
-
-
-
-
-    </Container>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-<container class="w-full" >
-
-
-    <div class="w-full flex justify-center  ">
-
-        <h1 class="   sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
-        font-bold text-heading-1 text-center">
-        ما الذي 
-      
-    
-          <span class="text-transparent bg-clip-text bg-gradient-to-br from-amber-900 from-20% via-yallow-400 via-30% to-amber-600">   يميزنا ؟</span> 
-    
-          </h1>
-    
-    
-    
-    
-    </div>
-  
-
-   
-    <div class="w-full flex justify-center " >
-
-
-    <div class="pt-8 grid grid-row-3 md:grid-cols-3  items-center gap-10 max-w-3xl m-10">
-        <Info description="لتحصل علي مكافأة 1200 $ من دعوة صديق" title="ادعو الاصدقاء">
-            <span slot="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
-                    <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
-                </svg>                              
-            </span>
-
-            
-        </Info>
-
-        <Info description=" استمتع ب 150 يوم من نسخ الصفقات " title="انسخ الصفقات">
-            <span slot="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.583 5.445h.01M8.86 16.71l-6.573-6.63a.993.993 0 0 1 0-1.4l7.329-7.394A.98.98 0 0 1 10.31 1l5.734.007A1.968 1.968 0 0 1 18 2.983v5.5a.994.994 0 0 1-.316.727l-7.439 7.5a.975.975 0 0 1-1.385.001Z"/>
-
-                </svg>
-
-            </span>
-
-
-
-           
-        </Info>
-
-
-        <Info description=" استمتع ببونص ترحيبي يصل الي 90% " title="احصل علي بونص" >
-            <span slot="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
-                </svg>
-
-
-
-                
-               
-            </span>
-        </Info>
-    </div>
-    </div>
+  </div>
 </container>
