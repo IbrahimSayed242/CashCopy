@@ -1,8 +1,9 @@
 ---
 export interface Props{
     className?:string,
-    variant:"primary"|"secondary"
-    href?:string
+    variant:"primary"|"secondary",
+    href?:string,
+    type?:string
 }
 
 const {className, variant} = Astro.props

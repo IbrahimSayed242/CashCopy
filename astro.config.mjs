@@ -7,8 +7,8 @@ import vue from "@astrojs/vue";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), vue()],
-  // outDir: "../django/templates/astro/",
-  // publicDir: "../django/media/",
+  // outDir: "../astrobuild/",
+  // publicDir: "../astrobuild/media/",
   // trailingSlash: "always",
   // compressHTML: process.env.NODE_ENV === "production",
   // build: {
