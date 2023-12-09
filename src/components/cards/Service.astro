@@ -9,14 +9,14 @@ export interface Props{
 
 const {title, description, icon} = Astro.props
 ---
-<div class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
-    <div class="rounded-xl bg-gray-300 dark:bg-gray-950 p-3 text-heading-1 w-max relative">
+<div class="  p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border  bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
+    <div class="rounded-xl bg-gray-300 dark:bg-gray-950 p-3 text-heading-1 w-max relative text-center">
             <slot set:html={icon} />
     </div>
     <div class="mt-6 space-y-4 relative">
-        <h2 class="text-lg md:text-xl font-semibold text-heading-2">
+        <h2 class="text-lg md:text-xl font-semibold text-heading-2 text-center">
             {title}
-        </h2>
+        </h2 >
         <Paragraph>
             {description}
         </Paragraph>
