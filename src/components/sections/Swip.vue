@@ -1,3 +1,6 @@
+
+
+
 <template>
   <swiper
     :effect="'coverflow'"
@@ -108,7 +111,7 @@ body {
   position: absolute;
   z-index: 33;
   top: 80%;
-  right: 36%;
+  right: 30%;
 }
 
 .cont{
