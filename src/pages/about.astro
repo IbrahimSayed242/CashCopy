@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/shared/Container.astro";
+import Paragaph from "../components/shared/Paragraph.astro";
+import Title from "../components/shared/Title.astro";
+---
+
+<Layout title="من نحن">
+    <div class="mt-20" dir="rtl"> 
+    <main class="flex flex-col gap-y-4 overflow-hidden">
+        <Container className="flex flex-col gap-y-10">
+            <Paragaph>
+                <h2 class ="text-3xl">التزامنا تجاهك</h2>
+                <p>
+                    في كوبونز كوبي, نحن ملتزمون بتقديم لك مزايا لا مثيل لها في عالم التداول والاستثمار. نحن نقف بتصميمنا لتعزيز رحلتك المالية بالشفافية والموثوقية والفوائد المثيرة.
+                </p>
+            </Paragaph>
+        </Container>
+
+        <Container className="flex flex-col gap-y-10">
+            <Paragaph>
+                <h2 class ="text-3xl">ضمان الرد النقدي</h2>
+                <p>
+                    استمتع بثقة التداول خالي من المخاطر مع عرضنا ضمان الرد النقدي. إذا لم ترَ الأرباح خلال [X أيام] من متابعة صفقاتنا الفعّالة، فسنضمن لك استرداد أموالك دون طرح أي أسئلة.
+                </p>
+            </Paragaph>
+        </Container>
+        <Container className="flex flex-col gap-y-10">
+            <Paragaph>
+                <h2 class ="text-3xl">تداول النسخ المجاني</h2>
+                <p>
+                    فتح أفق التداول التلقائي مع [X أيام] من التداول المجاني. دع خبراؤنا الخبراء يتعاملون مع الاستراتيجيات بينما تستمتع بالفوائد. إنها كما لو كان لديك مساعد شخصي في التداول!
+                </p>
+            </Paragaph>
+            <Container className="flex flex-col gap-y-10">
+                <Paragaph>
+                    <h2 class ="text-3xl">مكافآت الإحالة</h2>
+                    <p>
+                        شارك الثروة من خلال الإحالة لصديق! اكسب 500 دولار وقدم لصديقك نفس الفوائد المذهلة. إنها موقف رابح للجميع يعزز مجتمعنا ونجاحك المالي.
+                    </p>
+                </Paragaph>
+            </Container>
+        </Container>
+    </main>
+    </div>
+</Layout>
+
