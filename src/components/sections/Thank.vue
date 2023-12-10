@@ -3,9 +3,9 @@
    <div class="content  flex-wrap-reverse mt-20 ">
     <div class="info text-2xl m-20 md:m-15 text-indigo-700 text-center font-bold" dir="rtl">
  
-          شكرا لك سيتم التواصل معك عبر البريد الالكتروني
+          شكرا لك سيتم التواصل معك عبر الهاتف و الايميل في اقرب وقت
 <div class="m-10">
-      <button class="btn "> رجوع</button>
+      <a href="/" class="btn "> الصفحه الرئيسيه</a>
     </div>
     </div>
   <swiper
