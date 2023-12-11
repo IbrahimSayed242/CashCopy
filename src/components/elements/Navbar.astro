@@ -6,16 +6,16 @@ import  Navitem from "../shared/Navitem.astro";
 const navItems = [
     {
         href:"/",
-        text:"Home"
+        text:" الرئيسية"
     },
-    {
-        href:"/coupons",
-        text:"Coupons"
-    },
+    ,
     {
         href:"/earn",
-        text:"Earn"
-    },
+        text:"كوبونات"
+    },{
+        href:"/coupons",
+        text:"عروض"
+    }
     // {
     //     href:"#features",
     //     text:"Features"
@@ -25,12 +25,12 @@ const navItems = [
 
 <header class="absolute inset-x-0 top-0 z-50 py-6">
     <Container>
-        <nav class="w-full flex justify-between gap-6 relative">
+        <nav class="w-full flex justify-between gap-6 relative "dir ="rtl">
             <!-- logo -->
             <div class="min-w-max inline-flex relative">
                 <a href="/" class="relative flex items-center gap-2">
                     <div class="relative w-7 h-7 overflow-hidden flex ">
-                        <img src="https://s6.imgcdn.dev/VA4y9.png" alt="Logo" width="2350" height="2359" class="w-full h-full object-cover">
+                        <img src="https://s6.imgcdn.dev/VA4y9.png" alt="CouponsCopy" width="2350" height="2359" class="w-full h-full object-cover">
                     </div>
                     <div class="inline-flex text-lg font-semibold  text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600">
                     CouponsCopy
