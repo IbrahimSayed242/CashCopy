@@ -1,25 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero3 from "../components/sections/Hero3.astro";
+import Hero2 from "../components/sections/Hero2.astro";
 import Cards1 from  "../components/sections/Cards1.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
-import Button from "../components/shared/Button.astro";
-import About_card from "../components/sections/About_card.astro";
+import Swip from "../components/sections/Swip.vue";
 import CTA from "../components/sections/CTA.astro";
+
 ---
 
 <Layout title="CouponsCopy">
-    <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+    <main class="flex flex-col gap-y-10 md:gap-y-32 overflow-hidden ">
            
        
-<Hero3/>
+<Hero2/>
 
-<About_card/>
+<Cards1/>
+    </main>
 
+    <div class="flex justify-center">
+
+ 
+        <h2 class="mt-8 text-center   text-3xl font-bold text-yellow-700">
+        سجل مع افضل الوسطاء في الشرق الاوسط
+      </h2>
+      </div> 
+    <Swip/ client:only>
+</Swip>
 <CTA />
-
-
-
    
 </Layout>
 
