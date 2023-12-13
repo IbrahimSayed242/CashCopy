@@ -1,0 +1,34 @@
+---
+import Layout3 from "../layouts/Layout3.astro";
+import Hero2_landing from "../components/sections/Hero2_landing.astro";
+import Cards_landing from  "../components/sections/Cards_landing.astro";
+import Paragraph from "../components/shared/Paragraph.astro";
+import Swip from "../components/sections/Swip.vue";
+import CTA_landing from "../components/sections/CTA_landing.astro";
+
+---
+
+<Layout3 title="CouponsCopy">
+    <main class="flex flex-col  overflow-hidden ">
+           
+       
+<Hero2_landing/>
+
+<Cards_landing/>
+    </main>
+
+    <div class="flex justify-center">
+
+ 
+        <h2 class="mt-8 text-center   text-3xl font-bold text-yellow-700">
+        سجل مع افضل الوسطاء في الشرق الاوسط
+      </h2>
+      </div> 
+    <Swip/ client:only>
+</Swip>
+<CTA_landing />
+   
+</Layout3>
+
+
+

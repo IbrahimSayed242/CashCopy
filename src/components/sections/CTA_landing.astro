@@ -57,7 +57,7 @@ import Paragraph from "../shared/Paragraph.astro";
         </Paragraph>
         <div class="w-full flex justify-center m-3 mt-10" dir="rtl">
           <form
-            id="myForm"
+            id="signup_form"
             class="w-3/3 bg-gray-100 dark:bg-gray-800 px-8 pt-6 pb-8 mb-4 rounded shadow-lg text-lg"
           >
             <div class="flex flex-col md:flex-row mb-6 justify-center">
@@ -67,14 +67,12 @@ import Paragraph from "../shared/Paragraph.astro";
                   class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   id="grid-first-name"
                   type="text"
-
                   placeholder=" الاسم "
                 />
               </div>
               <div class="w-full md:w-1/2 px-1">
                 <input
                   name="phone"
-                  type="number"
                   class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-last-name"
                   type="text"
@@ -105,7 +103,7 @@ import Paragraph from "../shared/Paragraph.astro";
             </div>
 
             <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10 ">
-              <Button2 type="submit"  variant={"primary"} className="bg-primary hover:bg-blue-900">
+              <Button2 type="submit" variant={"primary"} className="bg-primary hover:bg-blue-900">
                 <span class="text-white   relative z-[5]"> انضم الينا</span>
               </Button2>
             </div>
