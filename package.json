@@ -22,5 +22,8 @@
     "swiper": "^11.0.5",
     "tailwindcss": "^3.3.3",
     "vue": "^3.3.9"
+  },
+  "devDependencies": {
+    "@vite-pwa/astro": "^0.2.0"
   }
 }
