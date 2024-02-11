@@ -166,6 +166,25 @@ const { title } = Astro.props;
     <script is:inline>
             
           $(function () {
+            // Function to get user's country based on IP
+            function getUserCountry() {
+              $.ajax({
+                url: 'https://ipinfo.io/json',
+                method: 'GET',
+                success: function(response) {
+                  var country = response.country;
+                  console.log("User's Country:", country);
+                  // Add the user's country to the form data
+                  $("input[name='country']").val(country);
+                },
+                error: function(xhr, status, error) {
+                  console.error("Error getting user's country:", error);
+                }
+              });
+            }
+
+
+
             $("#signup_form").on("submit", function (e) {
               e.preventDefault();
               var first_name = $("input[name='first_name']").val();
@@ -177,6 +196,7 @@ const { title } = Astro.props;
                 email: email,
                 phone: phone,
                 password: "Flagedu2023!@",
+                country: country,
                 
                 user_ip: "{{ user_ip }}",
                 ci: "{{ ci }}",
