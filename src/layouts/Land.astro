@@ -125,72 +125,172 @@ const { title } = Astro.props;
   
     
   <script is:inline>
-         
-          $(function () {
-            $("#myForm").on("submit", function (e) {
-              e.preventDefault();
-              var name1 = $("input[name='first_name']").val();
-              var email = $("input[name='email']").val();
-              var phone = $("input[name='phone']").val();
-              var formdata = {
-                name1: name1,
-                lastName: "Coupons",
-                email: email,
-                phone: phone,
-                password: "Flagedu2023!@",
-                source:"CouponsCopy Homepage",
-                interest:"coupons",
-                user_ip: "{{ user_ip }}",
-                ci: "{{ ci }}",
-                uai: "{{ uai }}",
-                ani: "{{ ani }}",
-               
-                
-              };
-              console.log(formdata);
-    
-              var brand = "{{ brand }}";
-              var url = "https://alltargeting.com/api/method/heero.api.flagedu_lead";
+    function submitForm() {
+      const form = document.getElementById("myForm");
+      const formData = new FormData(form);
+      const urlParams = new URLSearchParams(window.location.search);
+      const afpParam = urlParams.get("afp") || "CouponsCopy"; // Get the value of the 'afp' parameter from the URL
+      formData.append("afp", afpParam);
+      formData.append("interest", "Contact us");
+      formData.append("country", "don't know");
 
-    
-              $.ajax({
-                method: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                data: JSON.stringify(formdata),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                url: url,
-                success: function (response) {
-                console.log(response);
-                  // var login_url = response.login_url;
-                  // var thank_you_url = `https://affiliate.flagedu.com/thanks2?redirect_uri=${login_url}`;
-                location.href = `/thanks`;
-                },
-                error: function (data, textStatus, xhr) {
-                  var err_msg = [];
-                  var status = data.status;
-                  console.log(data);
-    
-                  if (status == 400) {
-                    for (const [key, value] of Object.entries(data.responseJSON)) {
+      const jsonData = {};
+
+      formData.forEach((value, key) => {
+        jsonData[key] = value;
+      });
+
+      // Send the data to API
+      fetch("https://alltargeting.com/api/method/heero.api.flagedu_lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the success response from the API
+          console.log("API response:", data);
+          // Show success message or redirect to another page
+        })
+        .catch((error) => {
+          // Handle errors
+          console.error("Error sending data to API:", error);
+          // Show an error message to the user
+        });
+    }
+  </script>
+  <script is:inline>
+    $(function () {
+      // Function to get user's country based on IP
+      function getUserCountry() {
+        $.ajax({
+          url: "https://ipinfo.io/json",
+          method: "GET",
+          success: function (response) {
+            var country = response.country;
+            console.log("User's Country:", country);
+            // Once country is retrieved, call the function to submit the form with the country data
+            submitForm(country);
+          },
+          error: function (xhr, status, error) {
+            console.error("Error getting user's country:", error);
+            // If there's an error getting the country, still submit the form without country data
+            submitForm("unknown");
+          },
+        });
+      }
+
+      // Function to submit the form with the provided country data
+      function submitForm(country) {
+        $("#signup_form").on("submit", function (e) {
+          e.preventDefault();
+          var first_name = $("input[name='first_name']").val();
+          var email = $("input[name='email']").val();
+          var phone = $("input[name='phone']").val();
+          var formdata = {
+            firstName: first_name,
+            lastName: "flagedu",
+            email: email,
+            phone: phone,
+            interest: "Coupons Copy",
+            source: "Coupons Copy Affiliate",
+            password: "Flagedu2023!@",
+            country: country, // Use the retrieved country here
+            user_ip: "{{ user_ip }}",
+            ci: "{{ ci }}",
+            uai: "{{ uai }}",
+            ani: "{{ ani }}",
+          };
+          console.log(formdata);
+
+          var brand = "{{ brand }}";
+          var url = "";
+          if (brand == "evest") {
+            url =
+              "https://api.flagedu.com/api/v1/affiliate/public/evest/signup/";
+          } else if (brand == "flagedu") {
+            url =
+              "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/";
+          } else if (brand == "astro") {
+            url =
+              "https://api.flagedu.com/api/v1/affiliate/public/evest/signup/";
+          } else if (brand == "exness") {
+            url =
+              "https://api.flagedu.com/api/v1/affiliate/public/exness/signup/";
+            formdata["usa_citizen"] = false;
+          }
+
+          $.ajax({
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(formdata),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            url: url,
+            success: function (response) {
+              var login_url = response.login_url;
+              var thank_you_url = `https://affiliate.flagedu.com/thanks2?redirect_uri=${login_url}`;
+              location.href = response.login_url;
+            },
+            error: function (data, textStatus, xhr) {
+              var status = data.status;
+              console.log(data);
+
+              if (status == 400) {
+                var err_msg = [];
+                for (const [key, value] of Object.entries(data.responseJSON)) {
+                  err_msg.push(`<p style='color: red;'>${value}</p>`);
+                }
+                for (var i = 0; i < err_msg.length; i++) {
+                  $("#error_msg").html(err_msg[i]);
+                }
+              } else if (status !== 200) {
+                // New POST request with the same data to a different URL
+                var newData = JSON.stringify(formdata); // Convert formdata to JSON string
+                var newUrl =
+                  "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/"; // New URL for the request
+
+                $.ajax({
+                  method: "POST",
+                  dataType: "json",
+                  contentType: "application/json",
+                  data: newData, // Use the same form data
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  url: newUrl,
+                  success: function (response) {
+                    location.href = location.href = `/thanks`;
+                    // Handle success response if needed
+                  },
+                  error: function (errorData, errorTextStatus, errorXhr) {
+                    for (const [key, value] of Object.entries(
+                      data.responseJSON
+                    )) {
                       err_msg.push(`<p style='color: red;'>${value}</p>`);
                     }
-                  }
-                  if (status == 500) {
-                    var msg =
-                      "<p style='color: red;'>Something went wrong! Try again!</p>";
-                    err_msg.push(msg);
-                  }
-                  for (var i = 0; i < err_msg.length; i++) {
-                    $("#error_msg").html(err_msg[i]);
-                  }
-                },
-              });
-            });
+                    for (var i = 0; i < err_msg.length; i++) {
+                      $("#error_msg").html(err_msg[i]);
+                    }
+                  },
+                });
+              }
+            },
           });
-        </script>
+        });
+      }
+      getUserCountry();
+    });
+  </script>
 </html>
 <style is:global>
   *{
