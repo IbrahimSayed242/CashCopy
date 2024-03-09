@@ -8,7 +8,7 @@ import vue from "@astrojs/vue";
 export default defineConfig({
   integrations: [tailwind(), react(), vue()],
   outDir: "../astrobuild/",
-  // publicDir: "../astrobuild/media/",
+  publicDir: "../astrobuild/media/",
   // trailingSlash: "always",
   // compressHTML: process.env.NODE_ENV === "production",
   // build: {

@@ -35,7 +35,7 @@
         class="">
         
 
-          <a href="https://affiliate.flagedu.com/evest/EvestStocks?ci=17&uai=44816&ani=7371&afp=Coupons" class="bt text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+          <a href="https://affiliate.flagedu.com/evest/EvestStocks?ci=17&uai=44816&ani=7371&afp=Coupons" class="bt text-white bg-gradient-to-br  from-green-400 to-teal-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-[8px] px-5 py-1 text-center me-2 mb-2">
            فتح حساب
           </a>
         <div class="cont">
@@ -49,7 +49,7 @@
 
     ><swiper-slide
        class="">
-       <a href="https://affiliate.flagedu.com/exness/exness-cc?ci=14&uai=44816&ani=7357&afp=Coupons" class=" bt text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+       <a href="https://affiliate.flagedu.com/exness/exness-cc?ci=14&uai=44816&ani=7357&afp=Coupons" class=" bt text-white bg-gradient-to-br  from-green-400 to-teal-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-[8px] px-5 py-1 text-center me-2 mb-2">
            فتح حساب
        </a>
        <img
@@ -61,7 +61,7 @@
     >
     <swiper-slide
       >
-      <a  href="https://affiliate.flagedu.com/ava/AvaBonus?ci=35&uai=53854&ani=19424&afp=Flagedu-Article" class="bt text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+      <a  href="https://affiliate.flagedu.com/ava/AvaBonus?ci=35&uai=53854&ani=19424&afp=Flagedu-Article" class="bt text-white bg-gradient-to-br  from-green-400 to-teal-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-[8px] px-5 py-1 text-center me-2 mb-2">
            فتح حساب
       </a>
       <img
@@ -72,7 +72,7 @@
 
     <swiper-slide
       >
-      <a  href="https://affiliate.flagedu.com/evetrade/eve?ci=40&uai=46252&ani=19411%3DFlagedu-Article&source=website&st=155" class="bt text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+      <a  href="https://affiliate.flagedu.com/evetrade/eve?ci=40&uai=46252&ani=19411%3DFlagedu-Article&source=website&st=155" class="bt text-white bg-gradient-to-br  from-green-400 to-teal-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-[8px] px-5 py-1 text-center me-2 mb-2">
            فتح حساب
       </a>
       <img
@@ -88,7 +88,7 @@
 
     <swiper-slide
       >
-      <a  href="https://clicks.pipaffiliates.com/c?c=632677&l=ar&p=6" class="bt text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+      <a  href="https://clicks.pipaffiliates.com/c?c=632677&l=ar&p=6" class="bt text-white bg-gradient-to-br  from-green-400 to-teal-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-[8px] px-5 py-1 text-center me-2 mb-2">
            فتح حساب
       </a>
       <img
@@ -143,9 +143,9 @@ body {
 }
 .bt{
   position: absolute;
-  z-index: 33;
+  z-index: 0;
   top: 80%;
-  right: 30%;
+  right: 24%;
 }
 
 .cont{
@@ -158,7 +158,7 @@ body {
 
 
 body {
-  background: #eee;
+  background: #eeeeee00;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
@@ -170,13 +170,14 @@ body {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  z-index: 0;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
 }
 
 .swiper-slide img {
