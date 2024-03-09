@@ -9,11 +9,11 @@ export default defineConfig({
   integrations: [tailwind(), react(), vue()],
   outDir: "../astrobuild/",
   publicDir: "../astrobuild/media/",
-  trailingSlash: "always",
-  compressHTML: process.env.NODE_ENV === "production",
-  build: {
-    format: "file",
-    inlineStylesheets: "auto",
-    assets: "static",
-  },
+  // trailingSlash: "always",
+  // compressHTML: process.env.NODE_ENV === "production",
+  // build: {
+  //   format: "file",
+  //   inlineStylesheets: "auto",
+  //   assets: "static",
+  // },
 });
