@@ -1,0 +1,349 @@
+---
+import Footer from "../components/elements/Footer2.astro";
+import Navbar from "../components/elements/Navbar.astro";
+import Whatsapp from "../components/shared/Whatsapp.astro";
+import Pop from "../components/shared/Pop.astro";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1709983214/copy/apple-touch-icon_ztaatw.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1709983274/copy/favicon-32x32_w44hdq.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1709983227/copy/favicon_qvi55a.ico">
+
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Explore Our exclusive coupons for copy trading on CouponsCopy. Unlock special benefits, including free copy trading days, cashback bonuses, and elite trading packages. Enhance your trading experience with guaranteed profits and a money-back guarantee.">
+    <title> {title}</title>
+  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  </head>
+  <body class="overflow-hidden overflow-y-auto bg-body" dir="rtl">
+
+    <Pop/>
+    <slot />
+    <Whatsapp />
+    <Footer />
+  </body>
+  <script>
+    const switchTheme = document.querySelector(
+      "[data-switch-theme]"
+    ) as HTMLButtonElement;
+
+    if (
+      localStorage.getItem("appTheme") === "dark" ||
+      (!("appTheme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    if (switchTheme) {
+      switchTheme.addEventListener("click", (e) => {
+        e.preventDefault();
+        const doc = document.documentElement;
+        if (doc) {
+          if (localStorage.getItem("appTheme")) {
+            if (localStorage.getItem("appTheme") === "light") {
+              doc.classList.add("dark");
+              localStorage.setItem("appTheme", "dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("appTheme", "light");
+            }
+          } else {
+            if (doc.classList.contains("dark")) {
+              doc.classList.remove("dark");
+              localStorage.setItem("appTheme", "light");
+            } else {
+              doc.classList.add("dark");
+              localStorage.setItem("appTheme", "dark");
+            }
+          }
+        }
+      });
+    }
+  </script>
+  <script>
+    const toggleMenu = document.querySelector(
+      "[data-toggle-nav]"
+    ) as HTMLButtonElement;
+    const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
+    const overlayNav = document.querySelector(
+      "[data-nav-overlay]"
+    ) as HTMLDivElement;
+    if (toggleMenu) {
+      toggleMenu.addEventListener("click", e => {
+        e.preventDefault();
+        if (toggleMenu.getAttribute("data-open-nav") === "false") {
+          toggleMenu.setAttribute("data-open-nav", "true");
+          overlayNav.setAttribute("data-is-visible", "true");
+          document.body.classList.add("!overflow-y-hidden");
+		  navbar.style.height = `${navbar.scrollHeight}px`
+
+        }else{
+			toggleMenu.setAttribute("data-open-nav", "false");
+        	overlayNav.setAttribute("data-is-visible", "false");
+        	document.body.classList.remove("!overflow-y-hidden");
+		  	navbar.style.height = "0px"
+		}
+		
+        
+      });
+
+      navbar.addEventListener("click", () => {
+        toggleMenu.setAttribute("data-open-nav", "false");
+        overlayNav.setAttribute("data-is-visible", "false");
+        document.body.classList.remove("!overflow-y-hidden");
+		  	navbar.style.height = "0px"
+      });
+
+      overlayNav.addEventListener("click", () => {
+        toggleMenu.setAttribute("data-open-nav", "false");
+        	overlayNav.setAttribute("data-is-visible", "false");
+        	document.body.classList.remove("!overflow-y-hidden");
+		  	navbar.style.height = "0px"
+      });
+    }
+  </script>
+  
+    
+  <script is:inline>
+    function submitForm() {
+      const form = document.getElementById("myForm");
+      const formData = new FormData(form);
+      const urlParams = new URLSearchParams(window.location.search);
+      const afpParam = urlParams.get("afp") || "CouponsCopy"; // Get the value of the 'afp' parameter from the URL
+      formData.append("afp", afpParam);
+      formData.append("interest", "Contact us");
+      formData.append("country", "don't know");
+
+      const jsonData = {};
+
+      formData.forEach((value, key) => {
+        jsonData[key] = value;
+      });
+
+      // Send the data to API
+      fetch("https://alltargeting.com/api/method/heero.api.flagedu_lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the success response from the API
+          console.log("API response:", data);
+          // Show success message or redirect to another page
+        })
+        .catch((error) => {
+          // Handle errors
+          console.error("Error sending data to API:", error);
+          // Show an error message to the user
+        });
+    }
+  </script>
+  <script is:inline>
+    $(function () {
+      // Function to get user's country based on IP
+      function getUserCountry() {
+        $.ajax({
+          url: "https://ipinfo.io/json",
+          method: "GET",
+          success: function (response) {
+            var country = response.country;
+            console.log("User's Country:", country);
+            // Once country is retrieved, call the function to submit the form with the country data
+            submitForm(country);
+          },
+          error: function (xhr, status, error) {
+            console.error("Error getting user's country:", error);
+            // If there's an error getting the country, still submit the form without country data
+            submitForm("unknown");
+          },
+        });
+      }
+
+      // Function to submit the form with the provided country data
+      function submitForm(country) {
+        $("#signup_form").on("submit", function (e) {
+          e.preventDefault();
+          var first_name = $("input[name='first_name']").val();
+          var email = $("input[name='email']").val();
+          var phone = $("input[name='phone']").val();
+          var formdata = {
+            firstName: first_name,
+            lastName: "flagedu",
+            email: email,
+            phone: phone,
+            interest: "Coupons Copy",
+            source: "Coupons Copy Affiliate",
+            password: "Flagedu2023!@",
+            country: country, // Use the retrieved country here
+            user_ip: "{{ user_ip }}",
+            ci: "{{ ci }}",
+            uai: "{{ uai }}",
+            ani: "{{ ani }}",
+          };
+          console.log(formdata);
+
+          var brand = "{{ brand }}";
+          var url = "";
+          if (brand == "evest") {
+            url =
+              "https://api.flagedu.com/api/v1/affiliate/public/evest/signup/";
+          } else if (brand == "flagedu") {
+            url =
+              "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/";
+          } else if (brand == "astro") {
+            url =
+              "https://api.flagedu.com/api/v1/affiliate/public/evest/signup/";
+          } else if (brand == "exness") {
+            url =
+              "https://api.flagedu.com/api/v1/affiliate/public/exness/signup/";
+            formdata["usa_citizen"] = false;
+          }
+
+          $.ajax({
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(formdata),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            url: "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/",
+            success: function (response) {
+              location.href = location.href = `/thanks`;
+            },
+            error: function (data, textStatus, xhr) {
+              var status = data.status;
+              console.log(data);
+
+              if (status == 400) {
+                var err_msg = [];
+                for (const [key, value] of Object.entries(data.responseJSON)) {
+                  err_msg.push(`<p style='color: red;'>${value}</p>`);
+                }
+                for (var i = 0; i < err_msg.length; i++) {
+                  $("#error_msg").html(err_msg[i]);
+                }
+              } else if (status !== 200) {
+                // New POST request with the same data to a different URL
+                var newData = JSON.stringify(formdata); // Convert formdata to JSON string
+                var newUrl =
+                  "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/"; // New URL for the request
+
+                $.ajax({
+                  method: "POST",
+                  dataType: "json",
+                  contentType: "application/json",
+                  data: newData, // Use the same form data
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  url: newUrl,
+                  success: function (response) {
+                    location.href = location.href = `/thanks`;
+                    // Handle success response if needed
+                  },
+                  error: function (errorData, errorTextStatus, errorXhr) {
+                    for (const [key, value] of Object.entries(
+                      data.responseJSON
+                    )) {
+                      err_msg.push(`<p style='color: red;'>${value}</p>`);
+                    }
+                    for (var i = 0; i < err_msg.length; i++) {
+                      $("#error_msg").html(err_msg[i]);
+                    }
+                  },
+                });
+              }
+            },
+          });
+        });
+      }
+      getUserCountry();
+    });
+  </script>
+</html>
+<style is:global>
+  *{
+    font-family: "Noto Kufi Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  }
+  :root {
+    --color-bg: 255 255 255;
+    --color-border: 255 255 255;
+    --color-box: 255 255 255;
+    --box-border: 229 231 235;
+    --box-sd: 226 232 240 / 0.5;
+	--heading-1:  23 37 84;
+	--heading-2: 31 41 55;
+	--heading-3: 55 65 81;
+  }
+
+  .dark {
+  
+    --color-bg:  21 31 53 ;
+    --color-box: 17 24 39;
+    --box-border: 243 244 246/0.1;
+    --box-sd: transparent;
+
+	
+	--heading-1:  255 255 255;
+	--heading-2:  243 244 246;
+	--heading-3:  209 213 219;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  body {
+
+    
+   
+  }
+
+  [data-toggle-nav][data-open-nav="true"] #line1 {
+    transform: translateY(0.375rem) rotate(40deg);
+  }
+  [data-toggle-nav][data-open-nav="true"] #line2 {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  [data-toggle-nav][data-open-nav="true"] #line3 {
+    transform: translateY(-0.375rem) rotate(-40deg);
+  }
+
+  
+  [data-nav-overlay][data-is-visible="true"] {
+    visibility: visible;
+    display: flex;
+  }
+</style>
