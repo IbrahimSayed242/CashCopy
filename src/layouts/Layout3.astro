@@ -127,8 +127,7 @@ const { title } = Astro.props;
         navbar.style.height = "0px";
       });
     }
-  </script>
-  <script is:inline>
+    <script is:inline>
     function submitForm() {
       const form = document.getElementById("myForm");
       const formData = new FormData(form);
@@ -260,7 +259,8 @@ const { title } = Astro.props;
               } else if (status !== 200) {
                 // New POST request with the same data to a different URL
                 var newData = JSON.stringify(formdata); // Convert formdata to JSON string
-                var newUrl = "https://example.com/alternate-url"; // New URL for the request
+                var newUrl =
+                  "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/"; // New URL for the request
 
                 $.ajax({
                   method: "POST",
@@ -272,10 +272,18 @@ const { title } = Astro.props;
                   },
                   url: newUrl,
                   success: function (response) {
+                    location.href = location.href = `/thanks`;
                     // Handle success response if needed
                   },
                   error: function (errorData, errorTextStatus, errorXhr) {
-                    // Handle error if needed
+                    for (const [key, value] of Object.entries(
+                      data.responseJSON
+                    )) {
+                      err_msg.push(`<p style='color: red;'>${value}</p>`);
+                    }
+                    for (var i = 0; i < err_msg.length; i++) {
+                      $("#error_msg").html(err_msg[i]);
+                    }
                   },
                 });
               }
