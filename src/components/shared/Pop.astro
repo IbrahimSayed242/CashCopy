@@ -1,0 +1,78 @@
+
+<div id="pop" class=" dark:bg-gray-900 fixed pop  w-full ">
+  <div class="relative rounded-md ">
+      <img src="https://i.ibb.co/SBpL1cK/pexels-aleksandar-paaric-325185-1.png" alt="city view" class="w-full h-full rounded-md  object-center object-fill absolute sm:block hidden" />
+      <img src="https://i.ibb.co/LQpxBsc/mobile.png" alt="city view" class="w-full h-full rounded-md absolute object-center object-fill sm:hidden" />
+      <div class="text-xl relative z-20 bg-gradient-to-r from-teal-700 to-transparent w-full h-full top-0 md:p-16 p-6 flex flex-col justify-between rounded-md ">
+          <div>
+              <h1 class="md:text-5xl text-3xl font-bold md:leading-10 leading-9 text-white sm:w-auto w-64 mt-4">انضم الان </h1>
+              <p class="text-lg leading-6 text-white xl:w-5/12 lg:w-8/12 md:w-10/12  2xl:pr-12 mt-4"> احصل علي افضل العروض </p>
+          </div>
+        
+      </div>
+
+
+      <div class="md:mt-12 mt-20 releative  z-41 ">
+        <button class="text-base font-medium leading-4 text-teal-700 bg-white sm:w-auto w-full rounded p-4 focus:outline-none hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-white">Explore More</button>
+    </div>
+
+    
+  </div>
+</div>
+
+
+<style>
+   .pop{
+    z-index: 9999;
+    
+    bottom: -100px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+   }  
+
+   @media (max-width: 576px) { 
+    .pop{
+      bottom: -130px;
+      right:-10px ;}
+   }
+   @media (min-width: 576px) { 
+    .pop{
+      bottom: -130px;
+      right:-40px ;}
+      
+   }
+
+
+@media (min-width: 768px) { 
+  .pop{
+      right:-70px ;}
+ }
+
+
+@media (min-width: 1200px) {
+  .pop{
+      right:-90px ;}
+ }
+
+
+@media (min-width: 1300px) {
+
+  .pop{
+      right:0px ;}
+ }
+
+
+
+
+   
+</style>
+<script>
+$(window).scroll(function() {
+    var element = $('#pop');
+    if ($(this).scrollTop() > 100) { // قم بتغيير 100 إلى الحد الذي تريده لظهور العنصر
+        element.css('opacity', 1);
+    } else {
+        element.css('opacity', 0);
+    }
+});
+</script>

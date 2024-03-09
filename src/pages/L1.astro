@@ -1,0 +1,71 @@
+---
+import Layout3 from "../layouts/Land.astro";
+import Container from "../components/shared/Container.astro";
+import Paragaph from "../components/shared/Paragraph.astro";
+import Hero from "../components/lp/Hero.astro";
+
+import News from "../components/lp/News.astro";
+import Hero2 from "../components/lp/Hero2.astro";
+import CTA from "../components/lp/LCta.astro";
+import Review from "../components/lp/Review.astro";
+import Hero3 from "../components/lp/Hero3.astro";
+import FQA from "../components/lp/FQA.astro";
+import Cards from "../components/lp/Cards.astro";
+import Carousel from "../components/lp/Carousel.astro";
+import Swip from "../components/sections/Swip.vue";
+import Thank from "../components/sections/Thank.vue";
+import Services from "../components/sections/Services.astro";
+import BYn from "../components/lp/BYn.astro";
+import Start from "../components/lp/Start.astro";
+import Pop from "../components/shared/Pop.astro";
+import Review_co from "../components/lp/Review_co.astro";
+import Stocks from "../components/lp/Stocks.astro";
+import Tawsiat from "../components/lp/Tawsiat.astro";
+import ChoseBroker from "../components/lp/ChoseBroker.astro";
+import Edu from "../components/lp/Edu.astro";
+
+
+---
+
+<Layout3 title="فلاجيدو">
+
+<Pop/>
+<Stocks/>
+
+
+
+
+ 
+
+
+<Services />
+
+<News/>
+<Container>
+<Tawsiat/>
+
+<Edu/>
+
+
+    <Hero2/>
+
+<Hero3/>
+
+<Review_co/>
+<Start/>
+<CTA/>
+
+
+<FQA/>
+
+
+
+<Swip client:only />
+
+   <Review/>  
+
+    </main>
+</Container>
+<Carousel/>
+</Layout3>
+

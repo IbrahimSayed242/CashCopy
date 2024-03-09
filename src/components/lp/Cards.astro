@@ -1,0 +1,152 @@
+<div> 
+<h1 class="text-center text-2xl font-regular m-3">
+  كل ما تحتاجه - في مكان واحد
+
+</h1>
+
+</div>
+
+<div class="flex justify-center gap-10 flex-wrap  ">
+
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front b1">
+            <p class="font-regular absolute bottom-2 right-3 text-center text-teal-400 text-sm"> جميع الوسطاء في مكان واحد</p>
+          
+        </div>
+        <div class="flip-card-back">
+            <p class="title"> ما الذي يقدمه لك</p>
+            <p>احصل على مراجعة مايزيد عنن 6000</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+      <div class="flip-card-front b2">
+          <p class="font-regular absolute bottom-2 right-3 text-center text-teal-400 text-sm">مراجعات شاملة</p>
+     
+      </div>
+      <div class="flip-card-back">
+          <p class="title"> تقييم الوسيط </p>
+          <p>من جمع الجوانب   ومعرفة المميزات والعيوب</p>
+      </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+      <div class="flip-card-front b3">
+          <p class="font-regular absolute bottom-2 right-3 text-center text-teal-400 text-sm"> محتوي متجدد</p>
+         
+      </div>
+      <div class="flip-card-back">
+          <p class="title"> محتوي متجدد </p>
+          <p> محتوي محدث أول بأول </p> 
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front b4">
+            <p class="font-regular absolute bottom-2 right-3 text-center text-teal-400 text-sm"> دعم من الخبراء</p>
+          
+        </div>
+        <div class="flip-card-back">
+            <p class="title"> احصل عليه الان</p>
+            <p>دعم من خبراء فلاجيدو خلال ال24 ساعة</p>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<style>
+
+
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(4, 128, 128);
+  border-radius: 1rem;
+}
+
+.b1 {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709801408/copy/flagedu_6_qvzpow.webp)
+      no-repeat 50% 50% / cover;
+}
+
+.b2 {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709801409/copy/WA-660x400_eeliqo.webp)
+      no-repeat 50% 50% / cover;
+}
+
+
+.b3 {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709801410/copy/flagedu_7_drywxf.webp)
+      no-repeat 50% 50% / cover;
+}
+
+
+.b4 {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709801410/copy/flagedu_8_k2pinl.webp)
+      no-repeat 50% 50% / cover;
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(0, 172, 157) 30%, rgb(2, 150, 142) 88%,
+     rgb(196, 253, 255) 40%, rgb(160, 255, 234) 78%);
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
