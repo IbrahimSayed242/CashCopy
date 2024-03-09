@@ -1,12 +1,16 @@
 <template>
-  <div class="flex justify-center  ">
-   <div class="content  flex-wrap-reverse mt-20 ">
-    <div class="info text-2xl m-20 md:m-15 text-indigo-700 text-center font-bold" dir="rtl">
- 
-          شكرا لك سيتم التواصل معك عبر الهاتف و الايميل في اقرب وقت
-<div class="m-10">
-      <a href="/" class="btn "> الصفحه الرئيسيه</a>
-    </div>
+  <div class="flex justify-center   ">
+   <div class="content relative  flex-wrap-reverse mt-20  bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-[#11726dc7]     ">
+    <div class="info text-2xl m-20 md:m-15 text-center font-bold  " dir="rtl">
+      <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png" class="absolute top-10 right-0 z-0 " >
+    <h2 class="text-3xl font-bold text-teal-200" style="line-height: 1.5;" >ضاعف حجم استثماراتك دون تحمل المخاطر</h2>
+    <p class="">اختر الكوبون الأنسب لك 
+وانطلق في رحلة الثراء الآن
+</p>
+
+<div class="mt-auto">
+              <a href="#sin-in" class="inline-block rounded-lg bg-white dark:bg-gray-900 dark:text-white px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-teal-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:text-base">سجل الآن</a>
+            </div>
     </div>
   <swiper
     :effect="'cards'"
@@ -37,18 +41,7 @@
 
 
   
-<ul class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul> 
+
 </div>
 </template>
 
@@ -159,11 +152,7 @@ body {
   justify-content: center;
   align-items: center; 
   gap: 30px;
-  background: linear-gradient(
-    180deg,
-    rgba(7, 114, 109, 0.28) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+ 
   backdrop-filter: blur(30px);
   border-radius: 20px;
   width: min(900px, 100%);
@@ -349,8 +338,6 @@ body {
   }
 
 }
-div{
-  font-family: 'Tajawal', sans-serif;
-}
+
 
 </style>

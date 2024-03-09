@@ -1,5 +1,5 @@
 
-<div class="lg:flex items-center justify-between pt-[150px]" dir="rtl">
+<div class="lg:flex items-center justify-between pt-10" dir="rtl">
     <div class="lg:w-1/2 w-full pt-10">
 
 
@@ -23,12 +23,14 @@
         <img class="w-full object-contain" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709798950/copy/flagedu_axua7f.webp" alt="flagedu" role="img"  />
 
     </div>
-        <div class="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0 mt-12 md:px-8" role="list">
+        <div class="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0 mt-12 md:px-8 cards" role="list">
         <img src="https://i.ibb.co/0n6DSS3/bgimg.png" class="absolute w-full -ml-12 mt-24 " alt="background circle images" />
        
        
-        <div role="listitem" class="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30">
-            <div class="md:flex items-center justify-between">
+
+
+        <div role="listitem" class="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30 card ">
+            <div class="md:flex items-center justify-between card">
                 <h2 class="text-2xl font-regular leading-6 text-gray-800 dark:text-white"
                 >
         عائد عالي
@@ -40,7 +42,11 @@
                 أعلى عائد ممكن من الصفقات المفتوحة.                
             </p>
         </div>
-        <div role="listitem" class="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg mt-3 flex relative z-30">
+
+
+
+
+        <div role="listitem" class="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg mt-3 flex relative z-30 card ">
             <div class="w-2.5 h-auto bg-teal-700 rounded-tl-md rounded-bl-md"></div>
             <div class="w-full p-8">
                 <div class="md:flex items-center justify-between">
@@ -54,7 +60,9 @@
                 </p>
             </div>
         </div>
-        <div role="listitem" class="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7">
+
+
+        <div role="listitem" class="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7 card ">
             <div class="md:flex items-center justify-between">
                 <h2 class="text-2xl font-regular leading-6 text-gray-800 dark:text-white"
                 >
@@ -93,3 +101,36 @@
 
 
 
+
+<style>
+  
+    .cards .card {
+  
+      
+   
+    
+
+    
+     
+      cursor: pointer;
+      transition: 400ms;
+    }
+    
+    .cards .card p.tip {
+      font-size: 1em;
+      font-weight: 700;
+    }
+    
+    .cards .card p.second-text {
+      font-size: .7em;
+    }
+    
+    .cards .card:hover {
+      transform: scale(1.1, 1.1);
+    }
+    
+    .cards:hover > .card:not(:hover) {
+      filter: blur(10px);
+      transform: scale(0.9, 0.9);
+    }
+    </style>
