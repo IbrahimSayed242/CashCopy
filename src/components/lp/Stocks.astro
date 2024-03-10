@@ -1,10 +1,46 @@
 
 
+
+<style>
+    .radial-gradient {
+     
+      top:0px;
+      left:0px;
+    
+      
+      /*Fallback if gradeints don't work */
+      background: #c7afd1;
+      /*Linear gradient... */
+      background: 
+        radial-gradient(
+         at center, #00eccc9a, #065879
+        );
+    }
+    
+    </style>
+    
+    <script>
+    document.addEventListener('mousemove', function(event) {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+    
+      const mouseXpercentage = Math.round(event.pageX / windowWidth * 100);
+      const mouseYpercentage = Math.round(event.pageY / windowHeight * 100);
+    
+      const elements = document.querySelectorAll('.radial-gradient');
+    
+      for (const element of elements) {
+        element.style.background = `radial-gradient(at ${mouseXpercentage}% ${mouseYpercentage}%,#04df84,#065879)`;
+      }
+    });
+    </script>
 <div class="w-full pr-6 mt-20 mx-auto  ">
-    <div class="mt-8 relative rounded-lg bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1707232531/copy/earth-layer_jadxvo.png)] bg-cover bg-no-repeat bg-center bg-[#168b7cad] container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
-       <img class="mr-2 lg:mr-12 mt-2 lg:mt-12 absolute right-0 top-0"  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg2.svg" alt="bg"/>
-       <img class="ml-2 lg:ml-12 mb-2 lg:mb-12 absolute bottom-0 left-0" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg3.svg" alt="bg"/>
+    <div class="mt-8 relative rounded-lg radial-gradient bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1707232531/copy/earth-layer_jadxvo.png)] bg-cover bg-no-repeat bg-center bg-[#168b7cad] container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
        
+       
+        <img class="mr-2 lg:mr-12 mt-2 lg:mt-12 absolute right-0 top-0"  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg2.svg" alt="bg"/>
+       <img class="ml-2 lg:ml-12 mb-2 lg:mb-12 absolute bottom-0 left-0" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg3.svg" alt="bg"/>
+       <img class="ml-2 lg:ml-12 mb-2 lg:mb-12 absolute bottom-50 left-50" src="  https://res.cloudinary.com/dt9k74vof/image/upload/v1709982579/copy/bulls_wffqct_vpw6kg.png" alt="bg"/>
         <div class="w-11/12 sm:w-2/3 mb-5 sm:mb-10">
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-bold leading-tight">  
 
