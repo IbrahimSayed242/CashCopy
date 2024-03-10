@@ -1,4 +1,7 @@
+---
+import M1 from "../components/lp/M1.astro";
 
+---
 <div class="mx-auto container xl:px-20 lg:px-12 sm:px-6  px-4 pt-12 pb-[230px]">
     <div class="flex flex-col items-center justify-center">
   
@@ -9,7 +12,7 @@
         <div class="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-8">
             <a href="javascript:void(0)" class="focus:underline focus:outline-none hover:text-teal-500 text-base cursor-pointer leading-4 text-teal-800 dark:text-teal-400 dark:hover:text-white">About</a>
             <a href="javascript:void(0)" class="focus:underline focus:outline-none hover:text-teal-500 text-base cursor-pointer leading-4 text-teal-800 dark:text-teal-400 dark:hover:text-white">Contact us</a>
-            <a href="javascript:void(0)" class="focus:underline focus:outline-none hover:text-teal-500 text-base cursor-pointer leading-4 text-teal-800 dark:text-teal-400 dark:hover:text-white">Terms of Service</a>
+            <a href="javascript:void(0)" onclick="openModal('modelConfirm') " class="focus:underline focus:outline-none hover:text-teal-500 text-base cursor-pointer leading-4 text-teal-800 dark:text-teal-400 dark:hover:text-white">Terms of Service</a>
             <a href="javascript:void(0)" class="focus:underline focus:outline-none modal-open hover:text-teal-500 text-base cursor-pointer leading-4 text-teal-800 dark:text-teal-400 dark:hover:text-white modal-open">Privacy Policy</a>
         </div>
         <div class="flex items-center gap-x-8 mt-6">
@@ -59,7 +62,7 @@
   
   
   
-  
+  <M1/>
   
   
   
