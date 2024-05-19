@@ -192,11 +192,12 @@ const { title } = Astro.props;
         $("#signup_form").on("submit", function (e) {
           e.preventDefault();
           var first_name = $("input[name='first_name']").val();
+          var last_name = $("input[name='last_name']").val();
           var email = $("input[name='email']").val();
           var phone = $("input[name='phone']").val();
           var formdata = {
             firstName: first_name,
-            lastName: "flagedu",
+            lastName: last_name,
             email: email,
             phone: phone,
             interest: "Coupons Copy",
