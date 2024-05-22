@@ -2,18 +2,69 @@
 
 
 <template>
-  <div class="flex justify-center  pt-20 ">
-   <div class="content md:w-2/3  w-5/6 relative  flex-wrap-reverse mt-20  bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-gradient-to-br from-black from-20% via-gray-800 via-30% to-emerald-500   ">
-    <div class="info text-2xl my-20  md:mx-10   md:m-15 text-center font-bold  " dir="rtl">
+  <div class="flex justify-center  pt-20  w-full">
+   <div class="content lg:py-20 w-5/6 relative   flex-wrap-reverse mt-20  bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-gradient-to-br from-black from-20% via-gray-800 via-30% to-emerald-500   ">
+    
+
+
+
+
+  <swiper
+    :effect="'cards'"
+    :grabCursor="true"
+    :modules="modules"
+    :loop="true"
+    class="mySwiper py-20 px-10  mx-0"
+  >
+
+
+
+
+ 
+   
+    <swiper-slide class="swiper-slide ">  
+      
+    
+    
+    
+    </swiper-slide>
+    <swiper-slide class="swiper-slide"> </swiper-slide>
+    <swiper-slide class="swiper-slide"> </swiper-slide>
+    <swiper-slide class="swiper-slide">  </swiper-slide>
+
+  
+  </swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="info text-2xl mt-20     text-center font-bold  " dir="rtl">
       <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png" class="absolute top-10 right-0 z-0 " >
     <h1
-        class="text-2xl sm:text-3xl 
+        class="text-4xl md:text-8xl 
             font-bold text-heading-1 drop-shadow-md text-white"
       >
         اختر الكوبون المناسب لك
-
+<br>
         <span
-          class="text-transparent bg-clip-text bg-gradient-to-br from-teal-100 from-20% via-teal-400 via-30% to-emerald-600"
+          class=" text-xl text-light sm:text- xl  text-transparent bg-clip-text bg-gradient-to-br from-teal-100 from-20% via-teal-400 via-30% to-emerald-600"
         >
         فرصتك لتضاعف حجم محفظتك دون المخاطرة بأي شيء
         </span> 
@@ -21,11 +72,10 @@
 
 
       <h1 class=" text-heading-1 m-5 text-white font-light">
-        لا تفوت هذه الفرصة الرائعة لزيادة ثروتك!
-
+       
 
         <span
-          class="text-transparent bg-clip-text bg-gradient-to-br from-emerald-200 from-20% via-yallow-300 via-30% to-emerald-400 "
+          class=" text-lg text-transparent bg-clip-text bg-gradient-to-br from-emerald-200 from-20% via-yallow-300 via-30% to-emerald-400 "
         >
         أبدأ رحلة تحقيق أحلامك نحو استثمار آمن وناجح.
  
@@ -63,34 +113,6 @@
 
     </div>
 
-
-
-
-  <swiper
-    :effect="'cards'"
-    :grabCursor="true"
-    :modules="modules"
-    :loop="true"
-    class="mySwiper py-20 px-10  mx-0"
-  >
-
-
-
-
- 
-   
-    <swiper-slide class="swiper-slide ">  
-      
-    
-    
-    
-    </swiper-slide>
-    <swiper-slide class="swiper-slide"> </swiper-slide>
-    <swiper-slide class="swiper-slide"> </swiper-slide>
-    <swiper-slide class="swiper-slide">  </swiper-slide>
-
-  
-  </swiper>
 </div>
 
 
@@ -222,7 +244,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 450px;
+  max-width:650px;
   padding: 0 35px;
   text-align: justify;
   text-align: center;
