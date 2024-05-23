@@ -2,8 +2,8 @@
 
 
 <template>
-  <div class="flex justify-center  pt-20  w-full">
-   <div class="content lg:py-20 w-5/6 relative   flex-wrap-reverse mt-20  bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-gradient-to-br from-black from-20% via-gray-800 via-30% to-emerald-500   ">
+  <div class="flex justify-center   pt-20  w-full">
+   <div class="content lg:py-20 w-5/6 relative  relative flex-wrap  flex-col-reverse mt-20  bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-gradient-to-br from-black from-20% via-gray-800 via-30% to-emerald-500   ">
     
 
 
@@ -14,7 +14,7 @@
     :grabCursor="true"
     :modules="modules"
     :loop="true"
-    class="mySwiper py-20 px-10  mx-0"
+    class="mySwiper py-20 px-10  mx-0 w-5/6"
   >
 
 
@@ -55,9 +55,17 @@
 
 
 
-  <div class="info text-2xl mt-20     text-center font-bold  " dir="rtl">
+  <div class="info text-2xl md:mt-20     text-center font-bold  " dir="rtl">
       <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png" class="absolute top-10 right-0 z-0 " >
-    <h1
+   
+      <svg class="card__svg  0" viewBox="0 0 800 500"   >
+
+<path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="transparent"></path>
+<path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"></path>
+</svg>
+   
+   
+      <h1
         class="text-4xl md:text-8xl 
             font-bold text-heading-1 drop-shadow-md text-white"
       >
@@ -75,7 +83,7 @@
        
 
         <span
-          class=" text-lg text-transparent bg-clip-text bg-gradient-to-br from-emerald-200 from-20% via-yallow-300 via-30% to-emerald-400 "
+          class=" text-lg text-transparent text-white "
         >
         أبدأ رحلة تحقيق أحلامك نحو استثمار آمن وناجح.
  
@@ -216,8 +224,8 @@ body {
 }
 
 .mySwiper{
-  width: 20%;
-  height: 850px;
+ 
+ 
   padding: 50px 0;
 
  
@@ -266,8 +274,19 @@ body {
 .swiper {
   margin-left: 1px;
     margin-right: 1px;
-  width: 240px;
-  height: 560px;
+  width: 700px;
+  height: 400px;
+
+
+
+  @media screen and (max-width: 768px) {
+  
+
+    width: 200px;
+  height:500px;
+}
+
+
 
 }
 
@@ -282,27 +301,49 @@ body {
 }
 
 .swiper-slide:nth-child(1n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_cwr9te.webp)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716194787/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat.jpg)
   no-repeat 50% 50% / cover;
-  background-position: center;
-  background-size: contain;
-
+ 
+  @media screen and (max-width: 768px) {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_cwr9te.webp)
+    no-repeat 50% 50% / cover;
+}
 
 }
 
 .swiper-slide:nth-child(2n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211904/copy/cards/%D8%A7%D9%84%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%86%D9%84%D8%A9_p9msbu.webp)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716194790/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy.jpg)
       no-repeat 50% 50% / cover;
+
+
+      
+  @media screen and (max-width: 768px) {
+  
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_qe2p8t.webp)
+      no-repeat 50% 50% / cover;
+  }
+      
 }
 
 .swiper-slide:nth-child(3n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_qe2p8t.webp)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716194793/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h.jpg)
       no-repeat 50% 0% / cover;
+
+      @media screen and (max-width: 768px) {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211902/copy/cards/aaaa_gcdz78.webp)
+    no-repeat 50% 50% / cover;
+}
 }
 
 .swiper-slide:nth-child(4n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_cwr9te.webp)
-      no-repeat 50% 50% / cover;
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716207688/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n.jpg)
+      no-repeat 50% 50% / cover;  @media screen and (max-width: 768px) {
+  
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211904/copy/cards/%D8%A7%D9%84%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%86%D9%84%D8%A9_p9msbu.webp)
+    no-repeat 50% 50% / cover;
+}
 }
 
 
@@ -422,5 +463,36 @@ body {
 
 }
 
+
+.card__svg {
+  position: absolute;
+  left: 0;
+ bottom: 0;
+}
+
+.card__line {
+  opacity: 0;
+  animation: LineFadeIn 1.8s .8s forwards ease-in;
+}
+
+@keyframes LineFadeIn {
+  0% {
+    opacity: 0;
+    d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");
+    stroke: #13dbc048;
+  }
+
+  50% {
+    opacity: 1;
+    d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");
+    stroke: #4cecdf4f;
+  }
+
+  100% {
+    opacity: 1;
+    d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");
+    stroke: #78f7e642;
+  }
+}
 
 </style>

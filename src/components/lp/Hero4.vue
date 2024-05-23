@@ -263,7 +263,7 @@ class="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] tran
 
 
 
-<swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl ">
+<swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl  ">
 
 <div
 class="group  absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]"
