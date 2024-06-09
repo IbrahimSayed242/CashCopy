@@ -34,7 +34,7 @@
   >
 
 
-    <swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl ">
+    <swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl  infinite-scroll">
 
       <div
     class="group  absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]"
@@ -103,7 +103,7 @@
 
 
 
-      <swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl ">
+      <swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl   infinite-scroll">
 
       <div
     class="group  absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]"
@@ -131,7 +131,7 @@
       </defs>
     </svg>
     <div
-      class="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
+      class="items-left duration-600 absolute left-0 top-0 flex h-[8em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
     >
       <div class="items-left flex flex-col justify-center">
         <h1 class="text-[1.5em] font-bold leading-[0.8em]">كوبون الربح الاساسي</h1>
@@ -175,7 +175,7 @@
   
   
   
-  <swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl ">
+  <swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl   infinite-scroll">
 
 <div
 class="group  absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]"
@@ -203,7 +203,7 @@ xmlns="http://www.w3.org/2000/svg"
 </defs>
 </svg>
 <div
-class="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
+class="items-left duration-600 absolute left-0 top-0 flex h-[8em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
 >
 <div class="items-left flex flex-col justify-center">
   <h1 class="text-[1.5em] font-bold leading-[0.8em]">كوبون الربح الاساسي</h1>
@@ -263,7 +263,7 @@ class="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] tran
 
 
 
-<swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl  ">
+<swiper-slide class="relative hover:scale-105 hover:duration-500 hover:shadow-2xl   infinite-scroll">
 
 <div
 class="group  absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]"
@@ -291,7 +291,7 @@ xmlns="http://www.w3.org/2000/svg"
 </defs>
 </svg>
 <div
-class="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
+class="items-left duration-600 absolute left-0 top-0 flex h-[8em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
 >
 <div class="items-left flex flex-col justify-center">
   <h1 class="text-[1.5em] font-bold leading-[0.8em]">كوبون الربح الاساسي</h1>
@@ -414,6 +414,21 @@ swiper-slide:nth-child(1n) {
   cursor: pointer;
 }
 
+ 
+	@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}
+
+ 
 
 
 
