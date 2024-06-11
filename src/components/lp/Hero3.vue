@@ -301,7 +301,7 @@ body {
 }
 
 .swiper-slide:nth-child(1n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716194787/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat.jpg)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat_ebfyix.webp)
   no-repeat 50% 50% / cover;
  
   @media screen and (max-width: 768px) {
@@ -313,7 +313,7 @@ body {
 }
 
 .swiper-slide:nth-child(2n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716194790/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy.jpg)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy_sauh9s.webp)
       no-repeat 50% 50% / cover;
 
 
@@ -327,7 +327,7 @@ body {
 }
 
 .swiper-slide:nth-child(3n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716194793/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h.jpg)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1718091599/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h_fm93vg.webp)
       no-repeat 50% 0% / cover;
 
       @media screen and (max-width: 768px) {
@@ -338,7 +338,7 @@ body {
 }
 
 .swiper-slide:nth-child(4n) {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716207688/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n.jpg)
+  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1718091598/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n_xckhry.webp)
       no-repeat 50% 50% / cover;  @media screen and (max-width: 768px) {
   
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(https://res.cloudinary.com/dt9k74vof/image/upload/v1716211904/copy/cards/%D8%A7%D9%84%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%86%D9%84%D8%A9_p9msbu.webp)
