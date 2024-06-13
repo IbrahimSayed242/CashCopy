@@ -126,6 +126,7 @@ const { title } = Astro.props;
     
   <script is:inline>
     function submitForm() {
+      // Get the form data
       const form = document.getElementById("myForm");
       const formData = new FormData(form);
       const urlParams = new URLSearchParams(window.location.search);
@@ -133,6 +134,17 @@ const { title } = Astro.props;
       formData.append("afp", afpParam);
       formData.append("interest", "Contact us");
       formData.append("country", "don't know");
+      //get user IP
+      $.ajax({
+        url: "https://api.ipify.org?format=json",
+        method: "GET",
+        success: function (data) {
+          console.log("User's IP:", data.ip);
+          user_ip = data.ip;
+        }
+      });
+      formData.append("user_ip", user_ip);
+
 
       const jsonData = {};
 
@@ -175,6 +187,8 @@ const { title } = Astro.props;
           method: "GET",
           success: function (response) {
             var country = response.country;
+            var ip = response.ip;
+            console.log("User's IP", ip);
             console.log("User's Country:", country);
             // Once country is retrieved, call the function to submit the form with the country data
             submitForm(country);
@@ -204,11 +218,12 @@ const { title } = Astro.props;
             source: "Coupons Copy Affiliate",
             password: "Flagedu2023!@",
             country: country, // Use the retrieved country here
-            user_ip: "{{ user_ip }}",
+            user_ip: ip,
             ci: "{{ ci }}",
             uai: "{{ uai }}",
             ani: "{{ ani }}",
           };
+          
           console.log(formdata);
 
           var brand = "{{ brand }}";
