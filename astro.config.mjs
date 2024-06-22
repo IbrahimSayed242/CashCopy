@@ -16,11 +16,11 @@ export default defineConfig({
   //   inlineStylesheets: "auto",
   //   assets: "static",
   // },
-  output: "server",
+  output: "hybrid",
   adapter: vercel(
-    // {
-    //   edgeMiddleware: true,
-    // }
+    {
+      edgeMiddleware: true,
+    }
   ),
 
   middleware: ['./src/middleware.js'],
