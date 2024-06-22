@@ -4,6 +4,8 @@ import react from "@astrojs/react";
 import vue from "@astrojs/vue";
 // import vercel from '@astrojs/vercel/serverless';
 import vercelServerless from '@astrojs/vercel/serverless';
+import node from "@astrojs/node";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), vue()],
@@ -17,9 +19,8 @@ export default defineConfig({
   //   assets: "static",
   // },
   output: "hybrid",
-  adapter: vercelServerless(
-
-  ),
-
-  middleware: ['./src/middleware.js'],
+  adapter: node({
+    mode: "standalone"
+  }),
+  middleware: ['./src/middleware.js']
 });
