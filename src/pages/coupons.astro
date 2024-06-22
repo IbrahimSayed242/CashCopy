@@ -12,7 +12,7 @@ import Brokers  from "../components/sections/Brokers.astro";
 <Layout title="CouponsCopy">
     <main class="flex flex-col gap-y-10 md:gap-y-32 overflow-hidden ">
            
-        <Hero3 client:only /> 
+        <Hero3 client:only="vue" /> 
 <Hero2/>
 
 
@@ -31,7 +31,7 @@ import Brokers  from "../components/sections/Brokers.astro";
 
 
 
-    <Swip/ client:only>
+    <Swip/ client:only="vue">
 </Swip>
 <CTA />
    

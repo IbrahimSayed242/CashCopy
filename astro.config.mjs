@@ -18,4 +18,8 @@ export default defineConfig({
   // },
   output: "server",
   adapter: vercel(),
+  // middleware: [
+  //   redirectMiddleware,
+  // ],
+  middleware: ['./src/middleware.js'],
 });
