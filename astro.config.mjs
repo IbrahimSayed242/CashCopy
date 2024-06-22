@@ -18,9 +18,7 @@ export default defineConfig({
   // },
   output: "hybrid",
   adapter: vercelServerless(
-    {
-      edgeMiddleware: true,
-    }
+
   ),
 
   middleware: ['./src/middleware.js'],
