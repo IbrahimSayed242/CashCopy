@@ -17,13 +17,11 @@ export default defineConfig({
   //   assets: "static",
   // },
   output: "server",
-  adapter: vercelServerless(
+  adapter: vercel(
     {
       edgeMiddleware: true,
     }
   ),
-  // middleware: [
-  //   redirectMiddleware,
-  // ],
+
   middleware: ['./src/middleware.js'],
 });
