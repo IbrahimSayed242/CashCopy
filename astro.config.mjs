@@ -15,4 +15,5 @@ export default defineConfig({
   //   inlineStylesheets: "auto",
   //   assets: "static",
   // },
+  output: "server",
 });
