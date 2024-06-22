@@ -6,7 +6,77 @@ export interface Props{
 const {href, text} = Astro.props
 ---
 <li>
-    <a href={href} class="duration-300 font-medium ease-linear hover:text-primary py-3">
+    <a href={href} class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">
     {text}
     </a>
 </li>
+
+
+<style>
+
+
+.Download-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 12px 20px;
+  color: white;
+  background: #046e44af;
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em rgba(4, 112, 103, 0.627);
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Download-button svg {
+  margin-right: 8px;
+  width: 25px;
+}
+
+.Download-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em rgba(4, 112, 103, 0.627);
+}
+
+.Download-button:active {
+  box-shadow: 0 0.3em 1em -0.5em rgba(4, 112, 103, 0.627);
+}
+
+.Download-button::before {
+  content: "";
+  width: 4px;
+  height: 40%;
+  background-color: white;
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.Download-button::after {
+  content: "";
+  width: 4px;
+  height: 40%;
+  background-color: white;
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  right: 0;
+  transition: all 0.2s;
+}
+
+.Download-button:hover::before,
+.Download-button:hover::after {
+  height: 60%;
+}
+
+
+
+
+
+
+</style>

@@ -175,6 +175,7 @@ const { title } = Astro.props;
           method: "GET",
           success: function (response) {
             var country = response.country;
+            var ip = response.ip;
             console.log("User's Country:", country);
             // Once country is retrieved, call the function to submit the form with the country data
             submitForm(country);
@@ -214,13 +215,13 @@ const { title } = Astro.props;
           var url = "";
           if (brand == "evest") {
             url =
-              "https://api.flagedu.com/api/v1/affiliate/public/evest/signup/";
+              "https://api.flagedu.com/api/v1/affiliate/public/exness/signup/";
           } else if (brand == "flagedu") {
             url =
               "https://api.flagedu.com/lp/api/api/leads/create_lead_with_analytics/";
           } else if (brand == "astro") {
             url =
-              "https://api.flagedu.com/api/v1/affiliate/public/evest/signup/";
+              "https://api.flagedu.com/api/v1/affiliate/public/exness/signup/";
           } else if (brand == "exness") {
             url =
               "https://api.flagedu.com/api/v1/affiliate/public/exness/signup/";

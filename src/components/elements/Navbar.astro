@@ -3,6 +3,7 @@ import BtnLink2 from "../shared/BtnLink2.astro";
 import Container from "../shared/Container.astro";
 import  Navitem from "../shared/Navitem.astro";
 
+
 const navItems = [
     {
         href:"/",
@@ -15,6 +16,10 @@ const navItems = [
     },{
         href:"/about",
         text:"من نحن"
+    },
+    {
+        href:"/offer",
+        text:"عروض"
     }
     // {
     //     href:"#features",
@@ -23,24 +28,23 @@ const navItems = [
 ]
 ---
 
-<header class="absolute inset-x-0 top-0 z-50 py-6">
+<header class=" inset-x-0 top-0 z-[999] py-6 bg-emerald-600/90 dark:bg-emerald-900 fixed">
     <Container>
-        <nav class="w-full flex justify-between gap-6 relative "dir ="rtl">
+        <nav class="w-full flex justify-between gap-6 relative mx-4"dir ="rtl">
             <!-- logo -->
             <div class="min-w-max inline-flex relative">
                 <a href="/" class="relative flex items-center gap-2">
-                    <div class="relative w-7 h-7 overflow-hidden flex ">
-                        <img src="https://s6.imgcdn.dev/VA4y9.png" alt="CouponsCopy" width="2350" height="2359" class="w-full h-full object-cover">
+                    <div class="relative  mr-4 md:w-60 w-40 overflow-hidden flex ">
+                        <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" alt="CouponsCopy"  class="w-full h-full   ">
+                       
                     </div>
-                    <div class="inline-flex text-lg font-semibold  text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600">
-                    CouponsCopy
-                    </div>
+                   
                 </a>
             </div>
 
             <div data-nav-overlay aria-hidden="true" class="fixed hidden inset-0 lg:!hidden bg-box-bg bg-opacity-50 backdrop-filter backdrop-blur-xl"></div>
-            <div data-navbar class="flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-4 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0">
-                <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
+            <div data-navbar class="flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-10 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0">
+                <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-10 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
                     {navItems.map(item=>{
                         return <Navitem {...item}/>
                     })

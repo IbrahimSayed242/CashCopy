@@ -1,0 +1,294 @@
+---
+import Button2 from "../shared/Button2.astro";
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+---
+
+
+<button class="bg-teal-500 text-white rounded-md px-4 py-2 hover:bg-teal-700 transition " onclick="openModal('modelConfirm') ">
+  الاشتراك الآن 
+  </button>
+  
+  <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+      <div class="relative top-40 mx-auto shadow-xl rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900  max-w-md">
+  
+          <div class="flex justify-end p-2">
+              <button onclick="closeModal('modelConfirm')" type="button"
+                  class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                  </svg>
+              </button>
+          </div>
+  
+        
+        
+        
+    
+          <section id="cta"  class=" ">
+            <Container>
+              <div
+              id="sign-in"   class="w-full relative py-8 md:py-10 px-6 md:px-8 "
+              >
+                <div  class="absolute right-0 top-0 h-full w-full flex justify-end">
+                  <div
+                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
+                  >
+                    <span
+                      class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                      class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                      class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+                    ></span>
+                  </div>
+                </div>
+          
+                <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
+                  <div
+                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
+                  >
+                    <span
+                      class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                      class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                      class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+                    ></span>
+                  </div>
+                </div>
+                <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
+                  <h1
+                    class="text-xl/tight sm:text-2xl/tight md:text-3xl/tight
+                    font-bold text-heading-1"
+                  >
+                    انضم إلينا <span
+                      class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600"
+                    >
+                      دون جهد أو خبرة
+                    </span> وحقق دخلاً إضافياً
+                  </h1>
+                  <Paragraph className={"pt-5 text-md"}>
+                    ندعوك للانضمام إلينا! نحن نوفر لك فرصة لتحقيق دخل إضافي دون جهد أو
+                    خبرة في عالم التداول.
+                  </Paragraph>
+                  <div class="    mt-2" dir="rtl">
+                    <form
+                      id="myForm"
+                      class=" bg-gray-100 dark:bg-gray-800 px-2 pt-6 pb-8 mb-4 rounded shadow-lg text-lg"
+                    >
+                      <div class="flex flex-col md:flex-row mb-6 justify-center">
+                        <div class="w-full md:w-1/2 px-1 mb-6 md:mb-0">
+                          <input 
+                            name="first_name"
+                            class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            id="grid-first-name"
+                            type="text"
+          
+                            placeholder=" الاسم "
+                          />
+                        </div>
+                        <div class="w-full md:w-1/2 px-1">
+                          <input
+                            name="phone"
+                            type="number"
+                            class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="grid-last-name"
+                            type="text"
+                            placeholder=" رقم الجوال"
+                          />
+                        </div>
+                      </div>
+                      <!--  <div class="flex flex-wrap -mx-3 mb-6">
+                       <div class="w-full px-3">
+                          <input
+                            class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="grid-password"
+                            type="password"
+                            placeholder="**********"
+                          />
+                        </div> 
+                      </div>-->
+                      <div class="flex flex-wrap -mx-3 mb-3">
+                        <div class="w-full px-3">
+                          <input
+                            class="shadow-sm appearance-none block w-full  bg-gray-200 text-blue-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="grid-email"
+                            type="email"
+                            name="email"
+                            placeholder=" البريد الالكتروني"
+                          />
+                        </div>
+                      </div>
+          
+                      <div  class="flex flex-wrap  -mx-3 mb-3 justify-center pt-10 ">
+                        <Button2 type="submit"  variant={"primary"} className="bg-primary hover:bg-blue-900">
+                          <span class="text-white   relative z-[5]"> انضم الينا</span>
+                        </Button2>
+                      </div>
+
+
+
+
+
+
+                      <a href="https://wa.me/201063588999" class="button2 relative cursor-pointer">
+                      
+                        <svg class="inline  " viewBox="0 0 48 48" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z" fill="#fff"></path><path d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z" fill="#fff"></path><path d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z" fill="#cfd8dc"></path><path d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z" fill="#40c351"></path><path clip-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" fill-rule="evenodd" fill="#fff"></path>
+                    </svg>
+                   واتساب
+                  </a>
+
+
+
+
+
+
+
+
+
+
+
+                      
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          
+          </section>
+          
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         
+  
+      </div>
+  </div>
+  
+  <script type="text/javascript">
+      window.openModal = function(modalId) {
+          document.getElementById(modalId).style.display = 'block'
+          document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+      }
+  
+      window.closeModal = function(modalId) {
+          document.getElementById(modalId).style.display = 'none'
+          document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+      }
+  
+      // Close all modals when press ESC
+      document.onkeydown = function(event) {
+          event = event || window.event;
+          if (event.keyCode === 27) {
+              document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+              let modals = document.getElementsByClassName('modal');
+              Array.prototype.slice.call(modals).forEach(i => {
+                  i.style.display = 'none'
+              })
+          }
+      };
+  </script>
+
+  <style>
+    .button2 {
+      display: inline-block;
+      transition: all 0.2s ease-in;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      color: #090909;
+      padding: 0.7em  .7em;
+      font-size: 18px;
+      border-radius: 0.5em;
+      background: #e8e8e8;
+      border: 1px solid #e8e8e8;
+      box-shadow: 6px 6px 12px #c5c5c5,
+                 -6px -6px 12px #ffffff;
+    }
+    
+    .button2 > svg {
+      height: 30px;
+     
+      padding: 0px 5px;
+      margin-top: -4px;
+      
+    }
+    
+    .button2:active {
+      color: #666;
+      box-shadow: inset 4px 4px 12px #c5c5c5,
+                 inset -4px -4px 12px #ffffff;
+    }
+    
+    .button2:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scaleY(1) scaleX(1.25);
+      top: 100%;
+      width: 140%;
+      height: 180%;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+      z-index: -1;
+    }
+    
+    .button2:after {
+      content: "";
+      position: absolute;
+      left: 55%;
+      transform: translateX(-50%) scaleY(1) scaleX(1.45);
+      top: 180%;
+      width: 160%;
+      height: 190%;
+      background-color: #009087;
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+      z-index: -1;
+    }
+    
+    .button2:hover {
+      color: #ffffff;
+      border: 1px solid #009087;
+    }
+    
+    .button2:hover:before {
+      top: -35%;
+      background-color: #009087;
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    }
+    
+    .button2:hover:after {
+      top: -45%;
+      background-color: #009087;
+      transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    }
+    
+  </style>

@@ -1,18 +1,18 @@
 ---
 export interface Props{
     className?:string,
-    variant:"amber-900"|"Violet-900",
+    variant:"teal-900"|"Violet-900",
     href?:string,
     type?:string
 }
 
 const {className, variant} = Astro.props
 
-const getThemeStyle = (variant:"amber-900"|"Violet-900")=>{
-    if (variant === "amber-900") {
-        return "bg-amber-900 border-transparent relative after:bg-[#b45309] hover:border-[#172554]"
+const getThemeStyle = (variant:"teal-900"|"Violet-900")=>{
+    if (variant === "teal-900") {
+        return "bg-teal-900 border-transparent relative after:bg-[#b45309] hover:border-[#172554]"
     }
-    return "text-amber-900"
+    return "text-teal-900"
 }
 
 

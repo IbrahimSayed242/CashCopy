@@ -4,147 +4,125 @@ import Button2 from "../shared/Button2.astro";
 import Paragraph from "../shared/Paragraph.astro";
 ---
 
-
-
-
-<div class="py-6 sm:py-8 lg:py[50px] dark:bg-teal-800/10   bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-[#11726dc7]      text-white mx-auto relative "  id="sin-in">
-
-  <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-30 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+<div
+  class="py-6 sm:py-8 lg:py[50px] dark:bg-teal-800/10 bg-[url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)] bg-cover bg-no-repeat bg-center bg-[#11726dc7] text-white mx-auto relative"
+  id="sign-in"
+>
+  <svg
+    viewBox="0 0 52 24"
+    fill="currentColor"
+    class="absolute top-0 left-30 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+  >
     <defs>
-      <pattern id="ec5d8ef5-b853-4714-b94f-df28ec98eeb7" x="0" y="0" width=".135" height=".30"><circle cx="1" cy="1" r=".7"></circle></pattern>
+      <pattern
+        id="ec5d8ef5-b853-4714-b94f-df28ec98eeb7"
+        x="0"
+        y="0"
+        width=".135"
+        height=".30"><circle cx="1" cy="1" r=".7"></circle></pattern
+      >
     </defs>
-    <rect fill="url(#ec5d8ef5-b853-4714-b94f-df28ec98eeb7)" width="52" height="24"></rect>
-  </svg> 
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-8 relative">
+    <rect
+      fill="url(#ec5d8ef5-b853-4714-b94f-df28ec98eeb7)"
+      width="52"
+      height="24"></rect>
+  </svg>
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8 relative">
+    <img
+      src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png"
+      class="absolute top-10 right-0 z-0"
+    />
+    <div
+      class="flex flex-col items-center rounded-lg p-4 sm:p-8 lg:flex-row lg:justify-between"
+    >
+      <div class="mb-4 sm:mb-8 lg:mb-0">
+        <h2
+          class="text-center text-xl font-bold sm:text-2xl lg:text-3xl"
+          dir="rtl"
+        >
+          أحصل علي قائمة بأفضل الوسطاء
+        </h2>
+        <p class="text-center text-white dark:text-gray-100" dir="rtl">
+          اترك بريدك لتحصل علي القائمة الخاصة بك
+        </p>
+      </div>
 
-      <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png" class="absolute top-10 right-0 z-0 " >
-      <div class="flex flex-col items-center rounded-lg  p-4  sm:p-8 lg:flex-row lg:justify-between">
-        <div class="mb-4 sm:mb-8 lg:mb-0">
-
-     
-          <h2 class="text-center text-xl font-bold  sm:text-2xl  lg:text-3xl " dir="rtl"> أحصل علي قائمة بأفضل الوسطاء </h2>
-          <p class="text-center text-white dark:text-gray-100  " dir="rtl"> اترك بريدك  لتحصل علي القائمة الخاصة بك</p>
-        </div>
-  
-        <div class="flex flex-col items-center lg:items-center justify-center" >
-          <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
-           
-          
-            <div class="w-full flex justify-center m-3 mt-10" dir="rtl">
-              <form
-                id="myForm"
-                class="w-3/3 bg-gray-100 dark:bg-gray-800 px-8 pt-6 pb-8 mb-4 rounded shadow-lg text-lg"
-              >
-                <div class="flex flex-col md:flex-row mb-6 justify-center">
-                  <div class="w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                    <input
-                      name="first_name"
-                      class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                     
-                      type="text"
-    
-                      placeholder=" الاسم الاول "
-                    />
-                  </div>
-                  <div class="w-full md:w-1/2 px-1">
-                    <input
-                      name="last name"
-                      type="text"
-                      class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      
-                      type="text"
-                      placeholder="الاسم الاخير"
-                    />
-                  </div>
+      <div class="flex flex-col items-center lg:items-center justify-center">
+        <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
+          <div class="w-full flex justify-center m-3 mt-10" dir="rtl">
+            <form id="myForm" class="w-3/3 bg-gray-100 dark:bg-gray-800 px-8 pt-6 pb-8 mb-4 rounded shadow-lg text-lg" onSubmit={handleSubmit}>
+              <div class="flex flex-col md:flex-row mb-6 justify-center">
+                <div class="w-full md:w-1/2 px-1 mb-6 md:mb-0">
+                  <input name="first_name" class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder=" الاسم الاول " />
                 </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
-                 <div class="w-full px-3">
-                    <input
-                      class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      type="number"
-                      placeholder="رقم الجوال"
-                    />
-                  </div> 
+                <div class="w-full md:w-1/2 px-1">
+                  <input name="last_name" type="text" class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="الاسم الاخير" />
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-3">
-                  <div class="w-full px-3">
-                    <input
-                      class="shadow-sm appearance-none block w-full  bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      type="email"
-                      name="email"
-                      placeholder=" البريد الالكتروني"
-                    />
-                  </div>
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                  <input class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" name="phone" placeholder="رقم الجوال" />
                 </div>
-    
-                <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10 ">
-                  <Button2 type="submit"  variant={"primary"} className="bg-teal-600 hover:bg-teal-900">
-                    <span class="text-white   relative z-[5]"> انضم الينا</span>
-                  </Button2>
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-3">
+                <div class="w-full px-3">
+                  <input class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email" name="email" placeholder=" البريد الالكتروني" />
                 </div>
-              </form>
-            </div>
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10">
+                <Button2 type="submit" variant={"primary"} className="bg-teal-600 hover:bg-teal-900">
+                  <span class="text-white relative z-[5]"> انضم الينا</span>
+                </Button2>
+              </div>
+            </form>
           </div>
-        </div>
-
-
-           
-            </div>
-        </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         </div>
       </div>
     </div>
   </div>
+</div>
+<script>
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    // Extract form data
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Extract URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const param1 = urlParams.get('param1');
+    const param2 = urlParams.get('param2');
+
+    // Construct the request payload
+    const payload = {
+      ...data,
+      param1,
+      param2
+    };
+
+    try {
+      // Send the form data to the API endpoint
+      const response = await fetch('/api/handle-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+      console.log('Response from server:', result);
+
+      if (response.ok) {
+        alert('Form submitted successfully!');
+      } else {
+        alert('Failed to submit the form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    }
+  }
+</script>

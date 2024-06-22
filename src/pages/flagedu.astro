@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Land2.astro";
+import Layout from "../layouts/LPL.astro";
 import Container from "../components/shared/Container.astro";
 import Paragaph from "../components/shared/Paragraph.astro";
 import Hero from "../components/lp/Hero.astro";
@@ -7,6 +7,7 @@ import Hero from "../components/lp/Hero.astro";
 import News from "../components/lp/News.astro";
 import Hero2 from "../components/lp/Hero2.astro";
 import CTA from "../components/lp/LCta.astro";
+import Form from "../components/vue/Form.vue";
 import Review from "../components/lp/Review.astro";
 import Hero3 from "../components/lp/Hero3.astro";
 import FQA from "../components/lp/FQA.astro";
@@ -56,7 +57,7 @@ import About from "../components/lp/About.astro";
 
 <Review_co/>
 <Start/>
-<CTA/>
+<Form client:only/>
 
 
 <FQA/>

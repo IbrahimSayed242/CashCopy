@@ -4,12 +4,12 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 ---
 
-<section id="cta" class="pb-20">
+<section id="cta"  class="pb-20">
   <Container>
     <div
-      class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900"
+    id="sign-in"   class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900"
     >
-      <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+      <div  class="absolute right-0 top-0 h-full w-full flex justify-end">
         <div
           class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
         >
@@ -62,7 +62,7 @@ import Paragraph from "../shared/Paragraph.astro";
           >
             <div class="flex flex-col md:flex-row mb-6 justify-center">
               <div class="w-full md:w-1/2 px-1 mb-6 md:mb-0">
-                <input
+                <input 
                   name="first_name"
                   class="shadow-sm appearance-none block w-full bg-gray-200 text-blue-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   id="grid-first-name"
@@ -104,7 +104,7 @@ import Paragraph from "../shared/Paragraph.astro";
               </div>
             </div>
 
-            <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10 ">
+            <div  class="flex flex-wrap  -mx-3 mb-3 justify-center pt-10 ">
               <Button2 type="submit"  variant={"primary"} className="bg-primary hover:bg-blue-900">
                 <span class="text-white   relative z-[5]"> انضم الينا</span>
               </Button2>

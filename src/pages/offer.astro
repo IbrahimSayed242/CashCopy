@@ -1,34 +1,1070 @@
 ---
-import Layout3 from "../layouts/Layout3.astro";
-import Hero2_landing from "../components/sections/Hero2_landing.astro";
-import Cards_landing from  "../components/sections/Cards_landing.astro";
-import Paragraph from "../components/shared/Paragraph.astro";
-import Swip from "../components/sections/Swip.vue";
-import CTA_landing from "../components/sections/CTA_landing.astro";
-
+ import Popup from "../components/elements/popup.astro";
+ 
+import Layout from "../layouts/Layout.astro";
+import   Back from "../components/sections/Back.astro";
 ---
 
-<Layout3 title="CouponsCopy">
-    <main class="flex flex-col  overflow-hidden ">
-           
-       
-<Hero2_landing/>
-
-<Cards_landing/>
-    </main>
-
-    <div class="flex justify-center">
-
+<Layout title="CouponsCopy" >
  
-        <h2 class="mt-8 text-center   text-3xl font-bold text-yellow-700">
-        سجل مع افضل الوسطاء في الشرق الاوسط
-      </h2>
-      </div> 
-    <Swip/ client:only>
-</Swip>
-<CTA_landing />
-   
-</Layout3>
+
+<container dir="rtl">
+        <header   class="  pt-20 px-5 pb-10 relative     ">
+    
+    
+ 
+    
+    
+          <Back class="absolute top-0 left-0"/>
+    
+            <div class=" md:pt-52 xl:grid place-items-center place-content-center xl:grid-cols-2 xl:max-w-screen-xl mx-auto w-11/12 xl:max-w-screen-2xl gap-14 ">
+          
+              
+              <div class="max-w-xl mx-auto xl:max-w-2xl xl:-mt-8 z-10">
+                <h1 class="text-4xl text-center xl:text-5xl font-semibold leading-snug text-gray-900 2xl:text-6xl 2xl:leading-snug my-10 dark:text-white"><span class="text-teal-500 ">كوبونات وعروض </span> 	  التداول في اسواق الاسهم والفوركس والعملات المشفرة </h1>
+           
+          
+          <hr>
+           
+                <div class="flex items-center max-w-sm justify-between mt-16 mx-auto text-center lg:text-left lg:mx-0">
+                  <div>
+                    <span class="text-3xl font-semibold text-gray-900 dark:text-white">60K+</span>
+                    <p class="capitalize mt-2 dark:text-white">وسيط تداول </p>
+                  </div>
+                  <div class="w-0.5 h-12 bg-gray-900 dark:bg-white"></div>
+                  <div>
+                    <span class="text-3xl font-semibold text-gray-900 dark:text-white">200+</span>
+                    <p class="capitalize mt-2 dark:text-white">عرض اسبوعياَ</p>
+                  </div>
+                </div>
+          
+              </div>
+              <div class="card__grid mt-14 xl:mt-0 sm:justify-items-center relative ">
+          
+                <div class=" xl:absolute   lg:w-[500px]  xl:-left-52 xl:-top-40 z-10 ">
+             
+          <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716573687/copy/cards/features-04_ifuqir.png"> 
+          
+                  
+                  
+                  
+                  
+                </div>
+                
+                
+                
+                
+                <div class="card--2 w-full max-w-xs xl:flex items-center bg-white shadow-xl xl:shadow-teal-500 rounded-3xl w-80 p-5  lg:row-start-1 lg:row-end-2 z-10 hidden ">
+                  <div class="w-20 h-20 border border-gray-200 rounded-2xl m-2">
+                    <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1702984465/copy/evest_r3kf9y.webp" alt="Elise Doe" class="rounded-2xl object-cover w-full h-full">
+                  </div>
+                  <div class="ml-4">
+                    <h2 class="text-lg text-gray-900 font-semibold capitalize">evest</h2>
+                    <p class="text-gray-400 mt-1 mb-2 text-sm"> وسيط موثوق</p>
+                    <ul class="flex">
+                      <li>
+                        <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                      </li>
+                      <li><svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg></li>
+                      <li><svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg></li>
+                      <li><svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg></li>
+                      <li><svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg></li>
+                    </ul>
+                  </div>
+                </div>
+            
+                
+                
+                
+                
+                <div class="card--3 max-w-xs  shadow-xl   lg:row-start-2 lg:row-end-5 xl:mt-8">
+                 <div class="outer">
+            <div class="dot"></div>
+            <div class="card2">
+              <div class="ray"></div>
+              <div class="text">100%</div>
+              <div>بونص  ترحيبي يصل الى </div>
+              <div class="line topl"></div>
+              <div class="line leftl"></div>
+              <div class="line bottoml"></div>
+              <div class="line rightl"></div>
+            </div>
+          </div>
+          
+                
+          
+                </div>
+                
+                
+                
+              </div>
+            </div>
+          
+          </header>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <!--DIV =======================================================================-->
+             
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+              
+          
+           <!-- div ============================================================================================================-->
+          
+          <div class="bg-gradient-to-b from-transparent via-gray-500 relative to-gray-800 w-full " >
+             
+          
+              <section class="relative lg:min-h-[1000px] pt-24 pb-10 sm:pt-32 sm:pb-16 lg:pb-24">
+                  <div class=" ">
+                      <img class="w-[1000px] lg:block mx-auto" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717489127/copy/cards/credit-cards_nn0ofz.webp" alt="offer card" />
+                     
+                  </div>
+          
+                  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative z-20">
+                      <div class="  mx-auto text-center">
+                          <h1 class="text-4xl font-bold sm:text-6xl">
+                              <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-white">
+                             اشترك في باقات وعروض الكوبونات    
+                                
+                                
+                                
+                               </span>
+                          </h1>
+                        
+                          <p class="mt-5 text-base text-white sm:text-xl">  واحصل على افضل العروض والمميزات الاضافية .</p>
+          
+                          <a href="/coupons" title="" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-white transition-all duration-200 bg-teal-600 rounded-lg sm:mt-16 hover:bg-teal-700 focus:bg-teal-700" role="button">
+                
+                            
+                         معرفة المزيد 
+                            <svg class="w-6 h-6 mr-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                          </a>
+          
+                          <div class="grid grid-cols-1 px-20 mt-12 text-left gap-x-12 gap-y-8 sm:grid-cols-3 sm:px-0">
+                              <div class="flex items-center">
+                                  <svg class="flex-shrink-0 h-8 w-8 text-slate-100"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="5" r="2" />  <path d="M5 22v-5l-1-1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5" />  <circle cx="17" cy="5" r="2" />  <path d="M15 22v-4h-2l2 -6a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1l2 6h-2v4" /></svg>
+                                  <p class="mr-3 text-sm text-white">دعوة الاصدقاء </p>
+                              </div>
+          
+                              <div class="flex items-center">
+                                  <svg class="flex-shrink-0  text-teal-500" width="23" height="23"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polygon stroke="#fff" points="12 2 2 7 12 12 22 7 12 2" />  <polyline  points="2 17 12 22 22 17" />  <polyline points="2 12 12 17 22 12" /></svg>
+                                  <p class="mr-2 text-sm text-white">نسخ صفقات لا محدود </p>
+                              </div>
+          
+                              <div class="flex items-center">
+                                  <svg class="flex-shrink-0 h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          
+                                  <p class="mr-3 text-sm text-white"> كاش باك يصل 100%</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+           
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <!-- =====================================================================================================================-->
+          
+          
+          <div dir="rtl" class="flex lg:flex-row md:w-5/6  w-[95%] mx-auto z-50 flex-col  bg-teal-900/80 p-10 rounded-3xl shadow-2xl relative  "> 
+            <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716195175/copy/cards/all_trg5wx.webp" class="absolute bottom-0 left-0 w-[700px] z-0 xl:opacity-90 opacity-30 overflow-hidden" alt="offer" >
+          <div class="relative  my-10 flex   flex-col  px-2  md:px-10 lg:flex-row   my-auto  ">
+          
+          
+          
+          <div   class=" "> 
+           <span class="rounded-full w-full bg-teal-900 px-2 py-1 text-xs text-teal-500">جديد</span> 
+              <h2 class="text-teal-100 text-5xl font-bold lg:text-7xl">اكتشف افضل العروض </h2>
+              <p class="text-teal-100 mt-4 max-w-lg" >مع كوبونات  اراباح  لجميع المنصات ،يصل الكاش باك الى 100% من قيمة الايداع</p>
+          
+              
+          
+          
+           
+          <div class="flex   items-center    ">
+            <div class="space-y-6 border-r-2 border-dashed border-teal-600/30 mt-5">
+              <div class="relative w-full ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-0.5 z-10 -mr-3.5 h-7 w-7 rounded-full text-teal-500">
+                  <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                </svg>
+                <div class="mr-6">
+                  <h4 class="font-bold text-teal-500"> إختر الكوبون الانسب لك</h4>
+                  <p class="mt-2   text-sm text-teal-100 m-1">يمكنك الاختيار بين اربع كوبونات </p>
+                  
+                </div>
+              </div>
+              <div class="relative w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-0.5 z-10 -mr-3.5 h-7 w-7 rounded-full text-teal-500">
+                  <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                </svg>
+                <div class="mr-6">
+                  <h4 class="font-bold text-teal-500"> سجل بياناتك الشخصية</h4>
+                  <p class="mt-2   text-sm text-teal-100 m-1"> قم بملئ بياناتك  ليتم التواصل معك  من قبل فريقنا</p>
+                   
+                </div>
+              </div> 
+          
+          
+              <div class="relative w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="absolute -top-0.5 z-10 -mr-3.5 h-7 w-7 rounded-full text-teal-500">
+                  <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                </svg>
+                <div class="mr-6">
+                  <h4 class="font-bold text-teal-500"> قم بالإيداع و احصل علي البونص</h4>
+                  <p class="mt-2   text-sm text-teal-100 m-1"> بمجرد الاشترك في المنصة  ستحصل على الايداع مباشرة </p>
+           
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          
+                         <div class=" mt-10">
+         
+              
+                 </div> 
+           </div>
+          
+          
+           
+           </div>
+          
+           </div>
+          
+           
+          <!-- offer cards ----------------------------------------------------->
+          
+          <div class="py-10 w-5/6 mx-auto relative">  
+          
+            <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716195175/copy/cards/all_trg5wx.webp" class="absolute bottom-0 left-0 w-full z-0   opacity-20 overflow-hidden" alt="offer" >
+          
+          <div class="py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"> 
+          
+          <p class="w-60 my-10 text-2xl  text-center mx-auto smky-btn3 relative hover:text-teal-500  py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-teal-200  after:rounded-t-full after:w-full after:bottom-0 cursor-pointer after:left-0 text-gray-100 "> عروض الكوبونات </p></div>
+          
+              <div class="container-2 ">
+              
+          
+          
+            <div data-text="" style="--r:-15;" class="glass">
+          
+              <a
+                href="/couopn4"
+            class="absolute bottom-5  cursor-pointer  sm:text-teal-900 font-bold  text-gray-100   hover:text-purple-600  backdrop-blur-lg bg-gradient-to-tr from-purple-600 via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-purple-600 transition-600 duration-700"
+          >
+          عرض الكوبون
+            </a>
+          
+              <p class="absolute cursor-pointer  hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الثروة  الشاملة </p>
+                   <img  class="sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091598/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n_xckhry.webp"   >
+          
+              <img  class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211904/copy/cards/%D8%A7%D9%84%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%86%D9%84%D8%A9_p9msbu.webp"    >
+            </div>
+              
+          
+            <div data-text="" style="--r:5;" class="glass">
+                 <a
+                   href="/couopn3"
+            class="absolute cursor-pointer bottom-5  sm:text-teal-900 font-bold  text-gray-100   hover:text-teal-600  backdrop-blur-lg bg-gradient-to-tr from-teal-600 via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-teal-600 transition-600 duration-700"
+          >
+          عرض الكوبون
+            </a>
+                  <p class="absolute  hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون ارباح الــنخبة </p>
+              <img  class=" sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091599/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h_fm93vg.webp"   >
+          
+              <img  class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_cwr9te.webp"  >
+            </div>
+            
+             <div data-text="" style="--r:5;" class="glass">
+           <a
+             href="/couopn2"
+            class="absolute cursor-pointer bottom-5  sm:text-teal-900 font-bold  text-gray-100   hover:text-gray-600  backdrop-blur-lg bg-gradient-to-tr from-gray-600 via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-gray-600 transition-600 duration-700"
+          >
+          عرض الكوبون
+            </a>
+                  <p  class="absolute hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الربح المتقدم</p>
+              <img  class="  sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy_sauh9s.webp"   >
+          
+              <img class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211902/copy/cards/aaaa_gcdz78.webp"   >
+            </div>
+            
+            
+            <div data-text="" style="--r:25;" class="glass">
+           <a
+           href="/couopn1"
+            class="absolute cursor-pointer bottom-5   z-20 sm:text-teal-900 font-bold  text-gray-100   hover:text-yellow-800  backdrop-blur-lg bg-gradient-to-tr from-yellow-900 via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-yellow-900 transition-600 duration-700"
+          >
+          عرض الكوبون
+            </a>
+                  <p class="absolute hidden sm:block   z-10 text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الربح الاساسي</p>
+              <img  class="sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat_ebfyix.webp"   >
+             <img  class="rotate-180 z-0  hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_qe2p8t.webp "   >
+            </div>
+          </div>
+          </div>
+          
+          
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <!-- offers   -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+          <div class="flex justify-center flex-col gap-4 p-5 md:p-20  bg-gray-800 z-0">
+          <div class="py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"> 
+          
+          <p class="w-60 text-2xl text-center mx-auto smky-btn3 relative hover:text-teal-500  py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-teal-200  after:rounded-t-full after:w-full after:bottom-0 cursor-pointer after:left-0 text-gray-100"> عروض الشركات </p>
+          
+          </div>
+          
+          <section class="flex flex-wrap justify-center antialiased  text-gray-600 gap-5  p-4" >
+              <div class=" hovercard      ">
+           <!-- Card -->
+                  <div class="max-w-xs mx-auto shadow-lg rounded-lg ">
+                      <div class="relative grid grid-cols-1 h-full overflow-visible   bg-teal-700/20 shadow-lg rounded-lg shadow-lg p-5">
+                          <!-- Popular badge -->
+                          <div class="absolute top-8 z-20 overflow-visible  left-5">
+                              <div class="text-xs  inline-flex font-semibold bg-teal-100 text-teal-600 rounded-full text-center px-3 py-1.5 shadow-sm transform -translate-y-1/2">حصري</div>
+                          </div>
+                          <!-- Card header -->
+                          <header class="pb-4 mb-4 border-b border-teal-200 border-opacity-30">
+                              <!-- Logo -->
+                              <div class="mb-2">
+                                 
+                                
+                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1703669065/copy/evest_xjj0rq.jpg" class="w-32 my-2 rounded-2xl" >
+                              </div>
+                              <!-- Product name -->
+                              <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة ايفست</h3>
+                              <!-- Price -->
+                              <div class="font-extrabold mb-1"><span class="text-2xl text-teal-200">%</span><span class="text-4xl text-indigo-50">100</span></div>
+                              <!-- Description -->
+                              <div class="text-teal-200">بونص علي الايداع يصل الى 100% من قيمة الايداع</div>
+                          </header>
+                          <!-- Features list -->
+                          <ul class="text-teal-200 text-sm space-y-2 flex-grow mb-6">
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>أكاديمية التداول</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>بدون عمولة على بعض الأدوات</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>منصة ميتاتريدر 5</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>سهولة فتح الحساب</span>
+                              </li>
+                          </ul>
+                          <Popup/>                       </div>
+                  </div>
+              </div>
+            
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+          
+          
+          
+          
+          
+          
+          
+            
+            
+            
+            
+            
+               <div class=" hovercard   transition duration-300 ease-in-out">
+           <!-- Card -->
+                  <div class="max-w-xs mx-auto ">
+                      <div class="relative grid grid-cols-1 h-full overflow-visible   bg-teal-700/20 shadow-lg rounded-lg shadow-lg p-5">
+                          <!-- Popular badge -->
+                          <div class="absolute top-8  overflow-visible  left-5">
+                              <div class="text-xs  inline-flex font-semibold bg-teal-100 text-teal-600 rounded-full text-center px-3 py-1.5 shadow-sm transform -translate-y-1/2">حصري</div>
+                          </div>
+                          <!-- Card header -->
+                          <header class="pb-4 mb-4 border-b border-teal-200 border-opacity-30">
+                              <!-- Logo -->
+                              <div class="mb-2">
+                                 
+                                
+                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717270793/copy/252x160px_alrq0d.png" class="w-36 my-2 rounded-2xl" >
+                              </div>
+                              <!-- Product name -->
+                              <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة اكسنس</h3>
+                              <!-- Price -->
+                              <div class="font-extrabold mb-1"><span class="text-2xl text-teal-200">%</span><span class="text-4xl text-indigo-50">100</span></div>
+                              <!-- Description -->
+                              <div class="text-teal-200">بونص علي الايداع يصل الى 100% من قيمة الايداع</div>
+                          </header>
+                          <!-- Features list -->
+                          <ul class="text-teal-200 text-sm space-y-2 flex-grow mb-6">
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>خمسة أنواع من الحسابات</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>فروق أسعار منخفضة ومستقرة</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>أكثر من 70 خادم ميتاتريدر حول العالم</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>سهولة فتح الحساب</span>
+                              </li>
+                          </ul>
+                          <Popup class=""/>                   </div></div>
+              </div>
+            
+            
+             
+           
+            
+            
+            
+            
+           
+            
+            
+            
+                <div class=" hovercard   transition duration-300 ease-in-out">
+           <!-- Card -->
+                  <div class="max-w-xs mx-auto ">
+                      <div class="relative grid grid-cols-1 h-full overflow-visible   bg-teal-700/20 shadow-lg rounded-lg shadow-lg p-5">
+                          <!-- Popular badge -->
+                          <div class="absolute top-8 z-20 overflow-visible  left-5">
+                              <div class="text-xs  inline-flex font-semibold bg-teal-100 text-teal-600 rounded-full text-center px-3 py-1.5 shadow-sm transform -translate-y-1/2">حصري</div>
+                          </div>
+                          <!-- Card header -->
+                          <header class="pb-4 mb-4 border-b border-teal-200 border-opacity-30">
+                              <!-- Logo -->
+                              <div class="mb-2">
+                                 
+                                
+                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717271097/copy/Logo_FBS_252x160_prblu5.png" class="w-36 my-2 rounded-2xl" >
+                              </div>
+                              <!-- Product name -->
+                              <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة FBS</h3>
+                              <!-- Price -->
+                              <div class="font-extrabold mb-1"><span class="text-2xl text-teal-200">%</span><span class="text-4xl text-indigo-50">100</span></div>
+                              <!-- Description -->
+                              <div class="text-teal-200">بونص علي الايداع يصل الى 100% من قيمة الايداع</div>
+                          </header>
+                          <!-- Features list -->
+                          <ul class="text-teal-200 text-sm space-y-2 flex-grow mb-6">
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>الحد الأدنى للإيداع 5$</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>خدمة عملاء على مدار الساعة 24/7</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span> مجموعة واسعة من أدوات التداول </span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                 <span> رافعة مالية قياسية </span>
+                              </li>
+                          </ul>
+  <Popup/>                   </div>
+</div> </div>
+            
+            
+            
+            
+                <div class=" hovercard transition duration-300 ease-in-out ">
+           <!-- Card -->
+                  <div class="max-w-xs mx-auto ">
+                      <div class="relative grid grid-cols-1 h-full overflow-visible   bg-teal-700/20 shadow-lg rounded-lg shadow-lg p-5">
+                          <!-- Popular badge -->
+                          <div class="absolute top-8 z-20 overflow-visible  left-5">
+                              <div class="text-xs  inline-flex font-semibold bg-teal-100 text-teal-600 rounded-full text-center px-3 py-1.5 shadow-sm transform -translate-y-1/2">حصري</div>
+                          </div>
+                          <!-- Card header -->
+                          <header class="pb-4 mb-4 border-b border-teal-200 border-opacity-30">
+                              <!-- Logo -->
+                              <div class="mb-2">
+                                 
+                                
+                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717271812/copy/1729_nv7d12.jpg" class="w-36 my-2 rounded-2xl" >
+                              </div>
+                              <!-- Product name -->
+                              <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة XM</h3>
+                              <!-- Price -->
+                              <div class="font-extrabold mb-1"><span class="text-2xl text-teal-200">%</span><span class="text-4xl text-indigo-50">100</span></div>
+                              <!-- Description -->
+                              <div class="text-teal-200">بونص علي الايداع يصل الى 100% من قيمة الايداع</div>
+                          </header>
+                          <!-- Features list -->
+                          <ul class="text-teal-200 text-sm space-y-2 flex-grow mb-6">
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span> محتوى تعليمي رائع ومفيد</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>
+          سبريد منخفض ومنصات متعددة مثل MT4 و MT5  </span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>
+                                    محتوى تعليمي رائع ومفيد
+                                  </span>
+                              </li>
+                              <li class="flex items-center">
+                                  <svg class="w-3 h-3 fill-current text-teal-500 ml-3 flex-shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                                  </svg>
+                                  <span>
+                                  
+          أكثر من 30 زوج من العملات المشفرة يمكن تداولها بسلاسة
+                                  </span>
+                              </li>
+                          </ul>
+                         
+                          <Popup/> 
+                        </div>
+                  </div>
+              </div>
+          </section>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+          
+           </div>
+          
+          
+          </container>
+    
+             
+</Layout>
+          
+          
+           
+          
+          
+          
+          
+          
+          
+       
+           
+          
+          
+          
+          <style scoped>
+          
+          
+          .card__grid {
+            display: grid;
+          grid-template-columns: 280px;
+            place-content:center;
+          gap:1em;
+          }
+          
+          .card--1 {
+            align-self: start;
+          }
+          .card--2 {
+             align-self: start;
+          }
+          .card--3 {
+            align-self: start;
+          }
+          .card--4 {
+              align-self: end;
+          }
+          
+          @media screen and (min-width:780px){
+          .card__grid {
+            display: grid;
+          grid-template-columns: repeat(auto-fit,minmax(3.75em,1fr)); 
+            grid-template-rows: 7.375em 12em 7.375em; 
+              column-gap:1em;
+            row-gap:2.1em;
+          }
+          
+          }
+          
+          
+          .card {
+            box-sizing: border-box;
+            width: 190px;
+            height: 254px;
+            
+          background: linear-gradient(to right, #319795, #4B5563); 
+            border: 1px solid white;
+            box-shadow: 12px 11px 21px rgba(0, 0, 0, 0.075);
+            backdrop-filter: blur(6px);
+            border-radius: 17px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            font-weight: bolder;
+            color: black;
+          }
+          
+         
+          
+          
+          
+          
+          
+          .outer {
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+            padding: 1px;
+            background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+            position: relative;
+          }
+          
+          .dot {
+            width: 5px;
+            aspect-ratio: 1;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 0 10px #ffffff;
+            border-radius: 100px;
+            z-index: 2;
+            right: 10%;
+            top: 10%;
+            animation: moveDot 6s linear infinite;
+          }
+          
+          @keyframes moveDot {
+            0%,
+            100% {
+              top: 10%;
+              right: 10%;
+            }
+            25% {
+              top: 10%;
+              right: calc(100% - 35px);
+            }
+            50% {
+              top: calc(100% - 30px);
+              right: calc(100% - 35px);
+            }
+            75% {
+              top: calc(100% - 30px);
+              right: 10%;
+            }
+          }
+          
+          .card2 {
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 9px;
+            border: solid 1px #202222;
+            background-size: 20px 20px;
+            background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+            color: #fff;
+          }
+          .ray {
+            width: 220px;
+            height: 45px;
+            border-radius: 100px;
+            position: absolute;
+            background-color: #c7c7c7;
+            opacity: 0.4;
+            box-shadow: 0 0 50px #fff;
+            filter: blur(10px);
+            transform-origin: 10%;
+            top: 0%;
+            left: 0;
+            transform: rotate(40deg);
+          }
+          
+          .card2 .text {
+            font-weight: bolder;
+            font-size: 4rem;
+            background: linear-gradient(45deg, #000000 4%, #fff, #000);
+            background-clip: text;
+            color: transparent;
+          }
+          
+          .line {
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            background-color: #2c2c2c;
+          }
+          .topl {
+            top: 10%;
+            background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
+          }
+          .bottoml {
+            bottom: 10%;
+          }
+          .leftl {
+            left: 10%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, #747474 30%, #222424 70%);
+          }
+          .rightl {
+            right: 10%;
+            width: 1px;
+            height: 100%;
+          }
+          
+          
+          
+          
+          
+          
+          /* card styles */
+          .hovercard {
+            position: relative;
+            overflow: hidden;
+          
+            
+            border-radius: 4px;
+           
+            transition: 0.5s;
+         
+           
+          }
+           .hovercard:after {
+              display:none;
+            content: "";
+              top:0; 
+              left:0;
+            position: absolute;
+            height: 130%;
+            width: 0.6em;
+            background-color: aliceblue;
+              opacity: 0.1;
+            
+            animation: glider 4.8s infinite linear;
+          }
+          .hovercard:hover:after { 
+            display: block; 
+            
+          } 
+           
+          
+          
+          
+          @keyframes glider {
+            0% {
+              transform: rotate(45deg) translate(-140px, -140px);
+            }
+          
+            100% {
+              transform: rotate(45deg) translate(520px, -40px);
+            }
+          }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          .container-2 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+          }
+           
+          @media (max-width: 636px) { 
+            
+            
+          
+          
+          .container-2 {
+            
+              flex-direction: column-reverse;
+          } }
+          
+          
+          
+          
+          .container-2 .glass {
+            
+            position: relative;
+           
+            height: 100%;
+            background: linear-gradient(#fff2, transparent);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            border-radius: 10px;
+            margin: 0 -35px;
+            backdrop-filter: blur(10px);
+            transform: rotate(calc(var(--r) * -1deg));
+          }
+          
+          .container-2:hover .glass {
+            @media (min-width: 586px) {  
+            transform: rotate(0deg);
+            margin: 0 15px;
+             flex-direction: column-reverse;
+            }
+          
+          }
+          
+          .container-2 .glass::before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 0;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+              
+          }
+          
+          
+          </style>
+
 
 
 

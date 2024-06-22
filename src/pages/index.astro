@@ -7,14 +7,33 @@ import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Button from "../components/shared/Button.astro";
 import Swip from "../components/sections/Swip.vue";
+import NewFetuer from "../components/lp/NewFetuer.astro";
+
+
+
+ 
+import Hero5 from "../components/lp/Hero5.astro";
 ---
 
-<Layout title="CouponCopy- كوبون كوبي لنسخ الارباح">
-  <main class="flex flex-col gap-y-20 overflow-hidden">
+<Layout title="CouponCopy- كوبونز كوبي لنسخ الارباح">
+  <main class="flex flex-col gap-y-20 overflow-hidden mx-2 relative">
+<div class="absolute  top-28  left-0 w-full  h-[70vh] ">
+  <Hero5 />
+</div>
+
+
+
+
+
+<div class=" bg-gradient-to-t from-black">  
     <Hero />
 
-    <Features />
+</div>
 
+
+
+    <Features />
+    <NewFetuer />
     <Services />
 
     <CTA />

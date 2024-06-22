@@ -4,18 +4,18 @@ import Button from "../shared/Button.astro";
 ---
 
 <section class="relative">
-  <Container>
-    <section id="pricing" class="rounder" dir="rtl">
+
+    <section  class="rounder" dir="rtl">
       <div class="max-w-6xl px-8 mx-auto lg:px-4">
         <div class="mb-16 text-center">
           <h2
             class="max-w-xl mx-auto mb-4 text-2xl sm:text-3xl md:text-5xl font-bold text-gray-500 dark:text-gray-100 font-heading"
           >
             <span>عروض حصرية و</span>
-            <span class="relative pl-2 mr-2 text-yellow-700">
+            <span class="relative pl-2 mr-2 text-teal-700">
               <span class="relative z-10">ارباح مضمونة</span>
               <span
-                class="absolute bottom-0 left-0 w-full h-3 transform -skew-x-6 bg-yellow-100"
+                class="absolute bottom-0 left-0 w-full h-3 transform -skew-x-6 bg-teal-100"
               >
               </span>
             </span>
@@ -26,281 +26,127 @@ import Button from "../shared/Button.astro";
           </p>
         </div>
 
-        <div class="w-full flex flex-col justify-center sm:flex-row my-10">
-          <div
-            class="p-0.5 rounded w-9/10 sm:w-2/5 bg-1
-            md:w-4/10 lg:w-3/10 shadow-lg m-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-          >
-            <div class="p-7 rounded">
-              <h3
-                class="mb-4 text-white text-3xl font-bold text-center drop-shadow-md"
-              >
-                كوبون الربح الاساسي
-              </h3>
-              <span
-                class="flex items-center justify-center text-4xl font-bold text-yellow-100 font-heading drop-shadow-md"
-                >$250</span
-              >
-              <p class="mt-3 mb-8 text-sm text-gray-100"></p>
-              <div class="flex flex-col items-center mb-8">
-                <ul class="text-gray-100 text-sm">
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-yellow-100"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span> 250$ كاش باك50%</span>
-                  </li>
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-yellow-100"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span> لايوفر نسخ صفقات</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <a
-                  href="../couopn1"
-                  class="block px-4 py-3 mb-4 mt-20 text-base font-semibold leading-none text-center bg-white rounded-lg sm:mb-0 hover:bg-yellow-500"
-                  >احصل عليه الان</a
-                >
-              </div>
-            </div>
-          </div>
 
-          <div
-            class="p-0.5 rounded w-9/10 sm:w-2/5 bg-2
-            md:w-4/10 lg:w-3/10 shadow-lg m-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-          >
-            <div class="p-7 rounded">
-              <h3
-                class="mb-4 text-white text-3xl font-bold text-center drop-shadow-md"
-              >
-                كوبون الربح المتقدم
-              </h3>
-              <span
-                class="flex items-center justify-center text-4xl font-bold text-green-800 font-heading drop-shadow-md"
-                >$500</span
-              >
-              <p class="mt-3 mb-8 text-sm text-gray-100"></p>
-              <div class="flex flex-col items-center mb-8">
-                <ul class="text-gray-100 text-sm">
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-green-800"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span>$500 كاش باك 75%</span>
-                  </li>
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-green-800"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span> 15 يوم لنسخ الصفقات</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <a
-                  href="../couopn2"
-                  class="mt-20 block px-4 py-3 mb-4 text-base font-semibold leading-none text-center bg-white rounded-lg sm:mb-0 hover:bg-green-800"
-                  >احصل عليه الان</a
-                >
-              </div>
-            </div>
-          </div>
 
-          <div
-            class="p-0.5 rounded w-9/10 sm:w-2/5 bg-3
-            md:w-4/10 lg:w-3/10 shadow-lg m-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-          >
-            <div class="p-7 rounded">
-              <h3
-                class="mb-4 text-white text-3xl font-bold text-center drop-shadow-md"
-              >
-                كوبون ارباح النخبة
-              </h3>
-              <span
-                class="flex items-center justify-center text-4xl font-bold text-cyan-300 font-heading drop-shadow-md"
-                >$1000</span
-              >
-              <p class="mt-3 mb-8 text-sm text-gray-100"></p>
-              <div class="flex flex-col items-center mb-8">
-                <ul class="text-gray-100 text-sm">
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-cyan-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span>$1000 كاش باك 100%</span>
-                  </li>
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-cyan-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span> 45 يوم نسخ الصفقات</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <a
-                  href="../couopn3"
-                  class=" mt-20 block px-4 py-3 mb-4 text-base font-semibold leading-none text-center bg-white rounded-lg sm:mb-0 hover:bg-cyan-300"
-                  >احصل عليه الان</a
-                >
-              </div>
-            </div>
-          </div>
 
-          <div
-            class="p-0.5 rounded w-9/10 sm:w-2/5 bg-4
-            md:w-4/10 lg:w-3/10 shadow-lg m-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-          >
-            <div class="p-7 rounded">
-              <h3
-                class="mb-4 text-white text-3xl font-bold text-center drop-shadow-md"
-              >
-                كوبون الثروة الشاملة
-              </h3>
-              <span
-                class="flex items-center justify-center text-4xl font-bold text-yellow-500 font-heading drop-shadow-md"
-                >$2000</span
-              >
-              <p class="mt-3 mb-8 text-sm text-gray-100"></p>
-              <div class="flex flex-col items-center mb-8">
-                <ul class="text-gray-100 text-sm">
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-yellow-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span>$2000 كاش باك 100%</span>
-                  </li>
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-yellow-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span> نسخ صفقات غير محدود</span>
-                  </li>
-                  <li class="flex mb-2">
-                    <svg
-                      class="w-6 h-6 mr-1 text-yellow-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span> الانضمام لقناتنا الحصرية</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <a
-                  href="../couopn4"
-                  class="block px-4 mt-12 py-3 mb-4 text-base font-semibold leading-none text-center bg-white rounded-lg sm:mb-0 hover:bg-yellow-500"
-                  >احصل عليه الان</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+      
+
+        <div class="w-full flex  flex-col items-center md:flex-row  justify-center flex-wrap my-10 mx-auto gap-10 px-4">
+          
+          
+          
+          
+        
+<div
+class="relative md:w-2/5 group hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_12deg)] duration-500 overflow-hidden bg-gradient-to-bl from-gray-400 via-gray-500 to-gray-700 md:p-3  p-2 rounded-lg hover:shadow-lg [box-shadow:12px_12px_0px_0px_#0d0d0d] backdrop-filter backdrop-blur-md "
+> 
+<img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat_ebfyix.webp">
+<a href="../couopn1" class="Btn absolute bottom-4  md:right-40 right-20 md:w-[140px] w-[100px]   cursor-pointer ">
+</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class=" relative md:w-2/5 group hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_12deg)] duration-500 overflow-hidden bg-gradient-to-bl from-lime-900 via-lime-950 to-lime-950 md:p-3  p-2 rounded-lg hover:shadow-lg [box-shadow:12px_12px_0px_0px_#0d0d0d] backdrop-filter backdrop-blur-md "
+> 
+<img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy_sauh9s.webp"
+>
+<a href="../couopn2" class="Btn  absolute bottom-4  md:right-40 right-20 md:w-[140px] w-[100px]   cursor-pointer ">
+</a>
+</div>
+
+
+
+
+
+
+
+
+<div
+  class=" relative md:w-2/5 group hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_12deg)] duration-500 overflow-hidden bg-gradient-to-bl from-teal-400 via-teal-500 to-teal-700 md:p-3  p-2 rounded-lg hover:shadow-lg [box-shadow:12px_12px_0px_0px_#0d0d0d] backdrop-filter backdrop-blur-md "
+> 
+  <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091599/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h_fm93vg.webp">
+
+
+
+  <a  href="couopn3" class="Btn absolute bottom-4  md:right-40 right-20 md:w-[140px] w-[100px]   cursor-pointer ">
+  </a>
+
+</div>
+
+
+
+
+
+
+
+
+<div
+  class=" relative md:w-2/5 group hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_12deg)] duration-500 overflow-hidden bg-gradient-to-bl from-purple-400 via-purple-500 to-purple-700 md:p-3  p-2 rounded-lg hover:shadow-lg [box-shadow:12px_12px_0px_0px_#0d0d0d] backdrop-filter backdrop-blur-md "
+> 
+<img class=" " src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091598/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n_xckhry.webp">
+<a href="couopn4" class="Btn  absolute bottom-4  md:right-40 right-20 md:w-[140px] w-[100px]   cursor-pointer ">
+</a>
+
+
+
+ 
+  
+</div>
+
+
+
+
+
+
+
+
+ 
+</div>   </div>   
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </section>
-  </Container>
+
   <style>
 
 
@@ -330,5 +176,54 @@ import Button from "../shared/Button.astro";
       background-repeat: no-repeat;
       background-size: cover;
     }
-  </style>
+
+
+   
+.Btn {
+  
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+.Btn::before {
+  position: absolute;
+  content: "المزيد";
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.Btn:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:active {
+  transform: scale(0.95);
+} </style>
+
 </section>

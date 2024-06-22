@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/elements/Footer.astro";
 import Navbar from "../components/elements/Navbar.astro";
-import Whatsapp from "../components/shared/Whatsapp.astro";
+
 
 export interface Props {
   title: string;
@@ -15,9 +15,9 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://s6.imgcdn.dev/VAuDD.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://s6.imgcdn.dev/VA6lt.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://s6.imgcdn.dev/VAMfT.png">
+    <link rel="apple-touch-icon" sizes="180x180" href=https://res.cloudinary.com/dt9k74vof/image/upload/v1716376469/favicon-32x32_ziyh5p.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1716376565/apple-touch-icon_onnava.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1716376469/favicon-16x16_stjtmz.png">
 
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Explore Our exclusive coupons for copy trading on CouponsCopy. Unlock special benefits, including free copy trading days, cashback bonuses, and elite trading packages. Enhance your trading experience with guaranteed profits and a money-back guarantee.">
@@ -37,7 +37,7 @@ const { title } = Astro.props;
   <body class="overflow-hidden overflow-y-auto bg-body">
     <Navbar />
     <slot />
-    <Whatsapp />
+  
     <Footer />
   </body>
   <script>
@@ -122,75 +122,82 @@ const { title } = Astro.props;
       });
     }
   </script>
-  
+    <script is:inline>
+      $(function () {
+        // Fetch the user's IP address using an external API
+        $.getJSON('https://api.ipify.org?format=json', function(data) {
+          const userIp = data.ip;
     
-  <script is:inline>
-         
-          $(function () {
-            $("#myForm").on("submit", function (e) {
-              e.preventDefault();
-              var name1 = $("input[name='first_name']").val();
-              var email = $("input[name='email']").val();
-              var phone = $("input[name='phone']").val();
-              var formdata = {
-                name1: name1,
-                lastName: "Coupons",
-                email: email,
-                phone: phone,
-                password: "Flagedu2023!@",
-                source:"CouponsCopy Homepage",
-                interest:"coupons",
-                user_ip: "{{ user_ip }}",
-                ci: "{{ ci }}",
-                uai: "{{ uai }}",
-                ani: "{{ ani }}",
-               
-                
-              };
-              console.log(formdata);
+          // Form submission handler
+          $("#myForm").on("submit", function (e) {
+            e.preventDefault();
+            
+            // Collect form input values
+            var name1 = $("input[name='first_name']").val();
+            var email = $("input[name='email']").val();
+            var phone = $("input[name='phone']").val();
     
-              var brand = "{{ brand }}";
-              var url = "https://alltargeting.com/api/method/heero.api.flagedu_lead";
-
+            // Prepare form data including user IP
+            var formdata = {
+              name1: name1,
+              lastName: "Coupons",
+              email: email,
+              phone: phone,
+              password: "Flagedu2023!@",
+              source: "CouponsCopy Homepage",
+              interest: "coupons",
+              user_ip: userIp, // Add user IP here
+              ci: "{{ ci }}",
+              uai: "{{ uai }}",
+              ani: "{{ ani }}",
+            };
     
-              $.ajax({
-                method: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                data: JSON.stringify(formdata),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                url: url,
-                success: function (response) {
+            console.log(formdata);
+    
+            // Define the URL for the API request
+            var url = "https://alltargeting.com/api/method/heero.api.flagedu_lead";
+    
+            // Send the form data via AJAX POST request
+            $.ajax({
+              method: "POST",
+              dataType: "json",
+              contentType: "application/json",
+              data: JSON.stringify(formdata),
+              headers: {
+                "Content-Type": "application/json",
+              },
+              url: url,
+              success: function (response) {
                 console.log(response);
-                  // var login_url = response.login_url;
-                  // var thank_you_url = `https://affiliate.flagedu.com/thanks2?redirect_uri=${login_url}`;
+                // Redirect to a thank you page on success
                 location.href = `/thanks`;
-                },
-                error: function (data, textStatus, xhr) {
-                  var err_msg = [];
-                  var status = data.status;
-                  console.log(data);
+              },
+              error: function (data, textStatus, xhr) {
+                var err_msg = [];
+                var status = data.status;
+                console.log(data);
     
-                  if (status == 400) {
-                    for (const [key, value] of Object.entries(data.responseJSON)) {
-                      err_msg.push(`<p style='color: red;'>${value}</p>`);
-                    }
+                if (status == 400) {
+                  // Handle 400 errors and display them
+                  for (const [key, value] of Object.entries(data.responseJSON)) {
+                    err_msg.push(`<p style='color: red;'>${value}</p>`);
                   }
-                  if (status == 500) {
-                    var msg =
-                      "<p style='color: red;'>Something went wrong! Try again!</p>";
-                    err_msg.push(msg);
-                  }
-                  for (var i = 0; i < err_msg.length; i++) {
-                    $("#error_msg").html(err_msg[i]);
-                  }
-                },
-              });
+                }
+                if (status == 500) {
+                  // Handle 500 errors and display a generic message
+                  var msg = "<p style='color: red;'>Something went wrong! Try again!</p>";
+                  err_msg.push(msg);
+                }
+                for (var i = 0; i < err_msg.length; i++) {
+                  $("#error_msg").html(err_msg[i]);
+                }
+              },
             });
           });
-        </script>
+        });
+      });
+    </script>
+    
 </html>
 <style is:global>
   :root {
@@ -206,7 +213,7 @@ const { title } = Astro.props;
 
   .dark {
   
-    --color-bg:  21 31 53 ;
+    --color-bg:  24 43 41  ;
     --color-box: 17 24 39;
     --box-border: 243 244 246/0.1;
     --box-sd: transparent;
@@ -220,7 +227,7 @@ const { title } = Astro.props;
   html{
     scroll-behavior: smooth;
   }
-  body {
+*{
 
     @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;900&display=swap');
     font-family: 'Tajawal', sans-serif;
