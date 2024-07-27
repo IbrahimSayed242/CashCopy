@@ -2,11 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero.astro";
 import Services from "../components/sections/Services.astro";
+import Form from "../components/vue/Form.vue";
 
 import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
-import Button from "../components/shared/Button.astro";
-import Swip from "../components/sections/Swip.vue";
 import NewFetuer from "../components/lp/NewFetuer.astro";
 
 
@@ -36,14 +35,15 @@ import Hero5 from "../components/lp/Hero5.astro";
     <NewFetuer />
     <Services />
 
-    <CTA />
-    <div class="flex justify-center">
+    <Form client:only="vue" />
+    
+    <!-- <div class="flex justify-center">
 
  
       <h2 class="mt-8 text-center   text-3xl font-bold text-yellow-700">
       سجل مع افضل الوسطاء في الشرق الاوسط
     </h2>
-    </div> 
-    <Swip client:only="vue" />
+    </div>  -->
+    <!-- <Swip client:only="vue" /> -->
   </main>
 </Layout>

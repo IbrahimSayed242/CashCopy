@@ -162,7 +162,7 @@ async function submit(e: Event) {
     });
     const data = await response.json();
     responseMessage.value = data.message;
-    window.location.href = data.loginUrl;
+    window.location.href = '/thanks';
   } catch (error) {
     console.error("Error submitting form:", error);
     responseMessage.value = "An error occurred while submitting the form.";

@@ -18,7 +18,7 @@ export default defineConfig({
   //   inlineStylesheets: "auto",
   //   assets: "static",
   // },
-  output: "hybrid",
+  output: "server",
   adapter: node({
     mode: "standalone"
   }),
