@@ -8,7 +8,7 @@ on:
 jobs:
   production-build:
     name: Production Build
-    if: github.ref == 'refs/heads/stable'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git Repo
@@ -28,7 +28,7 @@ jobs:
   production-deploy:
     name: Production Deploy
     needs: production-build
-    if: github.ref == 'refs/heads/stable'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Server SSH Access
