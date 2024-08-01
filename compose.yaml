@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  astro-app:
+    image: menaheero/couponsastro:prod1
+    container_name: astro-app
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=4321
+    ports:
+      - "4321:4321"
+    restart: always
+    networks:
+      - astro-net
+
+networks:
+  astro-net:
+    driver: bridge
