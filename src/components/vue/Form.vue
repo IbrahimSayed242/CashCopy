@@ -95,23 +95,22 @@
                   </Button2>
                 </div>
               </form>
+              <p v-if="responseMessage" class="mt-4 text-red-500">{{ responseMessage }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <dive>
-      {{ responseMessage }}
-    </dive>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import axios from 'axios';
 import Button2 from './Button2.vue';
-
-// Reference for response message
-const responseMessage = ref<string>();
+const geoip_api = import.meta.env.geoip_api;
+console.log(geoip_api);
+const responseMessage = ref<string>("");
 
 // Function to extract URL parameters and add them to FormData
 function getUrlParams() {
@@ -161,8 +160,11 @@ async function submit(e: Event) {
       body: formData,
     });
     const data = await response.json();
-    responseMessage.value = data.message;
-    window.location.href = '/thanks';
+    if (response.ok && data.success) {
+      window.location.href = '/thanks';
+    } else {
+      responseMessage.value = data.message || "An error occurred while submitting the form.";
+    }
   } catch (error) {
     console.error("Error submitting form:", error);
     responseMessage.value = "An error occurred while submitting the form.";
@@ -174,6 +176,9 @@ onMounted(() => {
   console.log("URL Parameters:", getUrlParams());
 });
 </script>
+
+
+
 
 
   

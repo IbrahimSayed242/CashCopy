@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import axios from 'axios';
 
+const geoip_api = "30eb1316e4ce4c6dafb0af0a930ba6fe";
+
 export const POST: APIRoute = async ({ request }) => {
   let formData: any;
   try {
@@ -25,8 +27,18 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    let country = data.get("user_country");
+    if (!country && user_ip) {
+      try {
+        const geoResponse = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${geoip_api}&ip=${user_ip}`);
+        country = geoResponse.data.country_name;
+      } catch (geoError) {
+        console.error("Error fetching country from IP:", geoError.message);
+      }
+    }
+
     formData = {
-      firstName: firstName,
+      name1: firstName,
       lastName: lastName,
       phone: phone,
       email: email,
@@ -39,37 +51,24 @@ export const POST: APIRoute = async ({ request }) => {
       user_ip: user_ip,
       usa_citizen: false,
       password: "@Flagedu2024",
+      country: country,
     };
 
     console.log("formData prepared:", formData);
 
-    const endpoint1 = 'https://alltargeting.com/api/method/heero.api.flagedu_lead';
-    const endpoint2 = 'https://api.flagedu.com/api/v1/affiliate/public/exness/signup/';
-
-    let loginUrl;
-    try {
-      const response1 = await axios.post(endpoint2, formData);
-      loginUrl = response1.data.login_url[0];
-      console.log("Response from endpoint2:", response1.data);
-    } catch (error: any) {
-      console.error('Error occurred with endpoint2:', error.message);
-    }
+    const endpoint1 = 'https://alltargeting.com/api/method/heero.api.leads.flagedu_lead';
 
     try {
-      const response2 = await axios.post(endpoint1, formData);
-      console.log("Response from endpoint1:", response2.data);
-    } catch (error: any) {
-      console.error('Error occurred with endpoint1:', error.message);
-    }
-
-    if (loginUrl) {
+      const response1 = await axios.post(endpoint1, formData);
+      console.log("Response from endpoint1:", response1.data);
       return new Response(
-        JSON.stringify({ success: true, loginUrl: loginUrl, formData: formData }),
+        JSON.stringify({ success: true, responseData: response1.data, formData: formData }),
         { status: 200 }
       );
-    } else {
+    } catch (error: any) {
+      console.error('Error occurred with endpoint1:', error.message);
       return new Response(
-        JSON.stringify({ success: false, message: "No login URL found", formData: formData }),
+        JSON.stringify({ success: false, message: error.message, formData: formData }),
         { status: 500 }
       );
     }
