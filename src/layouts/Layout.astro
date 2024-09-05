@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href=https://res.cloudinary.com/dt9k74vof/image/upload/v1716376469/favicon-32x32_ziyh5p.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1716376565/apple-touch-icon_onnava.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dt9k74vof/image/upload/v1716376469/favicon-16x16_stjtmz.png">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Explore Our exclusive coupons for copy trading on CouponsCopy. Unlock special benefits, including free copy trading days, cashback bonuses, and elite trading packages. Enhance your trading experience with guaranteed profits and a money-back guarantee.">
     <title> {title}</title>
@@ -107,19 +107,12 @@ const { title } = Astro.props;
         
       });
 
-      navbar.addEventListener("click", () => {
-        toggleMenu.setAttribute("data-open-nav", "false");
-        overlayNav.setAttribute("data-is-visible", "false");
-        document.body.classList.remove("!overflow-y-hidden");
-		  	navbar.style.height = "0px"
-      });
-
-      overlayNav.addEventListener("click", () => {
-        toggleMenu.setAttribute("data-open-nav", "false");
-        	overlayNav.setAttribute("data-is-visible", "false");
-        	document.body.classList.remove("!overflow-y-hidden");
-		  	navbar.style.height = "0px"
-      });
+        // navbar.addEventListener("click", () => {
+        //   toggleMenu.setAttribute("data-open-nav", "false");
+        //   overlayNav.setAttribute("data-is-visible", "false");
+        //   document.body.classList.remove("!overflow-y-hidden");
+        // 	navbar.style.height = "0px"
+        // }); 
     }
   </script>
     <script is:inline>
@@ -248,5 +241,9 @@ const { title } = Astro.props;
   [data-nav-overlay][data-is-visible="true"] {
     visibility: visible;
     display: flex;
+  }
+  ul li a{
+    text-decoration: none;
+    font-size: 10px;
   }
 </style>

@@ -1,4 +1,4 @@
-import { defineConfig , envField  } from 'astro/config';
+import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import vue from "@astrojs/vue";
@@ -11,7 +11,13 @@ const { geoip_api } = loadEnv(process.env.geoip_api, process.cwd(), "");
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), vue()],
+  integrations: [
+    tailwind(),
+    react({
+      include: ["**/react/*"],
+    }),
+    vue(),
+  ],
   // outDir: "../astrobuild/",
   // publicDir: "../astrobuild/media/",
   // trailingSlash: "always",
@@ -23,16 +29,24 @@ export default defineConfig({
   // },
   output: "server",
   adapter: node({
-    mode: "standalone"
+    mode: "standalone",
   }),
   experimental: {
     env: {
-        schema: {
-            API_URL: envField.string({ context: "client", access: "public", optional: true }),
-            PORT: envField.number({ context: "server", access: "public", default: 4321 }),
-            API_SECRET: envField.string({ context: "server", access: "secret" }),
-        }
-    }
-},
-  middleware: ['./src/middleware.js']
+      schema: {
+        API_URL: envField.string({
+          context: "client",
+          access: "public",
+          optional: true,
+        }),
+        PORT: envField.number({
+          context: "server",
+          access: "public",
+          default: 4321,
+        }),
+        API_SECRET: envField.string({ context: "server", access: "secret" }),
+      },
+    },
+  },
+  middleware: ["./src/middleware.js"],
 });

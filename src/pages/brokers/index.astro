@@ -1,0 +1,47 @@
+---
+//import dependinces
+import Layout from "../../layouts/Layout.astro";
+import CardCompany from "../../components/cards/CardCompany.astro"
+// import Feature from '../React/Features.jsx';
+//Import bootstrap files
+
+---
+
+<Layout title="Brokers container">
+    <main class="flex flex-col gap-y-20  overflow-hidden p-2 lg:p-10">
+        <div class="evaluation-company text-center">
+            <h1 class="lg:text-5xl text-xl text-emerald-700 font-bold">تقييم شركات التداول</h1>
+            <p class="lg:text-xl lg:text-right ">يقدم موقع كوبون تقييمات شاملة لشركات التداول عبر الإنترنت العاملة في سوق الفوركس، حيث يقوم فريق من الخبراء المتخصصين في هذا المجال بتحليل وتقييم تلك الشركات بكل موضوعية واحترافية.
+
+                ستجد هنا كافة معلومات مفصلة ودقيقة عن مختلف شركات التداول عبر الإنترنت التي تقدم خدماتها للمتداولين العرب، حيث يتم تغطية جوانب عديدة مثل سمعة الشركة وخبرتها، والأدوات والمنصات التي توفرها، وشروط التداول والرافعة المالية، وسياسات الإيداع والسحب، بالإضافة إلى مستوى الدعم الفني والخدمة للعملاء.
+                
+                تهدف هذه التقييمات المعمقة إلى تزويد المتداولين بالمعلومات الضرورية التي تساعدهم على اتخاذ قرارات مدروسة حول الشركة التي يرغبون في التعامل معها، حيث أن اختيار شركة تداول عبر الإنترنت موثوقة وآمنة له أهمية كبيرة في ضمان تجربة تداول ناجحة وفعالة.</p>
+        </div>
+        <div class="list-company ">
+            <h2 class="text-center lg:text-4xl text-emerald-700 font-bold mb-4">قائمة تقييم شركات التداول عبر الانترنت</h2>
+            <div class="flex justify-around flex-col md:flex-row">
+                <CardCompany />
+                <CardCompany />
+                <CardCompany />
+                <CardCompany />
+            </div>
+
+        </div>
+    </main>
+        
+</Layout>
+
+<style>
+    main{
+        margin-top: 140px;
+    }
+    .evaluation-company p{
+        margin-top:20px
+    }
+    ul{
+        text-decoration: none ;
+    }
+    footer{
+        text-align: center;
+    }
+</style>
