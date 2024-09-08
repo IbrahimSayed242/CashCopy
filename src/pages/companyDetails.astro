@@ -1,17 +1,18 @@
 ---
-import CardCompany from "../components/cards/CardCompany.astro"
-import Info from "../components/cards/Info.astro"
-import Service from "../components/cards/Service.astro"
+
 import Layout from "../layouts/Layout.astro"
 import BtnLink2 from "../components/shared/BtnLink2.astro"
 import BestBroker from "../components/Brokers/BestBroker.astro"
 import ComentForm from "../components/shared/ComentForm.astro"
+
+
+
 ---
 
-<Layout title="Company Name">
+<Layout title="تفاصيل الوسيط">
 
 <div class="main">
-    <div style="background-color: #ddd;" class="rounded-lg ">
+    <div style="background-color: #ddd;" class="lg:rounded-full">
     <div class="main-company flex flex-col md:mt-52 md:flex-row-reverse justify-between container items-center">
         <div class="company-img w-full min-w-52 md:min-w-16">
             <img class="h-20 w-full md:rounded shadow-md m-auto " src="https://res.cloudinary.com/dt9k74vof/image/upload/v1703669065/copy/evest_xjj0rq.jpg">
@@ -36,7 +37,7 @@ import ComentForm from "../components/shared/ComentForm.astro"
             <h1 class="article-head head ">تفاصيل ومعلومات شركة أفاتريد AvaTrade</h1>
         </div>
         <div class="details flex flex-col md:flex-row-reverse  items-center">
-            <div class="flex justify-center">
+            <div class="flex justify-end">
                 <span class="">منصات التداول</span>
                 <span class="material-symbols-outlined text-emerald-700 ml-2">  shopping_cart</span>
             </div>
@@ -48,7 +49,7 @@ import ComentForm from "../components/shared/ComentForm.astro"
             </div>
         </div>
         <div class="details flex flex-col md:flex-row-reverse items-center">
-            <div class="flex justify-center">
+            <div class="flex justify-end">
                 <span>منتجات التداول</span>
                 <span class="material-symbols-outlined text-emerald-700 ml-2"> currency_pound </span>
                 </div>
@@ -60,7 +61,7 @@ import ComentForm from "../components/shared/ComentForm.astro"
             </div>
         </div>
         <div class="details flex flex-col md:flex-row-reverse items-center">
-            <div class="flex justify-center">
+            <div class="flex justify-end">
                 <span>  طرق الإيداع والسحب</span>
                 <span class="material-symbols-outlined text-emerald-700 ml-2"> paid</span>
             </div>
@@ -72,7 +73,7 @@ import ComentForm from "../components/shared/ComentForm.astro"
             </div>
         </div>
         <div class="details flex flex-col md:flex-row-reverse items-center">
-            <div class="flex justify-center">
+            <div class="flex justify-end">
                 <span> حد الإيداع</span>
                 <span class="material-symbols-outlined text-emerald-700 ml-2"> payments  </span>
             </div>
@@ -84,7 +85,7 @@ import ComentForm from "../components/shared/ComentForm.astro"
             </div>
         </div>
         <div class="details flex flex-col md:flex-row-reverse items-center">
-            <div class="flex justify-center">
+            <div class="flex justify-end">
                 <span>التراخيص</span>
                 <span class="material-symbols-outlined text-emerald-700 ml-2">description </span>
             </div>
@@ -96,16 +97,6 @@ import ComentForm from "../components/shared/ComentForm.astro"
             </div>
         </div>
         <div class="article-1 text-right">
-            <h1 class="article-head head text-center lg:text-right">تفاصيل ومعلومات شركة أفاتريد AvaTrade</h1>
-            <p>شركة افاتريد شركة وساطة مالية عبر الانترنت تأسست عام 2006 وتقدم خدمات التداول في العقود مقابل الفروقات على العملات والأسهم والمؤشرات والمعادن والعملات الرقمية والطاقة.
-
-                برزت آفاتريد Avatrade كشركة رائدة في مجال التداول الالكتروني للعملات منذ أكثر من 17 عاما، حيث تأسست بفضل جهود مشتركة من فريق متخصص من الخبراء الماليين والمتخصصين في مجالات التداولات وتداول العملات عبر الإنترنت.
-                
-                تتميز آفاتريد بالنزاهة والشفافية، إضافة إلى خدمة عملاء متميزة ودعم ممتاز، فضلا عن استمرارية في التطوير والإبداع حيث تسعى الشركة إلى تمكين الأفراد للاستثمار والتداول بثقة في بيئة مبتكرة وموثوقة، حيث توفر أفضل الخدمات لضمان تجربة استثمارية متميزة.
-                
-                في غضون سنوات قليلة، نمت شركة افاتريد بسرعة ملحوظة، حيث وصل عدد عملائها إلى 400 ألف عميل من مختلف أنحاء العالم. يقوم هؤلاء العملاء بتنفيذ أكثر من مليوني صفقة تداول شهريًا، مما يجعل حجم التداول للشركة يتجاوز 60 مليون دولار في الشهر.
-                
-                تضم شركة آفاتريد مكاتب محلية وإقليمية في مختلف بلدان العالم بما في ذلك الإمارات العربية المتحدة و دبلن و ميلانو و طوكيو و سيدني وأبو ظبي بالاضافة الى المقر الرئيسي للشركة في دبلن، العاصمة الإيرلندية</p>
         </div>
         <div class="article-1 text-right">
             <h1 class="article-head head text-center lg:text-right">تفاصيل ومعلومات شركة أفاتريد AvaTrade</h1>
@@ -150,7 +141,6 @@ import ComentForm from "../components/shared/ComentForm.astro"
     padding: 0;
 }
 .main-company{
-    background-color: #ddd;
     padding: 50px;
 }
 .company-img{
@@ -211,6 +201,7 @@ import ComentForm from "../components/shared/ComentForm.astro"
     width: 20px;
     height: 20px;
 }
+
 /* global classes */
 .container{
     width: 90%;
@@ -236,8 +227,17 @@ import ComentForm from "../components/shared/ComentForm.astro"
     .details div:first-child{
     width: 100%;
     padding: 30px 0;
+    }
 }
-}
-
 
 </style>
+
+<script>
+    //Fetch content from database
+const getPosts = async () => {
+    const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts");
+    const posts = await res.json();
+    console.log(posts)
+}
+getPosts()
+</script>

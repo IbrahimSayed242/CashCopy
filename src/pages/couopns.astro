@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Services from "../components/sections/Services.astro";
+import Form from "../components/vue/Form.vue";
+
+import Features from "../components/sections/Features.astro";
+import CTA from "../components/sections/CTA.astro";
+import NewFetuer from "../components/lp/NewFetuer.astro";
+
+import Hero5 from "../components/lp/Hero5.astro";
+---
+
+<Layout title="CouponCopy- كوبونز كوبي لنسخ الارباح">
+  <main class="flex flex-col gap-y-20 overflow-hidden mx-2 relative">
+<div class="absolute  top-28  left-0 w-full  h-[70vh] ">
+  <Hero5 />
+</div>
+
+<div class=" bg-gradient-to-t from-black">  
+    <Hero />
+
+</div>
+
+
+
+    <Features />
+    <NewFetuer />
+    <Services />
+
+    <Form client:only="vue" />
+    
+    <!-- <div class="flex justify-center">
+
+ 
+      <h2 class="mt-8 text-center   text-3xl font-bold text-yellow-700">
+      سجل مع افضل الوسطاء في الشرق الاوسط
+    </h2>
+    </div>  -->
+    <!-- <Swip client:only="vue" /> -->
+  </main>
+</Layout>

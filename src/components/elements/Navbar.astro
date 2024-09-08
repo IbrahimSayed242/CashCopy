@@ -52,10 +52,8 @@ import Container from "../shared/Container.astro";
                         return <Navitem {...item} id={`${index}`}/>
                     })
                     } -->
-                    <li><a href="/HomeBroker" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الرئيسية</a></li>
-                    <li><a href="/" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">كوبونات</a></li>
-                    <li><a href="/about" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">من نحن</a></li>
-                    <li><a href="/offer" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">عروض</a></li>
+                    <li><a href="/" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الرئيسية</a></li>
+                    <li><a href="/brokers" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الوسطاء</a></li>
                     <li id="dropdwon-button"><a  class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">افضل الوسطاء </a>
                         <div id="dropdown" class="divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                             <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
@@ -63,20 +61,22 @@ import Container from "../shared/Container.astro";
                                 <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
                               </li>
                               <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
                               </li>
                               <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
                               </li>
                               <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
                               </li>
                             </ul>
                         </div>
                     </li>
-
-                    <li><a href="/brokers" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الوسطاء</a></li>
-                </ul>
+                    <li><a href="/blog" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">المدونة</a></li>
+                    <li><a href="/offer" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">عروض</a></li>
+                    <li><a href="/couopns" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">كوبونات</a></li>
+                    <li><a href="/about" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">من نحن</a></li>
+                  </ul>
                 
                 <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
                     <BtnLink2 text="ابدأ الآن " href="https://wa.me/201063588999" className="flex justify-center w-full sm:w-max" variant="primary"/>
@@ -117,7 +117,7 @@ import Container from "../shared/Container.astro";
   font-family: inherit;
   font-weight: 500;
   font-size: 14px;
-  padding: 12px 20px;
+  padding: 12px 15px;
   color: white;
   background: #046e44af;
   border: none;
@@ -201,7 +201,7 @@ import Container from "../shared/Container.astro";
   height: 0;
   border-top: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid  rgb(1, 50, 32);;
+  border-bottom: 10px solid  rgb(10, 214, 140);;
   border-left: 10px solid transparent;
   position: absolute;
   left: 100px;
@@ -228,7 +228,7 @@ import Container from "../shared/Container.astro";
 }
 #dropdown ul li a{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
 }
 #dropdown.visible{
@@ -249,7 +249,7 @@ import Container from "../shared/Container.astro";
     #dropdown{
     position: absolute;
     width: 25%;
-    left: 26%;
+    right: 19%;
     z-index: 99999;
     display: none;    
     background-color: rgb(52 211 153);
