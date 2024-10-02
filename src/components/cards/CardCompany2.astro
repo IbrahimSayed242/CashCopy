@@ -1,0 +1,146 @@
+---
+import React ,{useContext} from "react";
+import Rate from "../elements/Rate.astro"
+// const data = useContext(DataContext)
+const { broker } = Astro.props; // Get the passed data
+interface data {
+    id: number;
+    name: string;
+}
+
+
+---
+  
+  
+  <!-- start card component  -->
+  <div class="company-component flex flex-col-reverse m-2 lg:flex-row bg-gradient-to-r from-yellow-500 via-lime-500 to-green-500">
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <button class="open-account">
+            <a href="https://wa.me/201063588999" >فتح حساب</a> 
+        </button>
+        <button class="company-details">
+            <a href=`../../companyDetails/${broker.name}`>تفاصيل الشركة</a>
+        </button>
+    </div>
+
+    <!-- Rating and Description Section -->
+    <div class="content flex flex-col-reverse text-center">
+        <div class="rating m-2">
+        
+                <span class="rating-number bg-red-500 rounded-full w-9 h-7 text-lg text-white font-bold mr-2">
+                  {broker.total_rate}
+                </span>
+        
+            <!-- Start Commponent Rate Star -->
+           <Rate broker = {broker} />
+                
+        </div>
+        <div class="description">
+            <p>بناءً على تقييم خبراء موقع نور تُبين أن الشركة AvaTrade موثوقة ومرخصة بأكثر من سبع تراخيص مالية علمية...</p>
+        </div>
+    </div>
+
+    <!-- Company Logo and Notification Badge Section -->
+        <div class="logo-section m-2">
+                    <div class="notification-badge">{broker["total_rate"]}</div>
+            <img src={`https://alltargeting.com/${broker.logo}`} alt="" class="company-logo">
+        </div>
+        <!-- <div id="new">
+            {broker.text_editor_jtjm}
+        </div> -->
+        
+</div>
+
+  <!-- end card component  -->
+
+  <style> 
+
+    /* start card component  */
+  .company-component {
+    display: flex;
+    align-items: center;
+    color: white;   
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: 20px;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.buttons button {
+    margin-bottom: 10px;
+    padding: 7px 8px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.open-account {
+    background-color: #e63946;
+    color: white;
+}
+
+.company-details {
+    background-color: #adb5bd;
+    color: white;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border-right: 2px solid #e9ecef;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.stars img {
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+}
+
+.description {
+    font-size: 14px;
+   }
+
+.logo-section {
+    position: relative;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e63946;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+  /* end card component  */
+  </style>

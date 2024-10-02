@@ -1,0 +1,86 @@
+---
+import type { any } from "astro/zod";
+import Layout from "../../layouts/Layout.astro";
+import BtnLink2 from "../../components/shared/BtnLink2.astro";
+//Fetch content from database
+// const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts");
+// const posts = await res.json();
+
+
+const { slug } = Astro.params;
+
+let res = await fetch(`https://arabporsa.com/wp-json/wp/v2/posts?slug=${slug}`);
+let [post] = await res.json();
+
+---
+
+<Layout>
+
+<div class="article w-3/4 m-auto text-right">
+   {
+        <div class="m-2 overflow-hidden">
+            <div class="p-2">
+                <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
+                <h2><a href="" class="font-bold text-emerald-700 my-4">{post.title.rendered}</a></h2>
+                <p set:html={post.modified}></p>
+                <a href=""><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 
+            </div>
+            <div  class="content text-bold text-2xl" set:html={post.content.rendered} />
+            <div>
+                <h3>اترك تعليقاً</h3>
+                <div class="font-bold text-2xl text-emerald-500">
+                    
+                    <span>Hisham Abdelrahman</span>
+                    <a href="">.تحرير ملفك الشخصي</a>
+                    <a href="">تسجيل الخروج؟</a>
+                    مُسجل دخول باسم
+                    {/* مشار إليها بـالحقول الإلزامية * */}
+                </div>
+                <div class="flex flex-col items-end"><strong>التعليق *</strong>
+                    <textarea name="comment" id="comment" class="block"></textarea>
+                    <BtnLink2 text="ارسال تعليق" href="https://wa.me/201063588999" className="flex justify-center m-4 w-full min-w-52 sm:w-max" variant="primary"/>
+                </div>  
+            </div>
+        </div>
+   }
+</div>
+</Layout>
+
+<style >
+    .article{
+        margin-top: 150px;
+    }
+    .a{
+        text-decoration: underline;
+        color: aqua;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 30px;
+        font-weight: bold;
+    }
+   textarea{
+    width: 400px;
+    height: 300px;
+    border: 1px solid #35c791;
+    margin-top: 20px;
+   }
+</style>
+
+<script>
+    const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts");
+    const posts = await res.json();
+    console.log(posts[0])  
+
+    document.querySelectorAll('.content p a').forEach(a=> {
+    a.style.color = "aqua";
+    a.style.textDecoration = "underline";
+    document.getElementById("ez-toc-container").style.width = "300px"
+    document.getElementById("ez-toc-container").style.padding = "20px"
+    document.getElementById("ez-toc-container").style.fontSize = "20px"
+    document.getElementById("ez-toc-container").style.color = "#fff"
+    document.getElementById("ez-toc-container").style.background = "#000"
+    document.getElementById("ez-toc-container").style.marginLeft = "auto"
+    document.getElementById("ez-toc-container").style.fontSize = "20px"
+  });
+ </script>
