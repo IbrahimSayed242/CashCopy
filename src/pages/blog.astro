@@ -7,7 +7,10 @@ const posts = await res.json();
 ---
 
 <Layout title="المدونة">
-<section class="blog mt-52 flex flex-row container text-right">
+<section class="blog mt-52 container text-right">
+    <div class="p-6 underline text-emerald-500">
+        <h1 class="lg:text-4xl">المقالات</h1>
+    </div>
     <div class="cards flex flex-col lg:flex-row-reverse justify-around items-center w-full flex-wrap">
         {
             posts.map((post:any) => (
