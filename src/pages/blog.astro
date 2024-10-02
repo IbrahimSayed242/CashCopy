@@ -15,11 +15,11 @@ const posts = await res.json();
         {
             posts.map((post:any) => (
                 <div class="card m-2 overflow-hidden">
-                    <a href={`articles/[${post.slug}]`}><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 
+                    <a href={`articles/${post.slug}`}><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 
                     <div class="p-2">
                         <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
                         {post.yoast_head_json.schema["@graph"][0].articleSection[1] && <span class="w-14 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[1]}</span> }           
-                        <h2><a href={`articles/[${post.slug}]`} set:html={post.title.rendered} class="font-bold text-emerald-700 my-4"></a></h2>
+                        <h2><a href={`articles/${post.slug}`} set:html={post.title.rendered} class="font-bold text-emerald-700 my-4"></a></h2>
                         <p set:html={post.modified}></p>
                     </div>
                 </div>

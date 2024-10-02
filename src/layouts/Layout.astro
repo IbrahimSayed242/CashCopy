@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/elements/Footer.astro";
 import Navbar from "../components/elements/Navbar.astro";
-
+import {DataProvider} from "../components/React/DataProvider.jsxder.jsx"
 
 export interface Props {
   title: string;
@@ -35,10 +35,9 @@ const { title } = Astro.props;
 
   </head>
   <body class="overflow-hidden overflow-y-auto bg-body">
-    <Navbar />
-    <slot />
-  
-    <Footer />
+      <Navbar />
+      <slot />
+      <Footer />
   </body>
   <script>
     const switchTheme = document.querySelector(

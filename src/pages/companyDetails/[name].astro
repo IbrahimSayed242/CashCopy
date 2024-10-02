@@ -1,0 +1,37 @@
+---
+
+import Layout from "../../layouts/Layout.astro"
+import BtnLink2 from "../../components/shared/BtnLink2.astro"
+// import ComentForm from "../../components/shared/ComentForm.astro"
+import CompanyService from "../../components/CompanyService.astro"
+import BrokerList from "../../components/React/BrokerList.jsx"
+import Form from "../../components/vue/Form.vue"
+
+const {name} = Astro.params;
+console.log("this is page name " + name)
+
+---
+
+<Layout title="تفاصيل الوسيط">
+
+
+   
+       
+        <div class="article-1 text-right">
+            
+            <BrokerList client:load name={name}/>
+            <CompanyService />
+        </div>
+        <!-- start section best brokers -->
+           
+        <!-- end section best brokers -->
+        <!-- start section comment form -->
+            <Form />
+            <!-- <ComentForm /> -->
+        <!-- end section commetn form  -->
+   
+    </div>
+  
+</Layout>
+
+
