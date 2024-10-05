@@ -1,0 +1,56 @@
+ <!-- start form -->
+ <div class="comment-form text-right">
+    <h2>اترك تعليق</h2>
+    <form action="/submit-comment" method="POST">
+        <label for="name">:الاسم</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">:الايميل</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="comment">:التعليق</label>
+        <textarea id="comment" name="comment" rows="5" required></textarea>
+
+        <input type="submit" value="ارسال التعليق">
+    </form>
+</div>
+<!-- end form -->
+
+<style>
+    /* start form  */
+    .comment-form {
+        /* background-size: cover; */
+        background:"./fqa flagedu.webp";
+       
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 20px auto;
+    }
+    .comment-form h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: #333;
+    }
+    .comment-form input,
+    .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .comment-form input[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .comment-form input[type="submit"]:hover {
+        background-color: #218838;
+    }
+/* end form  */
+</style>

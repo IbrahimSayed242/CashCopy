@@ -1,31 +1,7 @@
 ---
 import BtnLink2 from "../shared/BtnLink2.astro";
 import Container from "../shared/Container.astro";
-import  Navitem from "../shared/Navitem.astro";
-
-
-const navItems = [
-    {
-        href:"/",
-        text:" الرئيسية"
-    },
-    ,
-    {
-        href:"/coupons",
-        text:"كوبونات"
-    },{
-        href:"/about",
-        text:"من نحن"
-    },
-    {
-        href:"/offer",
-        text:"عروض"
-    }
-    // {
-    //     href:"#features",
-    //     text:"Features"
-    // },
-]
+import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
 ---
 
 <header class=" inset-x-0 top-0 z-[999] py-6 bg-emerald-600/90 dark:bg-emerald-900 fixed">
@@ -34,28 +10,50 @@ const navItems = [
             <!-- logo -->
             <div class="min-w-max inline-flex relative">
                 <a href="/" class="relative flex items-center gap-2">
-                    <div class="relative  mr-4 md:w-60 w-40 overflow-hidden flex ">
-                        <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" alt="CouponsCopy"  class="w-full h-full   ">
-                       
-                    </div>
-                   
+                    <div class="relative  mr-4 md:w-60 w-40  flex ">
+                        <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" alt="CouponsCopy"  class="w-full h-full">
+                    </div>  
                 </a>
             </div>
 
             <div data-nav-overlay aria-hidden="true" class="fixed hidden inset-0 lg:!hidden bg-box-bg bg-opacity-50 backdrop-filter backdrop-blur-xl"></div>
-            <div data-navbar class="flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-10 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0">
-                <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-10 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
-                    {navItems.map(item=>{
-                        return <Navitem {...item}/>
+            <div data-navbar class="overflow-hidden overflow-visible flex h-0 lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-10 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 lg:bg-transparent border-x border-x-box-border lg:border-x-0">
+                <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-5 text-xs text-heading-2 w-full lg:justify-center lg:items-center mt-3">
+                    <!-- {navItems.map((item, index) => {
+                        return <Navitem {...item} id={`${index}`}/>
                     })
-                    }
-                </ul>
-
+                    } -->
+                    <li><a href="/" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الرئيسية</a></li>
+                    <li><a href="/brokers" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الوسطاء</a></li>
+                    <li id="dropdwon-button"><a  class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">افضل الوسطاء </a>
+                        <div id="dropdown" class="divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                              <li>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                              </li>
+                              <li>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                              </li>
+                              <li>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                              </li>
+                              <li>
+                                <a href="/companyDetails" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ايفست</a>
+                              </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="/blog" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">المدونة</a></li>
+                    <li><a href="/offer" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">عروض</a></li>
+                    <li><a href="/couopns" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">كوبونات</a></li>
+                    <li><a href="/about" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">من نحن</a></li>
+                  </ul>
+                
                 <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
                     <BtnLink2 text="ابدأ الآن " href="https://wa.me/201063588999" className="flex justify-center w-full sm:w-max" variant="primary"/>
                 </div>
             </div>
-
+            
 
             <div class="min-w-max flex items-center gap-x-3">
                 <button data-switch-theme class="outline-none flex relative text-heading-2 rounded-full p-2 lg:p-3 border border-box-border ">
@@ -77,5 +75,167 @@ const navItems = [
                 </button>
             </div>
         </nav>
+       
     </Container>
 </header>
+
+
+<style>
+  .Download-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 15px;
+  color: white;
+  background: #046e44af;
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em rgba(4, 112, 103, 0.627);
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Download-button svg {
+  margin-right: 8px;
+  width: 25px;
+}
+
+.Download-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em rgba(4, 112, 103, 0.627);
+  z-index: 5;
+}
+
+.Download-button:active {
+  box-shadow: 0 0.3em 1em -0.5em rgba(4, 112, 103, 0.627);
+}
+
+.Download-button::before {
+  content: "";
+  width: 4px;
+  height: 40%;
+  background-color: white;
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: 0;
+  transition: all 0.3s;
+}
+.Download-button::after {
+  content: "";
+  width: 4px;
+  height: 40%;
+  background-color: white;
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  right: 0;
+  transition: all 0.3s;
+}
+.Download-button:hover::before,
+.Download-button:hover::after {
+  width: 50%;
+  height: 100%;
+  background-color: #046e44af;
+}
+
+.Download-button:hover::after{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+.Download-button:hover::before{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  z-index: 1;
+}
+ #dropdown-button{
+        perspective: 700;
+        transition: transform 0.3s ease-in;  
+ }   
+#dropdown{  
+    width: 100%;
+    display: none;    
+    background-color: rgb(52 211 153);
+}
+
+#dropdown::before{
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid  rgb(10, 214, 140);;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: 100px;
+  top: -19px;
+}
+#dropdown ul{
+    padding-left: 0;
+    text-align: center;
+    line-height: 1.6rem;
+}
+#dropdown ul li:not(:last-child) {
+    border-bottom: 1px solid #046e44af;
+}
+#dropdown ul li{
+  padding: 5px;
+}
+#dropdown ul li:hover{
+  background-color: #046e44af;
+}
+#dropdown ul li a{transition: all 0.3s ease-in-out;}
+#dropdown ul li a:hover{
+  background-color: unset;
+  margin-right: 15px;
+}
+#dropdown ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+}
+#dropdown.visible{
+  display: block;
+}
+
+@media (min-width: 768px) {
+    .overflow-visible {
+        overflow: visible !important;
+    }
+  }
+  @media (max-width: 1023px) {
+    .overflow-hidden {
+        overflow: hidden !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    #dropdown{
+    position: absolute;
+    width: 25%;
+    right: 19%;
+    z-index: 99999;
+    display: none;    
+    background-color: rgb(52 211 153);
+}
+
+    #dropdwon-button:hover #dropdown{
+        display: block; 
+    }
+}
+
+</style>
+<script>
+  const dropdownButton = document.getElementById("dropdwon-button");
+  const dropdown = document.getElementById("dropdown")
+
+  dropdownButton?.addEventListener("click", () => {
+    dropdown?.classList.toggle("visible")
+  })
+</script>

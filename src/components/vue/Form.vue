@@ -2,7 +2,10 @@
   <div
     class="py-6 sm:py-8 lg:py-[50px] dark:bg-teal-800/10 bg-cover bg-no-repeat bg-center bg-[#11726dc7] text-white mx-auto relative"
     id="sign-in"
-    :style="{ backgroundImage: 'url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)' }"
+    :style="{
+      backgroundImage:
+        'url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)',
+    }"
   >
     <svg
       viewBox="0 0 52 24"
@@ -31,16 +34,18 @@
         src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png"
         class="absolute top-10 right-0 z-0"
       />
-      <div class="flex flex-col items-center rounded-lg p-4 sm:p-8 lg:flex-row lg:justify-between">
+      <div
+        class="flex flex-col items-center rounded-lg p-4 sm:p-8 lg:justify-between"
+      >
         <div class="mb-4 sm:mb-8 lg:mb-0">
           <h2
             class="text-center text-xl font-bold sm:text-2xl lg:text-3xl"
             dir="rtl"
           >
-            {{ 'أحصل علي قائمة بأفضل الوسطاء' }}
+            {{ "أحصل علي قائمة بأفضل الوسطاء" }}
           </h2>
           <p class="text-center text-white dark:text-gray-100" dir="rtl">
-            {{ 'اترك بريدك لتحصل علي القائمة الخاصة بك' }}
+            {{ "اترك بريدك لتحصل علي القائمة الخاصة بك" }}
           </p>
         </div>
 
@@ -90,12 +95,20 @@
                   </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10">
-                  <Button2 type="submit" variant="primary" className="bg-teal-600 hover:bg-teal-900">
-                    <span class="text-white relative z-[5]">{{ 'انضم الينا' }}</span>
+                  <Button2
+                    type="submit"
+                    variant="primary"
+                    className="bg-teal-600 hover:bg-teal-900"
+                  >
+                    <span class="text-white relative z-[5]">{{
+                      "انضم الينا"
+                    }}</span>
                   </Button2>
                 </div>
               </form>
-              <p v-if="responseMessage" class="mt-4 text-red-500">{{ responseMessage }}</p>
+              <p v-if="responseMessage" class="mt-4 text-red-500">
+                {{ responseMessage }}
+              </p>
             </div>
           </div>
         </div>
@@ -106,10 +119,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import axios from 'axios';
-import Button2 from './Button2.vue';
+import axios from "axios";
+import Button2 from "./Button2.vue";
 const geoip_api = import.meta.env.geoip_api;
-console.log(geoip_api);
+
 const responseMessage = ref<string>("");
 
 // Function to extract URL parameters and add them to FormData
@@ -125,7 +138,7 @@ function getUrlParams() {
 // Function to get the client's IP address
 async function getClientIP(): Promise<string | null> {
   try {
-    const response = await fetch('https://api.ipify.org?format=json');
+    const response = await fetch("https://api.ipify.org?format=json");
     const data = await response.json();
     return data.ip;
   } catch (error) {
@@ -150,7 +163,7 @@ async function submit(e: Event) {
   // Get client IP and append it to form data
   const clientIP = await getClientIP();
   if (clientIP) {
-    formData.append('user_ip', clientIP);
+    formData.append("user_ip", clientIP);
   }
 
   // Send form data to the server
@@ -161,9 +174,10 @@ async function submit(e: Event) {
     });
     const data = await response.json();
     if (response.ok && data.success) {
-      window.location.href = '/thanks';
+      window.location.href = "/thanks";
     } else {
-      responseMessage.value = data.message || "An error occurred while submitting the form.";
+      responseMessage.value =
+        data.message || "An error occurred while submitting the form.";
     }
   } catch (error) {
     console.error("Error submitting form:", error);
@@ -177,187 +191,182 @@ onMounted(() => {
 });
 </script>
 
+<style scoped>
+.bg-cover {
+  background-size: cover;
+}
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+.bg-center {
+  background-position: center;
+}
 
-
-
-
-  
-  <style scoped>
-  .bg-cover {
-    background-size: cover;
-  }
-  .bg-no-repeat {
-    background-repeat: no-repeat;
-  }
-  .bg-center {
-    background-position: center;
-  }
- 
-  .text-white {
-    color: white;
-  }
-  .mx-auto {
-    margin: auto;
-  }
-  .relative {
-    position: relative;
-  }
-  .absolute {
-    position: absolute;
-  }
-  .z-0 {
-    z-index: 0;
-  }
-  .hidden {
-    display: none;
-  }
-  .w-32 {
-    width: 8rem;
-  }
-  .-mt-8 {
-    margin-top: -2rem;
-  }
-  .-ml-20 {
-    margin-left: -5rem;
-  }
-  .text-blue-gray-100 {
-    color: #e0f2fe;
-  }
-  .lg\:w-32 {
-    width: 8rem;
-  }
-  .lg\:-ml-28 {
-    margin-left: -7rem;
-  }
-  .lg\:-mt-10 {
-    margin-top: -2.5rem;
-  }
-  .sm\:block {
-    display: block;
-  }
-  .p-4 {
-    padding: 1rem;
-  }
-  .sm\:p-8 {
-    padding: 2rem;
-  }
-  .lg\:justify-between {
-    justify-content: space-between;
-  }
-  .mb-4 {
-    margin-bottom: 1rem;
-  }
-  .sm\:mb-8 {
-    margin-bottom: 2rem;
-  }
-  .lg\:mb-0 {
-    margin-bottom: 0;
-  }
-  .text-center {
-    text-align: center;
-  }
-  .text-xl {
-    font-size: 1.25rem;
-  }
-  .font-bold {
-    font-weight: 700;
-  }
-  .sm\:text-2xl {
-    font-size: 1.5rem;
-  }
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-  }
-  .px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .max-w-screen-2xl {
-    max-width: 1536px;
-  }
-  .bg-gray-100 {
-    background-color: #f3f4f6;
-  }
-  .dark\:bg-gray-800 {
-    background-color: #1f2937;
-  }
-  .px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .pt-6 {
-    padding-top: 1.5rem;
-  }
-  .pb-8 {
-    padding-bottom: 2rem;
-  }
-  .mb-4 {
-    margin-bottom: 1rem;
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
-  .text-lg {
-    font-size: 1.125rem;
-  }
-  .w-1\/2 {
-    width: 50%;
-  }
-  .px-1 {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-  .mb-6 {
-    margin-bottom: 1.5rem;
-  }
-  .w-full {
-    width: 100%;
-  }
-  .bg-gray-200 {
-    background-color: #e5e7eb;
-  }
-  .text-teal-600 {
-    color: #059669;
-  }
-  .border {
-    border-width: 1px;
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-  .px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .leading-tight {
-    line-height: 1.25;
-  }
-  .focus\:outline-none {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-  }
-  .focus\:bg-white {
-    background-color: #ffffff;
-  }
-  .focus\:border-gray-500 {
-    border-color: #6b7280;
-  }
-  .flex {
-    display: flex;
-  }
-  .justify-center {
-    justify-content: center;
-  }
-  </style>
-  
+.text-white {
+  color: white;
+}
+.mx-auto {
+  margin: auto;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.z-0 {
+  z-index: 0;
+}
+.hidden {
+  display: none;
+}
+.w-32 {
+  width: 8rem;
+}
+.-mt-8 {
+  margin-top: -2rem;
+}
+.-ml-20 {
+  margin-left: -5rem;
+}
+.text-blue-gray-100 {
+  color: #e0f2fe;
+}
+.lg\:w-32 {
+  width: 8rem;
+}
+.lg\:-ml-28 {
+  margin-left: -7rem;
+}
+.lg\:-mt-10 {
+  margin-top: -2.5rem;
+}
+.sm\:block {
+  display: block;
+}
+.p-4 {
+  padding: 1rem;
+}
+.sm\:p-8 {
+  padding: 2rem;
+}
+.lg\:justify-between {
+  justify-content: space-between;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.sm\:mb-8 {
+  margin-bottom: 2rem;
+}
+.lg\:mb-0 {
+  margin-bottom: 0;
+}
+.text-center {
+  text-align: center;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.sm\:text-2xl {
+  font-size: 1.5rem;
+}
+.lg\:text-3xl {
+  font-size: 1.875rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.md\:px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.max-w-screen-2xl {
+  max-width: 1536px;
+}
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+.dark\:bg-gray-800 {
+  background-color: #1f2937;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.w-1\/2 {
+  width: 50%;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.w-full {
+  width: 100%;
+}
+.bg-gray-200 {
+  background-color: #e5e7eb;
+}
+.text-teal-600 {
+  color: #059669;
+}
+.border {
+  border-width: 1px;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.leading-tight {
+  line-height: 1.25;
+}
+.focus\:outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus\:bg-white {
+  background-color: #ffffff;
+}
+.focus\:border-gray-500 {
+  border-color: #6b7280;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+</style>
