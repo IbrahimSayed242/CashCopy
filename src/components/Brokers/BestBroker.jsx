@@ -26,8 +26,8 @@ const BestBroker = ({ broker }) => {
       <div className="mb-5 text-center flex flex-col lg:flex-row-reverse items-center">
         <div className="text-center lg:text-right lg:ml-4 w-full lg:w-1/2">
           <h3 className="text-2xl text-[#333]">
-            <span className="font-bold"> {broker.total_rate} هو</span>
-            {broker.title} تقييم شركة
+            تقييم شركة {broker.title}هو
+            <span className="font-bold"> {broker.total_rate}</span>
           </h3>
           <p className="text-sm text-[#666] mt-3">
             بناءً على تقييم خبراء موقع كوبون كوبي تُبين أن الشركة موثوقة ومرخصة

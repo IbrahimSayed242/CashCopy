@@ -5,6 +5,7 @@ import CardCompany2 from "../components/cards/CardCompany2.astro";
 import SimpleCard from "../components/cards/SimpleCard.astro";
 import BtnLink2 from "../components/shared/BtnLink2.astro";
 import Form from "../components/vue/Form.vue";
+import Form2 from "../components/vue/Form.astro";
 
 // import {DataProvider} fro../components/React/DataProvider.jsxjsx'
 import {DataProvider} from "../components/React/DataProvider.jsx";
@@ -43,9 +44,8 @@ async function fetchData() {
 }
 
 await fetchData(); // Execute the fetch
-console.log(astroData[0]["Brokers"])
 ---
-    
+
   <Layout title="الرئيسية"> 
     <section class="home-brokers bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 h-80">
       <div class="overload flex flex-col lg:flex-row-reverse py-10 bg-emerald-300">
@@ -118,14 +118,19 @@ console.log(astroData[0]["Brokers"])
      <section class="company-trust mt-10 py-20 text-center">
         <h4 class="mb-20 lg:text-5xl font-bold lg:text-emerald-700">شركات التداول الأكثر ثقة</h4>
         <div class="cards flex flex-col md:flex-row items-center justify-around mb-5">
+          {astroData[0]["Brokers"].length > 0 ? astroData[0]["Brokers"].map((broker) => (
+          
+          <SimpleCard broker={broker} />
+        )) : ""}
+          <!-- <SimpleCard />
           <SimpleCard />
           <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
+          <SimpleCard /> -->
         </div>
      </section>
      <section>
       <Form client:only="vue" />
+      <!-- <Form2 /> -->
      </section>
   </Layout> 
 <!--Start Css Section -->

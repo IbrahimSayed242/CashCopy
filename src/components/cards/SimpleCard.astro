@@ -1,8 +1,16 @@
+---
+const { broker } = Astro.props; // Get the passed data
+interface data {
+    id: number;
+    name: string;
+}
+---
+
 <!-- start html -->
 
     <div class="card  rounded-lg mb-20 bg-emerald-500">
-      <img class="w-3/4 rounded m-auto border border-slate-300" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1703669065/copy/evest_xjj0rq.jpg">
-      <button class="open-account bg-emerald-800">فتح حساب</button>
+      <img src={`https://alltargeting.com/${broker.logo}`} alt="" class="company-logo w-[70%] m-auto h-[50%] flex-wrap mb-5">
+      <button class="open-account bg-emerald-800"><a href="https://wa.me/201063588999">فتح حساب</a></button>
     </div>
 
   <!-- start css -->
