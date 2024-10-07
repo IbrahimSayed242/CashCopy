@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { useStore } from "../../utils/Store.jsx"; // Import zustand store
 import BestBroker from "../../components/Brokers/BestBroker.jsx";
 import ContentBroker from "./ContentBroker.jsx";
-import Button from "./button.jsx";
+import Button from "./Button.jsx";
 
 const BrokerList = ({ name }) => {
   // Accessing `message` and `data` from the zustand store

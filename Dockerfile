@@ -1,4 +1,4 @@
-FROM node:lts AS base
+FROM node:lts-alpine AS base
 WORKDIR /app
 
 # Copy package.json and package-lock.json
@@ -8,8 +8,7 @@ FROM base AS prod-deps
 RUN npm install --omit=dev
 
 FROM base AS build-deps
-RUN npm install
-
+RUN npm install --force
 FROM build-deps AS build
 COPY . .
 COPY .env .env  

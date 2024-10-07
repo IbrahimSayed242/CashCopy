@@ -1,0 +1,130 @@
+---
+
+---
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نموذج التسجيل</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <style>
+      body {
+          background-image: url('https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+      }
+      .iti {
+          width: 100%;
+      }
+  </style>
+</head>
+<body class="bg-teal-800/10 text-white">
+  <div class="py-6 sm:py-8 lg:py-[50px] mx-auto relative">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-8 relative">
+          <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png" class="absolute top-10 right-0 z-0" alt="Background decoration">
+          <div class="flex flex-col items-center rounded-lg p-4 sm:p-8 lg:justify-between">
+              <div class="mb-4 sm:mb-8 lg:mb-0">
+                  <h2 class="text-center text-xl font-bold sm:text-2xl lg:text-3xl">
+                      أحصل علي قائمة بأفضل الوسطاء
+                  </h2>
+                  <p class="text-center text-white dark:text-gray-100">
+                      اترك بريدك لتحصل علي القائمة الخاصة بك
+                  </p>
+              </div>
+
+              <div class="flex flex-col items-center lg:items-center justify-center">
+                  <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
+                      <div class="w-full flex justify-center m-3 mt-10">
+                          <form id="leadForm" class="w-full md:w-2/3 bg-gray-100 dark:bg-gray-800 px-8 pt-6 pb-8 mb-4 rounded shadow-lg text-lg">
+                              <div class="flex flex-col md:flex-row mb-6 justify-center">
+                                  <div class="w-full md:w-1/2 px-1 mb-6 md:mb-0">
+                                      <input name="name" id="name" class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="الاسم" required>
+                                  </div>
+                                  <div class="w-full md:w-1/2 px-1">
+                                      <input name="email" id="email" type="email" class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="البريد الالكتروني" required>
+                                  </div>
+                              </div>
+                              <div class="flex flex-wrap -mx-3 mb-6">
+                                  <div class="w-full px-3">
+                                      <input name="phone" id="phone" class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="tel" placeholder="رقم الجوال" required>
+                                  </div>
+                              </div>
+                              <div class="flex flex-wrap -mx-3 mb-6">
+                                  <div class="w-full px-3">
+                                      <textarea name="message" id="message" class="shadow-sm appearance-none block w-full bg-gray-200 text-teal-600 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="الرسالة" required></textarea>
+                                  </div>
+                              </div>
+                              <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10">
+                                  <button type="submit" class="bg-teal-600 hover:bg-teal-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                      انضم الينا
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      let iti:any;
+      let userIP = '';
+
+      document.addEventListener('DOMContentLoaded', function() {
+          const phoneInput = document.querySelector("#phone");
+          iti = window.intlTelInput(phoneInput, {
+              utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+              separateDialCode: true,
+              initialCountry: "auto",
+              geoIpLookup: function(callback) {
+                  fetch('https://api.ipify.org?format=json')
+                      .then(response => response.json())
+                      .then(data => {
+                          userIP = data.ip;
+                          fetch(`https://ipapi.co/${data.ip}/json/`)
+                              .then(response => response.json())
+                              .then(data => {
+                                  callback(data.country_code);
+                              })
+                              .catch(() => callback("sa")); // Default to Saudi Arabia if detection fails
+                      })
+                      .catch(() => callback("sa")); // Default to Saudi Arabia if IP detection fails
+              },
+          });
+      });
+
+      document.getElementById('leadForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phoneNumber = iti.getNumber();
+          const message = document.getElementById('message').value;
+          const data = {
+              "name1": name,
+              "email": email,
+              "phone": phoneNumber,
+              "ip": userIP,
+              "message": message
+          };
+          axios.post('https://alltargeting.com/api/method/heero.api.leads.flagedu_lead', data, {
+              headers: {
+                  "Content-Type": "application/json",
+                  "Cookie": "full_name=Guest; sid=Guest; system_user=no; user_id=Guest; user_image="
+              }
+          })
+          .then(function (response) {
+              console.log(response.data);
+              alert('تم إرسال النموذج بنجاح!');
+          })
+          .catch(function (error) {
+              console.error('خطأ:', error);
+              alert('حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.');
+          });
+      });
+  </script>
+
