@@ -28,14 +28,9 @@ const BrokerList = ({ name }) => {
     <Fragment>
       <div>
         {data[0]["Brokers"].map((broker, index) => {
-          if (broker.name === name) {
+          if (broker.title === name) {
             // Replace the source link for image
             console.log(broker.name === name);
-            // const newSrc = broker.text_editor_jtjm.replace(
-            //   'src="',
-            //   'src="https://alltargeting.com'
-            // );
-            // console.log(newSrc);
 
             // Return a JSX element with the updated source
             return (
@@ -68,7 +63,7 @@ const BrokerList = ({ name }) => {
                             variant="primary"
                           /> */}
                           <Button
-                            href="https://wa.me/201063588999"
+                            href={`${broker.affiliate_link}`}
                             className="flex justify-center w-full min-w-52 sm:w-max"
                             variant="primary"
                             text="فتح حساب"
