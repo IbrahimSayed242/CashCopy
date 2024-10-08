@@ -6,7 +6,6 @@ on:
       - stable
 
 jobs:
-
   production-build:
     name: Production Build
     if: github.ref == 'refs/heads/main'
@@ -14,8 +13,8 @@ jobs:
     steps:
       - name: Checkout Git Repo
         uses: actions/checkout@v2
-      - name: Docker Login
 
+      - name: Docker Login
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -24,27 +23,30 @@ jobs:
 
       - name: Production Build Script
         run: |
-          docker build  -t menaheero/coupons:prod .
-          docker push  docker.io/menaheero/coupons:prod
+          docker build -t menaheero/coupons:prod .
+          docker push docker.io/menaheero/coupons:prod
+
   production-deploy:
     name: Production Deploy
     needs: production-build
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Server SSH Access
-        uses: garygrossgarten/github-action-ssh@release
+      - name: Setup SSH Key
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          passphrase: ""
-          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+      - name: Add SSH Known Hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-          command: |
+      - name: Run SSH Commands for Deployment
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd /www/astro/copy
             docker-compose pull
             docker-compose down
             docker-compose up -d
             docker system prune -af --volumes
+          EOF
