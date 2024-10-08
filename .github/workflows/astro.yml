@@ -40,7 +40,6 @@ jobs:
 
       - name: Add SSH Known Hosts
         run: |
-          mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
       - name: Run SSH Commands for Deployment
