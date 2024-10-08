@@ -23,8 +23,8 @@ jobs:
 
       - name: Production Build Script
         run: |
-          docker build  -t menaheero/couponsastro:prod1 .
-          docker push  docker.io/menaheero/couponsastro:prod1
+          docker build  -t menaheero/coupons:prod .
+          docker push  docker.io/menaheero/coupons:prod
   production-deploy:
     name: Production Deploy
     needs: production-build
