@@ -35,8 +35,8 @@ jobs:
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > ~/.ssh/id_rsa_github
+          chmod 600 ~/.ssh/id_rsa_github
 
       - name: Add SSH Known Hosts
         run: |
@@ -44,10 +44,11 @@ jobs:
 
       - name: Run SSH Commands for Deployment
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh -i ~/.ssh/id_rsa_github -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd /www/astro/copy
             docker-compose pull
             docker-compose down
             docker-compose up -d
             docker system prune -af --volumes
           EOF
+      
