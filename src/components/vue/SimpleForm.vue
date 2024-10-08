@@ -212,15 +212,19 @@ export default {
             },
           }
         );
+
         this.responseMessage = "تم إرسال النموذج بنجاح!";
-        $toast.success(`${this.responseMessage}`);
+
+        // $toast.success(`${this.responseMessage}`);
+
+        window.location.href = `/thanks`;
         console.log("Response:", response.data);
       } catch (error) {
         console.error("Error:", error);
         this.responseMessage =
           error.response?.data?.message?.error || "An error occurred";
+        $toast.error(`${this.responseMessage}`);
       }
-      $toast.error(`${this.responseMessage}`);
     },
     getUrlParams() {
       const params = new URLSearchParams(window.location.search);

@@ -9,16 +9,16 @@
           class="absolute top-10 right-0 z-0"
         />
         <h2 class="text-3xl font-bold text-teal-200" style="line-height: 1.5">
-        شكرا لك علي  الانضمام لمجتمعنا
+          شكرا لك علي الانضمام لمجتمعنا
         </h2>
-        <p class="">     سيتم التواصل معك في اقرب وقت   </p>
+        <p class="">سيتم التواصل معك في اقرب وقت</p>
 
         <div class="mt-auto">
           <a
-            href="https://flagedu.com"
+            href="/"
             class="inline-block rounded-lg bg-white dark:bg-gray-900 dark:text-white px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-teal-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:text-base"
-            >الصفحه الرئيسيه </a
-          >
+            >الصفحه الرئيسيه
+          </a>
         </div>
       </div>
       <swiper
