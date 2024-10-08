@@ -7,12 +7,10 @@ import BtnLink2 from "../components/shared/BtnLink2.astro";
 import Form from "../components/vue/Form.vue";
 import Form2 from "../components/vue/Form.astro";
 
-// import {DataProvider} fro../components/React/DataProvider.jsxjsx'
-import {DataProvider} from "../components/React/DataProvider.jsx";
 
 // This function will receive the data from the React component
 
-
+const HomeBG = 'https://res.cloudinary.com/dbju3llvz/image/upload/v1728299426/turst_review_jktkvr.webp'
 
 interface data {
   id: number;
@@ -46,7 +44,7 @@ async function fetchData() {
 await fetchData(); // Execute the fetch
 ---
 
-  <Layout title="الرئيسية"> 
+  <Layout title="CouponsCopy" description={"كوبونز كوبي شريكك الموثوق للاستثمار والتعلم المالي . احصل علي مراجعات الوسطاء الغير متحيزة والتعلم من رؤى الخبراء انضم إلينا اليوم وابدأ رحلتك نحو النجاح ..."}> 
     <section class="home-brokers bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 h-80">
       <div class="overload flex flex-col lg:flex-row-reverse py-10 bg-emerald-300">
         <div class="home-brokers-content lg:w-1/2 m-auto px-2  lg:px-10">
@@ -57,10 +55,6 @@ await fetchData(); // Execute the fetch
         
           <BtnLink2 text="فتح حساب" href="https://wa.me/201063588999" className="flex justify-center m-auto mt-5 w-10 min-w-52 sm:w-max" variant="primary"/>
         </div>
-          <!-- <div class="img-header w-1/2 px-10">
-            
-            <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716573677/copy/cards/logos_xw2vjl.png" alt="companies trading" class="m-5 w-full">
-          </div> -->
     </div>
       <!-- <CardCompany /> -->
     </section>
@@ -102,7 +96,7 @@ await fetchData(); // Execute the fetch
         يتعمق فريقنا من محترفين التداول في الأسواق المالية المحلية والعالمية والهيئات التنظيمية لمساعدتك في اختيار أفضل شركة تداول – أينما كنت تقيم.
       </p>
       <div class="cards-guide flex flex-col md:flex-row flex-wrap items-center justify-center">
-        <Guide title="الكويت">
+        <Guide title="الكويت"/>
         <Guide title="السعودية"/>
         <Guide title="الامارات"/>
         <Guide title="مصر"/>
@@ -149,7 +143,7 @@ await fetchData(); // Execute the fetch
 
   /* home-brokers Section Styles */
   .home-brokers {
-    background-image: url('../../public/images/turst review.webp');
+    background-image: url('https://res.cloudinary.com/dbju3llvz/image/upload/v1728299426/turst_review_jktkvr.webp');
     background-size: cover;
     background-position: center  ;
     background-repeat: no-repeat;

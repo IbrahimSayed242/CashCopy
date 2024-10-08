@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   astro-app:
-    image: menaheero/couponsastro:prod1
+    image: menaheero/coupons:prod
     container_name: astro-app
     environment:
       - NODE_ENV=production
