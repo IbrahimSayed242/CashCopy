@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-6 sm:py-8 lg:py-[50px] dark:bg-teal-800/10 bg-cover bg-no-repeat bg-center bg-[#11726dc7] text-white mx-auto relative"
+    class="py-6 sm:py-8 lg:py-[50px] dark:bg-teal-800/10 bg-cover bg-no-repeat bg-center bg-[#11726dc7] mx-auto relative"
     id="sign-in"
     :style="{
       backgroundImage:
@@ -12,6 +12,7 @@
       <img
         src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png"
         class="absolute top-10 right-0 z-0"
+        alt="bg-form"
       />
       <div
         class="flex flex-col items-center rounded-lg p-4 sm:p-8 lg:justify-between"
@@ -102,6 +103,10 @@
 
 <script>
 import axios from "axios";
+import { useToast } from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+
+const $toast = useToast();
 
 export default {
   data() {
@@ -216,12 +221,18 @@ export default {
             },
           }
         );
+
         this.responseMessage = "تم إرسال النموذج بنجاح!";
+
+        $toast.success(`${this.responseMessage}`);
+
+        window.location.href = `/thanks`;
         console.log("Response:", response.data);
       } catch (error) {
         console.error("Error:", error);
         this.responseMessage =
           error.response?.data?.message?.error || "An error occurred";
+        $toast.error(`${this.responseMessage}`);
       }
     },
     getUrlParams() {

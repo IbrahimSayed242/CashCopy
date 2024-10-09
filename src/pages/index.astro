@@ -15,6 +15,7 @@ const HomeBG = 'https://res.cloudinary.com/dbju3llvz/image/upload/v1728299426/tu
 interface data {
   id: number;
   name: string;
+  result: any;
 }
 let astroData: data[] = [];
 const API_URL = 'https://alltargeting.com/api/method/heero.flagedu.doctype.brokers.brokers.get_brokers';
@@ -45,7 +46,7 @@ await fetchData(); // Execute the fetch
 ---
 
   <Layout title="CouponsCopy" description={"كوبونز كوبي شريكك الموثوق للاستثمار والتعلم المالي . احصل علي مراجعات الوسطاء الغير متحيزة والتعلم من رؤى الخبراء انضم إلينا اليوم وابدأ رحلتك نحو النجاح ..."}> 
-    <section class="home-brokers bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 h-80">
+    <section class="home-brokers lg:text-2xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 h-60">
       <div class="overload flex flex-col lg:flex-row-reverse py-10 bg-emerald-300">
         <div class="home-brokers-content lg:w-1/2 m-auto px-2  lg:px-10">
           <h1 class="text-md font-bold mb-10 lg:text-4xl text-center">نساعدك في إختيار شركة التداول الأفضل لك عبر الإنترنت </h1>
@@ -53,23 +54,19 @@ await fetchData(); // Execute the fetch
             لقد التزم فريق موقع تقييمات كوبونز كوبي بمراجعة وتقييم شركات التداول وشركات الوساطة المالية بطريقة صارمة وغير متحيزة لأي شركة تداول، يتطلب اختيار أفضل شركة تداول الكثير من المهارات والابحاث.
           </p>
         
-          <BtnLink2 text="فتح حساب" href="https://wa.me/201063588999" className="flex justify-center m-auto mt-5 w-10 min-w-52 sm:w-max" variant="primary"/>
+          <BtnLink2 text="فتح حساب" href="https://wa.me/201063588999" className="flex justify-center m-auto mt-5 w-10 min-w-32 md:min-w-52 sm:w-max" variant="primary"/>
         </div>
     </div>
       <!-- <CardCompany /> -->
     </section>
     <!-- Features Section -->
     <section class="best-brokers flex-col justify-center items-bet text-center md:flex-row">
-      <h1 class="text-emerald-700">أفضل شركات تداول مرخصة لعام 2024</h1>
+      <h1 class="text-emerald-700 text-2xl lg:text-3xl text-center font-bold">أفضل شركات تداول مرخصة لعام 2024</h1>
       <div class="cards flex flex-col items-center">
         {astroData[0]["Brokers"].length > 0 ? astroData[0]["Brokers"].map((broker) => (
           
           <CardCompany2 broker={broker} />
         )) : ""}
-        
-        <!-- <CardCompany2/>
-        <CardCompany2/>
-        <CardCompany2/> -->
       </div>
       
       <!-- ... rest of the section ... -->
@@ -79,7 +76,7 @@ await fetchData(); // Execute the fetch
     <section class="helping bg-emerald-300">
       <h2 class="lg:text-4xl text-emerald-700 font-bold text-xl">مساعدة في اختيار وسيط تداول</h2>
       <div class="helping-item">
-        <p class="lg:w-3/4 m-auto lg:text-4xl text-emerald-900">
+        <p class="lg:w-3/4 m-auto text-sm leading-8 lg:text-4xl text-emerald-900">
           مهمتنا هي تقديم مراجعات متعمقة وغير متحيزة لوسطاء الفوركس وشركات التداول، وإنشاء محتوى عالي الجودة حول صناعة التداول العالمية. منذ البداية، ساعد موقع تقييمات نور الالاف من المتداولين على مقارنة واختيار أفضل وسطاء الفوركس وعقود الفروقات.
 
           دعنا نساعدك على دخول عالم التداول مع شركة التداول الأنسب لك.
@@ -92,7 +89,7 @@ await fetchData(); // Execute the fetch
     <!-- Trading Guide -->
     <section class="trading-guide text-center my-20">
       <h2 class="lg:text-5xl text-xl font-bold m-3 text-emerald-700">دليل التداول</h2>
-      <p class="lg:mb-10 m-auto lg:w-1/2 lg:text-2xl text-lg w-4/5 mb-4">
+      <p class="lg:mb-10 m-auto lg:w-1/2 lg:text-2xl text-lg w-4/5 mb-4 hidden md:block">
         يتعمق فريقنا من محترفين التداول في الأسواق المالية المحلية والعالمية والهيئات التنظيمية لمساعدتك في اختيار أفضل شركة تداول – أينما كنت تقيم.
       </p>
       <div class="cards-guide flex flex-col md:flex-row flex-wrap items-center justify-center">
@@ -101,7 +98,7 @@ await fetchData(); // Execute the fetch
         <Guide title="الامارات"/>
         <Guide title="مصر"/>
       </div>
-      <div class="flex justify-center w-1/6 bg-emerald-200 text-emerald-700 text-lg mx-auto mt-4 h-10 items-center rounded-lg">
+      <div class="flex justify-center w-1/2 md:w-1/6 bg-emerald-200 text-emerald-700 text-lg mx-auto mt-4 h-10 items-center rounded-lg">
         <span class="material-symbols-outlined">
           arrow_left_alt
         </span>
@@ -116,10 +113,7 @@ await fetchData(); // Execute the fetch
           
           <SimpleCard broker={broker} />
         )) : ""}
-          <!-- <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
-          <SimpleCard /> -->
+        
         </div>
      </section>
      <section>
@@ -151,7 +145,6 @@ await fetchData(); // Execute the fetch
     margin-top:100px;
     padding: 100px 40px 50px;
     text-align: right;
-    font-size: 25px;
     position: relative;
   }
  
@@ -190,10 +183,7 @@ await fetchData(); // Execute the fetch
   padding-bottom: 60px
 }
 .best-brokers h1{
-  text-align: center;
-    font-size: 30px;
     margin-bottom: 50px;
-    font-weight: bold;
 }
 
 
