@@ -3,7 +3,6 @@
 import Layout from "../../layouts/Layout.astro";
 import CardCompany from "../../components/cards/CardCompany.astro"
 
-
 interface data {
   id: number;
   name: string;
@@ -26,9 +25,11 @@ async function fetchData() {
       const result = await response.json();
       astroData = [result.message] || []; // Store the data fetched
     } else {
+      window.location.href = '/error500'
       console.error(`Failed to fetch data: ${response.status}`);
     }
   } catch (error) {
+   
     console.error('Error fetching data:', error);
   }
 }
@@ -39,8 +40,8 @@ await fetchData(); // Execute the fetch
 <Layout title="الوسطاء">
     <main class="flex flex-col gap-y-20  overflow-hidden p-2 lg:p-10">
         <div class="evaluation-company text-center">
-            <h1 class="lg:text-5xl text-xl text-emerald-700 font-bold">تقييم شركات التداول</h1>
-            <p class="lg:text-xl lg:text-right ">يقدم موقع كوبون تقييمات شاملة لشركات التداول عبر الإنترنت العاملة في سوق الفوركس، حيث يقوم فريق من الخبراء المتخصصين في هذا المجال بتحليل وتقييم تلك الشركات بكل موضوعية واحترافية.
+            <h1 class="lg:text-5xl text-xl text-emerald-700 font-bold dark:text-gray">تقييم شركات التداول</h1>
+            <p class="lg:text-xl lg:text-right dark:text-white ">يقدم موقع كوبون تقييمات شاملة لشركات التداول عبر الإنترنت العاملة في سوق الفوركس، حيث يقوم فريق من الخبراء المتخصصين في هذا المجال بتحليل وتقييم تلك الشركات بكل موضوعية واحترافية.
 
                 ستجد هنا كافة معلومات مفصلة ودقيقة عن مختلف شركات التداول عبر الإنترنت التي تقدم خدماتها للمتداولين العرب، حيث يتم تغطية جوانب عديدة مثل سمعة الشركة وخبرتها، والأدوات والمنصات التي توفرها، وشروط التداول والرافعة المالية، وسياسات الإيداع والسحب، بالإضافة إلى مستوى الدعم الفني والخدمة للعملاء.
                 
@@ -49,11 +50,11 @@ await fetchData(); // Execute the fetch
              
         </div>
         <div class="list-company ">
-            <h2 class="text-center lg:text-4xl text-emerald-700 font-bold mb-4">قائمة تقييم شركات التداول عبر الانترنت</h2>
+            <h2 class="text-center lg:text-4xl text-emerald-700 font-bold mb-12">قائمة تقييم شركات التداول عبر الانترنت</h2>
             <div class="flex justify-around flex-col md:flex-row flex-wrap">
                 {astroData[0]["Brokers"].length > 0 ? astroData[0]["Brokers"].map((broker) => (
                    
-                    <CardCompany broker={broker} />
+                   broker.site === 'coupons' &&  <CardCompany broker={broker} />
                 )) : ""}
             </div>
         </div>

@@ -1,28 +1,12 @@
 import React from "react";
-import BtnLink2 from "../../components/shared/BtnLink2.astro";
 
-const RatingContainer = {
-  BackgroundColor: " #f8f8f8",
-  padding: "20px",
-  BorderRadius: "8px",
-  BoxShadow: " 0px 0px 10px rgba(0, 0, 0, 0.1)",
-  MaxWidth: "800px",
-  Margin: " 30px auto",
-};
-const RatingItem = {
-  BackgroundColor: " #fff",
-  Padding: "15px",
-  BorderRadius: "5px",
-  BoxShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)",
-  TextAlign: "center",
-};
 const iconStyle = {
   fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24",
 };
 
 const BestBroker = ({ broker }) => {
   return (
-    <div className=" bg-[#f8f8f8] p-5 mt-5 rounded-md md:rounded-full shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center">
+    <div className=" bg-[#f8f8f8] p-5 my-5 rounded-md md:rounded-b-3xl shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center">
       <div className="mb-5 text-center flex flex-col lg:flex-row-reverse items-center">
         <div className="text-center lg:text-right lg:ml-4 w-full lg:w-1/2">
           <h3 className="text-2xl text-[#333]">

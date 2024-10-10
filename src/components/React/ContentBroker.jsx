@@ -3,9 +3,18 @@ import React, { Fragment } from "react";
 import "../../../public/css/contentbroker.css";
 
 const ContentBroker = ({ broker }) => {
+  console.log(Object.keys(broker));
+  const indexStyle = {
+    border: "1px solid #14b8a6",
+  };
+  const linkStyle = {
+    display: "block",
+    padding: "20px",
+    backgroundColor: "#ccc",
+  };
   // function to create index for article
   function addLink() {
-    if (broker) {
+    if (Object.keys(broker).length > 0) {
       const h2Contaienr = document.querySelectorAll("h2");
       const indexHeads = document.getElementById("index");
 
@@ -13,6 +22,7 @@ const ContentBroker = ({ broker }) => {
         h2.setAttribute("id", index);
 
         const a = document.createElement("a");
+
         a.setAttribute("href", `#${index}`);
         a.style = "display: block";
         a.style.padding = "10px";
@@ -24,13 +34,20 @@ const ContentBroker = ({ broker }) => {
 
   setTimeout(() => {
     addLink();
-  });
+  }, 0);
 
   return (
     <Fragment>
       {/* Render broker.text_editor_jtjm as HTML content */}
-      <div dir="rtl" id="index">
-        <h1>الفهرس</h1>
+      <div
+        dir="rtl"
+        id="index"
+        className="w-80 m-auto mb-10"
+        style={indexStyle}
+      >
+        <h1 className="m-0 text-center text-xl md:text-3xl lg:text-5xl">
+          الفهرس
+        </h1>
       </div>
       <div
         className="px-3 lg:px-5 w-full lg:w-3/4 m-auto"

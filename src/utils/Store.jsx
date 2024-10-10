@@ -27,6 +27,7 @@ async function fetchData() {
       useStore.getState().setData([result.message] || []); // Update store with fetched data
       // console.log('Fetched data:', result.message);
     } else {
+      window.location.href = "/error500";
       console.error(`Failed to fetch data: ${response.status}`);
     }
   } catch (error) {

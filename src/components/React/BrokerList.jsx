@@ -56,12 +56,6 @@ const BrokerList = ({ name }) => {
                       </div>
                       <div className="create-account w-52 h-12 border-none rounded-md">
                         <div className="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
-                          {/* <BtnLink2
-                            text="فتح حساب"
-                            href="https://wa.me/201063588999"
-                            className="flex justify-center w-full min-w-52 sm:w-max"
-                            variant="primary"
-                          /> */}
                           <Button
                             href={`${broker.affiliate_link}`}
                             className="flex justify-center w-full min-w-52 sm:w-max"
