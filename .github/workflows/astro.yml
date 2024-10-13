@@ -32,23 +32,24 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Setup SSH Key
+      - name: Install sshpass
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > ~/.ssh/id_rsa_github
-          chmod 600 ~/.ssh/id_rsa_github
+          sudo apt-get update
+          sudo apt-get install -y sshpass
 
       - name: Add SSH Known Hosts
         run: |
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Run SSH Commands for Deployment
+      - name: Run SSH Commands for Deployment via Password
+        env:
+          SSH_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         run: |
-          ssh -i ~/.ssh/id_rsa_github -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /www/astro/copy
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no \
+            ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} << 'EOF'
+            cd /www/CashCopy
             docker-compose pull
             docker-compose down
             docker-compose up -d
             docker system prune -af --volumes
           EOF
-      

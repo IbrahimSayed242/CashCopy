@@ -3,13 +3,13 @@ version: '3.8'
 services:
   astro-app:
     image: menaheero/coupons:prod
-    container_name: astro-app
+    container_name: Coupons
     environment:
       - NODE_ENV=production
       - HOST=0.0.0.0
-      - PORT=4321
+      - PORT=4322
     ports:
-      - "4321:4321"
+      - "4322:4322"
     restart: always
     networks:
       - astro-net

@@ -36,7 +36,7 @@ export default defineConfig({
         PORT: envField.number({
           context: "server",
           access: "public",
-          default: 4321,
+          default: 4322,
         }),
         API_SECRET: envField.string({ context: "server", access: "secret" }),
       },
