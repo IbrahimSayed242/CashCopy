@@ -2,10 +2,6 @@
   <div
     class="py-6 sm:py-8 lg:py-[50px] dark:bg-teal-800/10 bg-cover bg-no-repeat bg-center bg-[#11726dc7] mx-auto relative"
     id="sign-in"
-    :style="{
-      backgroundImage:
-        'url(https://res.cloudinary.com/dt9k74vof/image/upload/v1709982615/copy/stocks-bg_svid4a_dcpcpd.png)',
-    }"
   >
     <!-- SVG and other elements remain the same -->
     <div class="mx-auto max-w-screen-2xl px-4 md:px-8 relative">
@@ -18,12 +14,12 @@
         class="flex flex-col items-center rounded-lg p-4 sm:p-8 lg:justify-between"
       >
         <div class="mb-4 sm:mb-8 lg:mb-0">
-          <h2
-            class="text-center text-xl font-bold sm:text-2xl lg:text-3xl"
+          <h3
+            class="text-center text-xl font-bold sm:text-2xl lg:text-3xl dark:text-white mb-4 text-emerald-800 bg-inherit"
             dir="rtl"
           >
             {{ "أحصل علي قائمة بأفضل الوسطاء" }}
-          </h2>
+          </h3>
           <p class="text-center text-white dark:text-gray-100" dir="rtl">
             {{ "اترك بريدك لتحصل علي القائمة الخاصة بك" }}
           </p>
@@ -56,7 +52,7 @@
                     />
                   </div>
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="phone flex flex-wrap -mx-3 mb-6">
                   <div class="w-full px-3">
                     <input
                       v-model="formData.phone"
@@ -253,6 +249,9 @@ export default {
   direction: ltr;
 }
 .iti input {
+  width: 100%;
+}
+.phone .iti {
   width: 100%;
 }
 </style>

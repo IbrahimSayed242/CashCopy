@@ -16,16 +16,16 @@ let [post] = await res.json();
 
 <Layout>
 
-<div class="article w-3/4 m-auto text-right">
+<div class="article m-auto text-right container">
    {
-        <div class="m-2 overflow-hidden">
+        <div class="m-2 overflow-hidden ">
             <div class="p-2">
                 <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
                 <h2><a href="" class="font-bold text-emerald-700 my-4">{post.title.rendered}</a></h2>
-                <p set:html={post.modified}></p>
+                <p set:html={post.modified} class=" dark:text-white"></p>
                 <a href=""><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 
             </div>
-            <div  class="content text-bold text-2xl" set:html={post.content.rendered} />
+            <div  class="content text-bold text-2xl dark:text-white" set:html={post.content.rendered} />
             <div>
                 <h3>اترك تعليقاً</h3>
                 <div class="font-bold text-2xl text-emerald-500">
@@ -65,6 +65,7 @@ let [post] = await res.json();
     border: 1px solid #35c791;
     margin-top: 20px;
    }
+
 </style>
 
 <script>
@@ -75,12 +76,14 @@ let [post] = await res.json();
     document.querySelectorAll('.content p a').forEach(a=> {
     a.style.color = "aqua";
     a.style.textDecoration = "underline";
-    document.getElementById("ez-toc-container").style.width = "300px"
-    document.getElementById("ez-toc-container").style.padding = "20px"
-    document.getElementById("ez-toc-container").style.fontSize = "20px"
-    document.getElementById("ez-toc-container").style.color = "#fff"
-    document.getElementById("ez-toc-container").style.background = "#000"
-    document.getElementById("ez-toc-container").style.marginLeft = "auto"
-    document.getElementById("ez-toc-container").style.fontSize = "20px"
+    document.getElementById("ez-toc-container").style.display = "none"
   });
  </script>
+
+<!-- document.getElementById("ez-toc-container").style.width = "300px"
+document.getElementById("ez-toc-container").style.padding = "20px"
+document.getElementById("ez-toc-container").style.fontSize = "20px"
+document.getElementById("ez-toc-container").style.color = "#fff"
+document.getElementById("ez-toc-container").style.background = "#000"
+document.getElementById("ez-toc-container").style.marginLeft = "auto"
+document.getElementById("ez-toc-container").style.fontSize = "20px" -->

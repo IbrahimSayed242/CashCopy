@@ -5,12 +5,9 @@ import CardCompany2 from "../components/cards/CardCompany2.astro";
 import SimpleCard from "../components/cards/SimpleCard.astro";
 import BtnLink2 from "../components/shared/BtnLink2.astro";
 import Form from "../components/vue/Form.vue";
-import Form2 from "../components/vue/Form.astro";
 
 
 // This function will receive the data from the React component
-
-const HomeBG = 'https://res.cloudinary.com/dbju3llvz/image/upload/v1728299426/turst_review_jktkvr.webp'
 
 interface data {
   id: number;
@@ -33,11 +30,15 @@ async function fetchData() {
 
     if (response.ok) {
       const result = await response.json();
+      
       astroData = [result.message] || []; // Store the data fetched
+
     } else {
+      // window.location.href = '/error500'
       console.error(`Failed to fetch data: ${response.status}`);
     }
   } catch (error) {
+    // window.location.href = '/error500'
     console.error('Error fetching data:', error);
   }
 }
@@ -61,11 +62,12 @@ await fetchData(); // Execute the fetch
     </section>
     <!-- Features Section -->
     <section class="best-brokers flex-col justify-center items-bet text-center md:flex-row">
-      <h1 class="text-emerald-700 text-2xl lg:text-3xl text-center font-bold">أفضل شركات تداول مرخصة لعام 2024</h1>
+      <h1 class="text-emerald-700 text-2xl lg:text-3xl text-center font-bold dark:text-white">أفضل شركات تداول مرخصة لعام 2024</h1>
       <div class="cards flex flex-col items-center">
-        {astroData[0]["Brokers"].length > 0 ? astroData[0]["Brokers"].map((broker) => (
+        {astroData[0]["Brokers"].length > 0? astroData[0]["Brokers"].map((broker) => (
+         
+         broker.site === 'coupons' && <CardCompany2 broker={broker} /> 
           
-          <CardCompany2 broker={broker} />
         )) : ""}
       </div>
       
@@ -74,9 +76,9 @@ await fetchData(); // Execute the fetch
 
     <!-- helping Section -->
     <section class="helping bg-emerald-300">
-      <h2 class="lg:text-4xl text-emerald-700 font-bold text-xl">مساعدة في اختيار وسيط تداول</h2>
+      <h2 class="lg:text-4xl text-emerald-700 font-bold text-xl dark:text-white">مساعدة في اختيار وسيط تداول</h2>
       <div class="helping-item">
-        <p class="lg:w-3/4 m-auto text-sm leading-8 lg:text-4xl text-emerald-900">
+        <p class="lg:w-3/4 m-auto text-sm leading-8 lg:text-4xl text-emerald-900 dark:text-white">
           مهمتنا هي تقديم مراجعات متعمقة وغير متحيزة لوسطاء الفوركس وشركات التداول، وإنشاء محتوى عالي الجودة حول صناعة التداول العالمية. منذ البداية، ساعد موقع تقييمات نور الالاف من المتداولين على مقارنة واختيار أفضل وسطاء الفوركس وعقود الفروقات.
 
           دعنا نساعدك على دخول عالم التداول مع شركة التداول الأنسب لك.
@@ -88,8 +90,8 @@ await fetchData(); // Execute the fetch
 
     <!-- Trading Guide -->
     <section class="trading-guide text-center my-20">
-      <h2 class="lg:text-5xl text-xl font-bold m-3 text-emerald-700">دليل التداول</h2>
-      <p class="lg:mb-10 m-auto lg:w-1/2 lg:text-2xl text-lg w-4/5 mb-4 hidden md:block">
+      <h2 class="lg:text-5xl text-xl font-bold m-3 text-emerald-700 dark:text-white">دليل التداول</h2>
+      <p class="lg:mb-10 m-auto lg:w-1/2 lg:text-2xl text-lg w-4/5 mb-4 hidden md:block dark:text-white">
         يتعمق فريقنا من محترفين التداول في الأسواق المالية المحلية والعالمية والهيئات التنظيمية لمساعدتك في اختيار أفضل شركة تداول – أينما كنت تقيم.
       </p>
       <div class="cards-guide flex flex-col md:flex-row flex-wrap items-center justify-center">
@@ -107,11 +109,11 @@ await fetchData(); // Execute the fetch
     </section>
     <!-- start section Company Trust -->
      <section class="company-trust mt-10 py-20 text-center">
-        <h4 class="mb-20 lg:text-5xl font-bold lg:text-emerald-700">شركات التداول الأكثر ثقة</h4>
+        <h4 class="mb-20 lg:text-5xl font-bold lg:text-emerald-700 dark:text-white">شركات التداول الأكثر ثقة</h4>
         <div class="cards flex flex-col md:flex-row items-center justify-around mb-5">
           {astroData[0]["Brokers"].length > 0 ? astroData[0]["Brokers"].map((broker) => (
           
-          <SimpleCard broker={broker} />
+          broker.site === 'coupons' &&  <SimpleCard broker={broker} />
         )) : ""}
         
         </div>
