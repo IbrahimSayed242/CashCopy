@@ -42,9 +42,6 @@
       </div>
 
       <div class="flex flex-wrap -mx-3 mb-3 justify-center pt-10">
-        <!-- <Button2 type="submit"  variant={"primary"} className="bg-primary hover:bg-blue-900">
-          <span class="text-white relative z-[5]"> انضم الينا</span>
-        </Button2> -->
         <button
           type="submit"
           class="bg-primary hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

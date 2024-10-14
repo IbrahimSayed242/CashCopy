@@ -42,7 +42,7 @@ const ContentBroker = ({ broker }) => {
       <div
         dir="rtl"
         id="index"
-        className="w-80 m-auto mb-10"
+        className=" m-auto lg:mr-0 mb-10"
         style={indexStyle}
       >
         <h1 className="m-0 text-center text-xl md:text-3xl lg:text-5xl">
@@ -50,7 +50,7 @@ const ContentBroker = ({ broker }) => {
         </h1>
       </div>
       <div
-        className="px-3 lg:px-5 w-full lg:w-3/4 m-auto"
+        className="px-3 lg:px-5 w-full  m-auto"
         dangerouslySetInnerHTML={{
           __html: broker.text_editor_jtjm,
         }}

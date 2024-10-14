@@ -8,9 +8,9 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
     <Container>
         <nav class="w-full flex justify-between gap-6 relative mx-4"dir ="rtl">
             <!-- logo -->
-            <div class="min-w-max inline-flex relative">
-                <a href="/" class="relative flex items-center gap-2">
-                    <div class="relative  mr-4 md:w-60 w-40  flex ">
+            <div class="max-w-[200px] md:max-w-[150px] inline-flex relative">
+                <a href="/" class="relative flex items-center w-full  gap-2">
+                    <div class="relative  mr-4 md:w-60 w-full  flex ">
                         <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" alt="CouponsCopy"  class="w-full h-full">
                     </div>  
                 </a>
@@ -19,13 +19,9 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
             <div data-nav-overlay aria-hidden="true" class="fixed hidden inset-0 lg:!hidden bg-box-bg bg-opacity-50 backdrop-filter backdrop-blur-xl"></div>
             <div data-navbar class="overflow-hidden overflow-visible flex h-0 lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-10 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 lg:bg-transparent border-x border-x-box-border lg:border-x-0">
                 <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-5 text-xs text-heading-2 w-full lg:justify-center lg:items-center mt-3">
-                    <!-- {navItems.map((item, index) => {
-                        return <Navitem {...item} id={`${index}`}/>
-                    })
-                    } -->
-                    <li><a href="/" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الرئيسية</a></li>
-                    <li><a href="/brokers" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">الوسطاء</a></li>
-                    <li id="dropdwon-button"><a  class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">افضل الوسطاء </a>
+                    <li><a href="/" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-lg">الرئيسية</a></li>
+                    <li><a href="/brokers" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-lg">الوسطاء</a></li>
+                    <li id="dropdwon-button"><a  class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-lg">افضل الوسطاء </a>
                         <div id="dropdown" class="divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                             <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                               <li>
@@ -43,10 +39,10 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
                             </ul>
                         </div>
                     </li>
-                    <li><a href="/blog" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">المدونة</a></li>
-                    <li><a href="/offer" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">عروض</a></li>
-                    <li><a href="/couopns" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">كوبونات</a></li>
-                    <li><a href="/about" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3">من نحن</a></li>
+                    <li><a href="/blog" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3 md:text-xs lg:text-lg">المدونة</a></li>
+                    <li><a href="/offer" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3 md:text-xs lg:text-lg">عروض</a></li>
+                    <li><a href="/couopns" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3 md:text-xs lg:text-lg">كوبونات</a></li>
+                    <li><a href="/about" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3 md:text-xs lg:text-lg">من نحن</a></li>
                   </ul>
                 
                 <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
@@ -86,7 +82,6 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
   align-items: center;
   font-family: inherit;
   font-weight: 500;
-  font-size: 14px;
   padding: 12px 15px;
   color: white;
   background: #046e44af;

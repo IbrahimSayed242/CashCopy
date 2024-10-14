@@ -2,7 +2,6 @@
 
 import Layout from "../../layouts/Layout.astro"
 // import ComentForm from "../../components/shared/ComentForm.astro"
-import CompanyService from "../../components/CompanyService.astro"
 import BrokerList from "../../components/React/BrokerList.jsx"
 import Form from "../../components/vue/Form.vue"
 
@@ -12,9 +11,9 @@ const {name} = Astro.params;
 
 <Layout title="تفاصيل الوسيط" description="">
     
-        <div class="article-1 text-right m-auto">  
+        <div class="article-1 text-right m-auto container">  
+            
             <BrokerList client:load name={name}/>
-            <CompanyService />
         </div>
        
 

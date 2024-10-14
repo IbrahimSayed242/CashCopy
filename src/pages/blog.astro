@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 //Fetch content from database
-const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts");
+const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts?categories=1");
 const posts = await res.json();
-
+console.log(posts)
 ---
 
 <Layout title="المدونة">
@@ -14,11 +14,12 @@ const posts = await res.json();
     <div class="cards flex flex-col lg:flex-row-reverse justify-around items-center w-full flex-wrap">
         {
             posts.map((post:any) => (
+               
                 <div class="card m-2 overflow-hidden">
                     <a href={`articles/${post.slug}`}><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 
                     <div class="p-2">
-                        <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
-                        {post.yoast_head_json.schema["@graph"][0].articleSection[1] && <span class="w-14 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[1]}</span> }           
+                        {/* <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
+                        {post.yoast_head_json.schema["@graph"][0].articleSection[1] && <span class="w-14 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[1]}</span> }            */}
                         <h2><a href={`articles/${post.slug}`} set:html={post.title.rendered} class="font-bold text-emerald-700 my-4  dark:text-white"></a></h2>
                         <p class=" dark:text-white" set:html={post.modified}></p>
                     </div>

@@ -20,7 +20,7 @@ let [post] = await res.json();
    {
         <div class="m-2 overflow-hidden ">
             <div class="p-2">
-                <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
+                {/* <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span> */}
                 <h2><a href="" class="font-bold text-emerald-700 my-4">{post.title.rendered}</a></h2>
                 <p set:html={post.modified} class=" dark:text-white"></p>
                 <a href=""><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 

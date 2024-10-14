@@ -3,14 +3,12 @@ import { useStore } from "../../utils/Store.jsx"; // Import zustand store
 import BestBroker from "../../components/Brokers/BestBroker.jsx";
 import ContentBroker from "./ContentBroker.jsx";
 import Button from "./Button.jsx";
+import CompanyService from "../../components/CompanyService.jsx";
 
 const BrokerList = ({ name }) => {
   // Accessing `message` and `data` from the zustand store
   const { data } = useStore();
-  // const imageUrl =
-  //   "https://res.cloudinary.com/dt9k74vof/image/upload/v1703669065/copy/evest_xjj0rq.jpg";
-  // Log the data to verify that it's being retrieved correctly
-  // console.log("Message from store:", message);
+
   console.log("Data from store:", data);
 
   // Handle loading state
@@ -35,15 +33,15 @@ const BrokerList = ({ name }) => {
             // Return a JSX element with the updated source
             return (
               <div key={index}>
-                <div className="main mt-[100px] lg:mt-[140px]">
+                <div className="main mt-[100px] lg:mt-[140px] ">
                   <div
                     style={{ backgroundColor: "#ddd" }}
                     className="lg:rounded-full rounded-b-3xl"
                   >
-                    <div className="main-company flex flex-col  p-12 md:flex-row-reverse justify-between container items-center">
+                    <div className="main-company flex flex-col  p-12 md:flex-row-reverse justify-between  items-center ">
                       <div className="company-img md:min-w-16 w-1/2 md:w-1/6 mb-6">
                         <img
-                          className="w-full  rounded md:rounded-3xl shadow-md m-auto  text-center"
+                          className="w-full  rounded md:rounded-[7.5rem] shadow-md m-auto  text-center"
                           src={`https://alltargeting.com/${broker.logo}`}
                           alt="Company"
                         />
@@ -67,8 +65,8 @@ const BrokerList = ({ name }) => {
                     </div>
                   </div>
                 </div>
-
                 <BestBroker broker={broker} />
+                <CompanyService nameBroker={name} />
                 {broker.text_editor_jtjm !== null && (
                   <ContentBroker broker={broker} />
                 )}

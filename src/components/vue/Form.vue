@@ -52,7 +52,7 @@
                     />
                   </div>
                 </div>
-                <div class="phone flex flex-wrap -mx-3 mb-6">
+                <div class="phone flex flex-wrap mx-3 mb-6">
                   <div class="w-full px-3">
                     <input
                       v-model="formData.phone"
