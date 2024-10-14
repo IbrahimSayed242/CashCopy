@@ -12,6 +12,9 @@ const ContentBroker = ({ broker }) => {
     padding: "20px",
     backgroundColor: "#ccc",
   };
+  const indesDesgin = {
+    borderButton: "1px solid #ddd",
+  };
   // function to create index for article
   function addLink() {
     if (Object.keys(broker).length > 0) {
@@ -39,22 +42,27 @@ const ContentBroker = ({ broker }) => {
   return (
     <Fragment>
       {/* Render broker.text_editor_jtjm as HTML content */}
-      <div
-        dir="rtl"
-        id="index"
-        className=" m-auto lg:mr-0 mb-10"
-        style={indexStyle}
-      >
-        <h1 className="m-0 text-center text-xl md:text-3xl lg:text-5xl">
-          الفهرس
-        </h1>
+      <div className="flex flex-col md:flex-row-reverse ">
+        <div
+          dir="rtl"
+          id="index"
+          className="lg:mr-0 md:w-1/4 h-max align-top mt-32"
+          style={indexStyle}
+        >
+          <span
+            className="m-0 text-center text-md md:text-lx lg:text-2xl block"
+            style={indesDesgin}
+          >
+            الفهرس
+          </span>
+        </div>
+        <div
+          className="px-3 lg:px-5 md:w-3/4  m-auto"
+          dangerouslySetInnerHTML={{
+            __html: broker.text_editor_jtjm,
+          }}
+        ></div>
       </div>
-      <div
-        className="px-3 lg:px-5 w-full  m-auto"
-        dangerouslySetInnerHTML={{
-          __html: broker.text_editor_jtjm,
-        }}
-      ></div>
     </Fragment>
   );
 };

@@ -19,7 +19,9 @@ const CompanyService = ({ nameBroker }) => {
     backgroundColor: "#ddd",
     color: "#222",
     marginRight: "15px",
+    marginBottom: "15px",
     transition: "all 0.3s ease-in-out",
+    textAlign: "center",
   };
 
   const buttonHoverStyle = {
@@ -52,7 +54,7 @@ const CompanyService = ({ nameBroker }) => {
               shopping_cart
             </span>
           </div>
-          <div className="trade text-center mb-3 lg:mb-0">
+          <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
@@ -66,7 +68,7 @@ const CompanyService = ({ nameBroker }) => {
               currency_pound
             </span>
           </div>
-          <div className="trade text-center mb-3 lg:mb-0">
+          <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
@@ -80,7 +82,7 @@ const CompanyService = ({ nameBroker }) => {
               paid
             </span>
           </div>
-          <div className="trade text-center mb-3 lg:mb-0">
+          <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
@@ -94,7 +96,7 @@ const CompanyService = ({ nameBroker }) => {
               payments
             </span>
           </div>
-          <div className="trade text-center mb-3 lg:mb-0">
+          <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
@@ -108,7 +110,7 @@ const CompanyService = ({ nameBroker }) => {
               description
             </span>
           </div>
-          <div className="trade text-center mb-3 lg:mb-0">
+          <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
             <button style={tradeButtonStyle}>Ava Option</button>
