@@ -110,7 +110,7 @@ await fetchData(); // Execute the fetch
     <!-- start section Company Trust -->
      <section class="company-trust mt-10 py-20 text-center">
         <h4 class="mb-20 lg:text-5xl font-bold lg:text-emerald-700 dark:text-white">شركات التداول الأكثر ثقة</h4>
-        <div class="cards flex flex-col md:flex-row items-center justify-around mb-5">
+        <div class="cards flex flex-col md:flex-row items-center justify-around mb-5 flex-wrap">
           {astroData[0]["Brokers"].length > 0 ? astroData[0]["Brokers"].map((broker) => (
           
           broker.site === 'coupons' &&  <SimpleCard broker={broker} />
