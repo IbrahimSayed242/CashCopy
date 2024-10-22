@@ -5,6 +5,7 @@
     >
       <div class="info text-2xl m-20 md:m-15 text-center font-bold" dir="rtl">
         <img
+          loading="lazy"
           src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png"
           class="absolute top-10 right-0 z-0"
         />

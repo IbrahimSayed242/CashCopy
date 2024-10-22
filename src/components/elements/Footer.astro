@@ -1,8 +1,5 @@
 ---
-import GroupFooterNav from "../blocks/GroupFooterNav.astro";
 import Container from "../shared/Container.astro";
-import FooterNav from "../shared/FooterNav.astro";
-import Paragraph from "../shared/Paragraph.astro";
 
 
 const footerCompany = [
@@ -55,28 +52,28 @@ const footerCompany = [
         
         <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 blur-2xl opacity-20 w-24 h-16 sm:w-48 sm:h-36 rounded-full rotate-12 skew-x-6 bg-primary"></span>
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="#" class="flex justify-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" class="h-8" alt="couponsCopy" />   
+            <a href="/" class="flex justify-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img loading="lazy" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" class="h-8" alt="couponsCopy" />   
             </a>
         </div>
 
         <div class="flex flex-col md:flex-row items-center">
             <div class="w-3/4 md:3/4 ">    
-                <p class=" text-sm mt-5 dark:text-white text-center"> هو موقع متخصص في التداول يقدم عروض نسخ الصفقات الحصرية مع كوبونات الخصم، مما يساعد المتداولين على تحقيق أهدافهم الاستثمارية بأفضل طريقة ممكنة.</p>
+                <p class=" text-xs lg:text-md mt-5 dark:text-white text-center"> هو موقع متخصص في التداول يقدم عروض نسخ الصفقات الحصرية مع كوبونات الخصم، مما يساعد المتداولين على تحقيق أهدافهم الاستثمارية بأفضل طريقة ممكنة.</p>
              </div>
 
 
             <ul class="  flex flex-row  justify-center m-10 items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 mx-auto">
                 <h3>
-                    <a href="/about" class="hover:underline me-4 m-5 ">من نحن</a>
+                    <a href="/about" class="hover:underline me-4 m-5 text-xs md:text-md">من نحن</a>
                 </h3>
                
                 <h3>
-                    <a href="/terms" class="hover:underline m-5 "> الشروط والاحكام</a>
+                    <a href="/terms" class="hover:underline m-5 text-xs md:text-md"> الشروط والاحكام</a>
                  </h3>
 
                  <h3>
-                    <a href="https://wa.me/201063588999" class="hover:underline m-5 "> اتصل بنا</a>
+                    <a href="https://wa.me/201063588999" class="hover:underline m-5  text-xs md:text-md"> اتصل بنا</a>
                  </h3>
             </ul>
         </div>

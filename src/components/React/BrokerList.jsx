@@ -1,34 +1,31 @@
 import React, { Fragment } from "react";
-import { useStore } from "../../utils/Store.jsx"; // Import zustand store
+// import { useStore } from "../../utils/Store.jsx"; // Import zustand store
 import BestBroker from "../../components/Brokers/BestBroker.jsx";
 import ContentBroker from "./ContentBroker.jsx";
 import Button from "./Button.jsx";
 import CompanyService from "../../components/CompanyService.jsx";
 
-const BrokerList = ({ name }) => {
+const BrokerList = ({ name, brokers }) => {
   // Accessing `message` and `data` from the zustand store
-  const { data } = useStore();
-
-  console.log("Data from store:", data);
+  // const { data } = useStore();
 
   // Handle loading state
-  if (data.length === 0) {
+  if (brokers.length === 0) {
     return <p>Loading broker Details from CRM Sytem...</p>;
   }
 
   // Handle empty data case
-  if (!Array.isArray(data)) {
-    console.error("Data is not an array:", data);
+  if (!Array.isArray(brokers)) {
+    console.error("Data is not an array:", brokers);
     return <p>Error: Data is not in the expected format</p>;
   }
 
   return (
     <Fragment>
       <div>
-        {data[0]["Brokers"].map((broker, index) => {
+        {brokers[0]["Brokers"].map((broker, index) => {
           if (broker.title === name) {
             // Replace the source link for image
-            console.log(broker.name === name);
 
             // Return a JSX element with the updated source
             return (
@@ -41,6 +38,7 @@ const BrokerList = ({ name }) => {
                     <div className="main-company flex flex-col  p-12 md:flex-row-reverse justify-between  items-center ">
                       <div className="company-img md:min-w-16 w-1/2 md:w-1/6 mb-6">
                         <img
+                          fetchpriority="high"
                           className="w-full  rounded md:rounded-[7.5rem] shadow-md m-auto  text-center"
                           src={`https://alltargeting.com/${broker.logo}`}
                           alt="Company"
@@ -50,13 +48,15 @@ const BrokerList = ({ name }) => {
                         <h3 className="font-bold text-xl mb-2">
                           تقييم شركة {broker.title}
                         </h3>
-                        <p className="mb-3">{broker.company_description}</p>
+                        <p className="mb-3 text-xs md:text-md">
+                          {broker.company_description}
+                        </p>
                       </div>
                       <div className="create-account w-52 h-12 border-none rounded-md">
                         <div className="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
                           <Button
                             href={`${broker.affiliate_link}`}
-                            className="flex justify-center w-full min-w-52 sm:w-max"
+                            className="flex justify-center w-full min-w-42 sm:w-max"
                             variant="primary"
                             text="فتح حساب"
                           />

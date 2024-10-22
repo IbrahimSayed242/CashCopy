@@ -2,10 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/shared/Container.astro";
 import Paragaph from "../components/shared/Paragraph.astro";
-import Title from "../components/shared/Title.astro";
+
+// Canonical URL
+const path = Astro.url.href
 ---
 
-<Layout title="من نحن">
+<Layout title="من نحن" path={path} description="">
 
 
     <div class="mt-20 dark:text-white" dir="rtl"> 

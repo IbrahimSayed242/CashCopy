@@ -3,7 +3,6 @@ import React, { Fragment } from "react";
 import "../../../public/css/contentbroker.css";
 
 const ContentBroker = ({ broker }) => {
-  console.log(Object.keys(broker));
   const indexStyle = {
     border: "1px solid #14b8a6",
   };
@@ -16,37 +15,37 @@ const ContentBroker = ({ broker }) => {
     borderButton: "1px solid #ddd",
   };
   // function to create index for article
-  function addLink() {
-    if (Object.keys(broker).length > 0) {
-      const h2Contaienr = document.querySelectorAll("h2");
-      const indexHeads = document.getElementById("index");
+  // function addLink() {
+  //   if (Object.keys(broker).length > 0) {
+  //     const h2Contaienr = document.querySelectorAll("h2");
+  //     const indexHeads = document.getElementById("index");
 
-      h2Contaienr.forEach((h2, index) => {
-        h2.setAttribute("id", index);
+  //     h2Contaienr.forEach((h2, index) => {
+  //       h2.setAttribute("id", index);
 
-        const a = document.createElement("a");
+  //       const a = document.createElement("a");
 
-        a.setAttribute("href", `#${index}`);
-        a.style = "display: block";
-        a.style.padding = "10px";
-        a.innerText = h2.innerText;
-        indexHeads.appendChild(a);
-      });
-    }
-  }
+  //       a.setAttribute("href", `#${index}`);
+  //       a.style = "display: block";
+  //       a.style.padding = "10px";
+  //       a.innerText = h2.innerText;
+  //       indexHeads.appendChild(a);
+  //     });
+  //   }
+  // }
 
-  setTimeout(() => {
-    addLink();
-  }, 0);
+  // setTimeout(() => {
+  //   addLink();
+  // }, 0);
 
   return (
     <Fragment>
       {/* Render broker.text_editor_jtjm as HTML content */}
       <div className="flex flex-col md:flex-row-reverse ">
-        <div
+        {/* <div
           dir="rtl"
           id="index"
-          className="lg:mr-0 md:w-1/4 h-max align-top mt-32"
+          className="lg:mr-0 md:w-1/4 h-max align-top mt-32 hidden md:block dark:text-white"
           style={indexStyle}
         >
           <span
@@ -55,9 +54,9 @@ const ContentBroker = ({ broker }) => {
           >
             الفهرس
           </span>
-        </div>
+        </div> */}
         <div
-          className="px-3 lg:px-5 md:w-3/4  m-auto"
+          className="px-3 lg:px-5 md:w-3/4 m-auto"
           dangerouslySetInnerHTML={{
             __html: broker.text_editor_jtjm,
           }}

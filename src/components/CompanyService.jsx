@@ -1,11 +1,6 @@
 import React, { Fragment } from "react";
-import { useStore } from "../utils/Store.jsx"; // Import zustand store
 
 const CompanyService = ({ nameBroker }) => {
-  const { data } = useStore();
-
-  console.log(nameBroker);
-
   const detailsStyle = {
     padding: "0",
     alignItems: "center",
@@ -41,14 +36,14 @@ const CompanyService = ({ nameBroker }) => {
 
   return (
     <Fragment>
-      <div className="company-info w-11/12 m-auto">
+      <div className="company-info w-11/12 m-auto dark:text-white">
         <div className="article-1 text-right">
-          <h1 className="article-head text-2xl my-5">
+          <h1 className="dark:text-white article-head text-lg md:text-2xl my-5">
             تفاصيل ومعلومات شركة {nameBroker}
           </h1>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
-          <div className="flex justify-end p-7">
+          <div className="flex justify-center md:justify-end p-7 w-full md:w-1/3 lg:w-1/5">
             <span>منصات التداول</span>
             <span className="material-symbols-outlined" style={iconStyle}>
               shopping_cart
@@ -62,7 +57,7 @@ const CompanyService = ({ nameBroker }) => {
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
-          <div className="flex justify-end p-7">
+          <div className="flex justify-center md:justify-end p-7 w-full md:w-1/3 lg:w-1/5">
             <span>منتجات التداول</span>
             <span className="material-symbols-outlined" style={iconStyle}>
               currency_pound
@@ -76,7 +71,7 @@ const CompanyService = ({ nameBroker }) => {
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
-          <div className="flex justify-end p-7">
+          <div className="flex justify-center md:justify-end p-7 w-full md:w-1/3 lg:w-1/5">
             <span>طرق الإيداع والسحب</span>
             <span className="material-symbols-outlined" style={iconStyle}>
               paid
@@ -90,7 +85,7 @@ const CompanyService = ({ nameBroker }) => {
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
-          <div className="flex justify-end p-7">
+          <div className="flex justify-center md:justify-end p-7 w-full md:w-1/3 lg:w-1/5">
             <span>حد الإيداع</span>
             <span className="material-symbols-outlined" style={iconStyle}>
               payments
@@ -104,7 +99,7 @@ const CompanyService = ({ nameBroker }) => {
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
-          <div className="flex justify-end p-7">
+          <div className="flex justify-center md:justify-end p-7 w-full md:w-1/3 lg:w-1/5">
             <span>التراخيص</span>
             <span className="material-symbols-outlined" style={iconStyle}>
               description

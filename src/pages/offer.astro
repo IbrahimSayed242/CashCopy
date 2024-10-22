@@ -1,10 +1,13 @@
 ---
 import Popup from "../components/elements/popup.astro"
 import Layout from "../layouts/Layout.astro";
-import   Back from "../components/sections/Back.astro";
+import Back from "../components/sections/Back.astro";
+
+// Canonical URL
+const path = Astro.url.href
 ---
 
-<Layout title="CouponsCopy" >
+<Layout title="CouponsCopy" path={path} description="">
 
 <container dir="rtl">
         <header   class="  pt-20 px-5 pb-10 relative     ">
@@ -30,11 +33,11 @@ import   Back from "../components/sections/Back.astro";
           
                 <div class=" xl:absolute   lg:w-[500px]  xl:-left-52 xl:-top-40 z-10 ">
              
-              <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716573687/copy/cards/features-04_ifuqir.png"> 
+              <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716573687/copy/cards/features-04_ifuqir.png"> 
                 </div>
                 <div class="card--2 w-full max-w-xs xl:flex items-center bg-white shadow-xl xl:shadow-teal-500 rounded-3xl w-80 p-5  lg:row-start-1 lg:row-end-2 z-10 hidden ">
                   <div class="w-20 h-20 border border-gray-200 rounded-2xl m-2">
-                    <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1702984465/copy/evest_r3kf9y.webp" alt="Elise Doe" class="rounded-2xl object-cover w-full h-full">
+                    <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1702984465/copy/evest_r3kf9y.webp" alt="Elise Doe" class="rounded-2xl object-cover w-full h-full">
                   </div>
                   <div class="ml-4">
                     <h2 class="text-lg text-gray-900 font-semibold capitalize">evest</h2>
@@ -90,7 +93,7 @@ import   Back from "../components/sections/Back.astro";
           
               <section class="relative lg:min-h-[1000px] pt-24 pb-10 sm:pt-32 sm:pb-16 lg:pb-24">
                   <div class=" ">
-                      <img class="w-[1000px] lg:block mx-auto" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717489127/copy/cards/credit-cards_nn0ofz.webp" alt="offer card" />
+                      <img loading="lazy"  class="w-[1000px] lg:block mx-auto" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717489127/copy/cards/credit-cards_nn0ofz.webp" alt="offer card" />
                      
                   </div>
           
@@ -107,7 +110,7 @@ import   Back from "../components/sections/Back.astro";
                         
                           <p class="mt-5 text-base text-white sm:text-xl">  واحصل على افضل العروض والمميزات الاضافية .</p>
           
-                          <a href="/coupons" title="" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-white transition-all duration-200 bg-teal-600 rounded-lg sm:mt-16 hover:bg-teal-700 focus:bg-teal-700" role="button">
+                          <a href="/coupons" class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-white transition-all duration-200 bg-teal-600 rounded-lg sm:mt-16 hover:bg-teal-700 focus:bg-teal-700" role="button">
                 
                             
                          معرفة المزيد 
@@ -144,7 +147,7 @@ import   Back from "../components/sections/Back.astro";
           
           
           <div dir="rtl" class="flex lg:flex-row md:w-5/6  w-[95%] mx-auto z-50 flex-col  bg-teal-900/80 p-10 rounded-3xl shadow-2xl relative  "> 
-            <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716195175/copy/cards/all_trg5wx.webp" class="absolute bottom-0 left-0 w-[700px] z-0 xl:opacity-90 opacity-30 overflow-hidden" alt="offer" >
+            <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716195175/copy/cards/all_trg5wx.webp" class="absolute bottom-0 left-0 w-[700px] z-0 xl:opacity-90 opacity-30 overflow-hidden" alt="offer" >
           <div class="relative  my-10 flex   flex-col  px-2  md:px-10 lg:flex-row   my-auto  ">
           
           
@@ -213,7 +216,7 @@ import   Back from "../components/sections/Back.astro";
           
           <div class="py-10 w-5/6 mx-auto relative">  
           
-            <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716195175/copy/cards/all_trg5wx.webp" class="absolute bottom-0 left-0 w-full z-0   opacity-20 overflow-hidden" alt="offer" >
+            <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716195175/copy/cards/all_trg5wx.webp" class="absolute bottom-0 left-0 w-full z-0   opacity-20 overflow-hidden" alt="offer" >
           
           <div class="py-3 flex items-center text-sm text-gray-800 before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-neutral-600 dark:after:border-neutral-600"> 
           
@@ -233,9 +236,9 @@ import   Back from "../components/sections/Back.astro";
             </a>
           
               <p class="absolute cursor-pointer  hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الثروة  الشاملة </p>
-                   <img  class="sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091598/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n_xckhry.webp"   >
+                   <img loading="lazy"   class="sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091598/copy/cards/%D8%A7%D9%84%D8%AB%D8%B1%D9%88%D8%A9_%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9_rdhx3n_xckhry.webp"   >
           
-              <img  class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211904/copy/cards/%D8%A7%D9%84%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%86%D9%84%D8%A9_p9msbu.webp"    >
+              <img loading="lazy"   class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211904/copy/cards/%D8%A7%D9%84%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%86%D9%84%D8%A9_p9msbu.webp"    >
             </div>
               
           
@@ -247,9 +250,9 @@ import   Back from "../components/sections/Back.astro";
           عرض الكوبون
             </a>
                   <p class="absolute  hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون ارباح الــنخبة </p>
-              <img  class=" sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091599/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h_fm93vg.webp"   >
+              <img loading="lazy"   class=" sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091599/copy/cards/%D9%83%D8%A8%D9%88%D9%86_%D8%A7%D8%B1%D8%A8%D8%A7%D8%AD_%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_n9bq2h_fm93vg.webp"   >
           
-              <img  class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_cwr9te.webp"  >
+              <img loading="lazy"   class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9_cwr9te.webp"  >
             </div>
             
              <div data-text="" style="--r:5;" class="glass">
@@ -259,10 +262,10 @@ import   Back from "../components/sections/Back.astro";
           >
           عرض الكوبون
             </a>
-                  <p  class="absolute hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الربح المتقدم</p>
-              <img  class="  sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy_sauh9s.webp"   >
+                <p  class="absolute hidden sm:block  text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الربح المتقدم</p>
+              <img loading="lazy"   class="  sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85_bhcpjy_sauh9s.webp"   >
           
-              <img class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211902/copy/cards/aaaa_gcdz78.webp"   >
+              <img loading="lazy"  class="hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211902/copy/cards/aaaa_gcdz78.webp"   >
             </div>
             
             
@@ -274,8 +277,8 @@ import   Back from "../components/sections/Back.astro";
           عرض الكوبون
             </a>
                   <p class="absolute hidden sm:block   z-10 text-sm md:text-2xl bg-teal-800/80 text-white p-2"> كوبون الربح الاساسي</p>
-              <img  class="sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat_ebfyix.webp"   >
-             <img  class="rotate-180 z-0  hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_qe2p8t.webp "   >
+              <img loading="lazy"   class="sm:hidden  w-[210px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1718091596/copy/cards/%D9%83%D9%88%D8%A8%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%A8%D8%AD_%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_ansvat_ebfyix.webp"   >
+             <img loading="lazy"   class="rotate-180 z-0  hidden sm:block w-[110px] md:w-[150px] lg:w-[200px]" src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716211901/copy/cards/%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A_qe2p8t.webp "   >
             </div>
           </div>
           </div>
@@ -310,7 +313,7 @@ import   Back from "../components/sections/Back.astro";
                               <!-- Logo -->
                               <div class="mb-2">
                 
-                                 <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1703669065/copy/evest_xjj0rq.jpg" class="w-32 my-2 rounded-2xl" >
+                                 <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1703669065/copy/evest_xjj0rq.jpg" class="w-32 my-2 rounded-2xl" >
                               </div>
                               <!-- Product name -->
                               <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة ايفست</h3>
@@ -368,7 +371,7 @@ import   Back from "../components/sections/Back.astro";
                               <div class="mb-2">
                                  
                                 
-                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717270793/copy/252x160px_alrq0d.png" class="w-36 my-2 rounded-2xl" >
+                               <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717270793/copy/252x160px_alrq0d.png" class="w-36 my-2 rounded-2xl" >
                               </div>
                               <!-- Product name -->
                               <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة اكسنس</h3>
@@ -422,7 +425,7 @@ import   Back from "../components/sections/Back.astro";
                               <div class="mb-2">
                                  
                                 
-                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717271097/copy/Logo_FBS_252x160_prblu5.png" class="w-36 my-2 rounded-2xl" >
+                               <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717271097/copy/Logo_FBS_252x160_prblu5.png" class="w-36 my-2 rounded-2xl" >
                               </div>
                               <!-- Product name -->
                               <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة FBS</h3>
@@ -478,7 +481,7 @@ import   Back from "../components/sections/Back.astro";
                               <div class="mb-2">
                                  
                                 
-                               <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717271812/copy/1729_nv7d12.jpg" class="w-36 my-2 rounded-2xl" >
+                               <img loading="lazy"  src="https://res.cloudinary.com/dt9k74vof/image/upload/v1717271812/copy/1729_nv7d12.jpg" class="w-36 my-2 rounded-2xl" >
                               </div>
                               <!-- Product name -->
                               <h3 class="text-xl font-extrabold text-indigo-50 leading-snug mb-2">شركة XM</h3>

@@ -3,10 +3,12 @@ import Layout from "../layouts/Layout.astro";
 //Fetch content from database
 const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts?categories=1");
 const posts = await res.json();
-console.log(posts)
+
+// Canonical URL
+const path = Astro.url.href
 ---
 
-<Layout title="المدونة">
+<Layout title="المدونة" path={path} description="صفحة المقالات يتم عرض فيها جميع المواضيع الخاصة بالتداول">
 <section class="blog mt-52 container text-right">
     <div class="p-6 underline text-emerald-500">
         <h1 class="lg:text-4xl dark:text-white">المقالات</h1>
@@ -16,11 +18,11 @@ console.log(posts)
             posts.map((post:any) => (
                
                 <div class="card m-2 overflow-hidden">
-                    <a href={`articles/${post.slug}`}><img src={`${post.yoast_head_json.og_image[0].url}`} alt=""/></a> 
+                    <a href={`articles/${post.slug}`}><img loading="lazy"  src={`${post.yoast_head_json.og_image[0].url}`} alt="thumble image"/></a> 
                     <div class="p-2">
                         {/* <span class="text-sm w-20 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[0]}</span>
                         {post.yoast_head_json.schema["@graph"][0].articleSection[1] && <span class="w-14 rounded-md text-white bg-emerald-500 p-1">{post.yoast_head_json.schema["@graph"][0].articleSection[1]}</span> }            */}
-                        <h2><a href={`articles/${post.slug}`} set:html={post.title.rendered} class="font-bold text-emerald-700 my-4  dark:text-white"></a></h2>
+                        <h2><a href={`articles/${post.slug}`} class="font-bold text-emerald-700 my-4  dark:text-white">{post.title.rendered}</a></h2>
                         <p class=" dark:text-white" set:html={post.modified}></p>
                     </div>
                 </div>

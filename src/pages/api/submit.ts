@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import axios from 'axios';
+import axios from "axios";
 
 const geoip_api = "30eb1316e4ce4c6dafb0af0a930ba6fe";
 
@@ -30,7 +30,9 @@ export const POST: APIRoute = async ({ request }) => {
     let country = data.get("user_country");
     if (!country && user_ip) {
       try {
-        const geoResponse = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${geoip_api}&ip=${user_ip}`);
+        const geoResponse = await axios.get(
+          `https://api.ipgeolocation.io/ipgeo?apiKey=${geoip_api}&ip=${user_ip}`
+        );
         country = geoResponse.data.country_name;
       } catch (geoError) {
         console.error("Error fetching country from IP:", geoError.message);
@@ -56,28 +58,41 @@ export const POST: APIRoute = async ({ request }) => {
 
     console.log("formData prepared:", formData);
 
-    const endpoint1 = 'https://alltargeting.com/api/method/heero.api.leads.flagedu_lead';
+    const endpoint1 =
+      "https://alltargeting.com/api/method/heero.api.leads.flagedu_lead";
 
     try {
       const response1 = await axios.post(endpoint1, formData);
       console.log("Response from endpoint1:", response1.data);
       return new Response(
-        JSON.stringify({ success: true, responseData: response1.data, formData: formData }),
+        JSON.stringify({
+          success: true,
+          responseData: response1.data,
+          formData: formData,
+        }),
         { status: 200 }
       );
     } catch (error: any) {
-      console.error('Error occurred with endpoint1:', error.message);
+      console.error("Error occurred with endpoint1:", error.message);
       return new Response(
-        JSON.stringify({ success: false, message: error.message, formData: formData }),
+        JSON.stringify({
+          success: false,
+          message: error.message,
+          formData: formData,
+        }),
         { status: 500 }
       );
     }
   } catch (error: any) {
-    console.error('Error occurred:', error.message);
-    console.error('formData:', formData);
+    console.error("Error occurred:", error.message);
+    console.error("formData:", formData);
 
     return new Response(
-      JSON.stringify({ success: false, error: error.message, formData: formData }),
+      JSON.stringify({
+        success: false,
+        error: error.message,
+        formData: formData,
+      }),
       { status: 500 }
     );
   }

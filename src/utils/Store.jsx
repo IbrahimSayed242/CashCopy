@@ -1,13 +1,7 @@
 import React from "react";
-import { create } from "zustand";
+// import { create } from "zustand";
 
 // Create a zustand store outside the fetch function
-const useStore = create((set) => ({
-  message: "Hello from Hisham!",
-  data: [], // Initially, no data
-  setMessage: (newMessage) => set({ message: newMessage }),
-  setData: (newData) => set({ data: newData }), // Store setter for data
-}));
 
 // Fetch data before rendering the page
 async function fetchData() {
@@ -36,6 +30,6 @@ async function fetchData() {
 }
 
 // Immediately call the fetchData function
-fetchData();
+// fetchData();
 
-export { useStore };
+// export { useStore };

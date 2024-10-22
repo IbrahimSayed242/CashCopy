@@ -8,9 +8,11 @@ import CTA from "../components/sections/CTA.astro";
 import Form from "../components/vue/Form.vue";
 import Brokers  from "../components/sections/Brokers.astro";
 
+// Canonical URL
+const path = Astro.url.href
 ---
 
-<Layout title="CouponsCopy">
+<Layout title="CouponsCopy" path={path}  description="">
     <main class="flex flex-col gap-y-10 md:gap-y-32 overflow-hidden ">
            
         <Hero3 client:only="vue" /> 

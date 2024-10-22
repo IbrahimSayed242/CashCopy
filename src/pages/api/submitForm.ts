@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import axios from 'axios';
+import axios from "axios";
 
 export const POST: APIRoute = async ({ request }) => {
   // Ensure you capture and log errors properly
@@ -15,7 +15,7 @@ export const POST: APIRoute = async ({ request }) => {
     const ci = data.get("ci");
     const ani = data.get("ani");
     const ip = data.get("user_ip");
-    
+
     // Validate the data
     if (!firstName || !lastName || !phone || !email) {
       return new Response(
@@ -33,10 +33,9 @@ export const POST: APIRoute = async ({ request }) => {
       uai: uai,
       ci: ci,
       ani: ani,
-      interest : "Coupons Copy",
-      source : afp,
-      ip : ip
-
+      interest: "Coupons Copy",
+      source: afp,
+      ip: ip,
     };
     const formData2 = {
       firstName: firstName,
@@ -47,34 +46,42 @@ export const POST: APIRoute = async ({ request }) => {
       uai: uai,
       ci: 14,
       ani: ani,
-      interest : "Coupons Copy",
-      source : afp,
-      ip : ip,
-      "usa_citizen": false,
-      "password": "@Flagedu2024",
-
+      interest: "Coupons Copy",
+      source: afp,
+      ip: ip,
+      usa_citizen: false,
+      password: "@Flagedu2024",
     };
     // Make API requests
-    const endpoint1 = 'https://alltargeting.com/api/method/heero.api.flagedu_lead';
-    const endpoint2 = 'https://api.flagedu.com/api/v1/affiliate/public/exness/signup/';
+    const endpoint1 =
+      "https://alltargeting.com/api/method/heero.api.flagedu_lead";
+    const endpoint2 =
+      "https://api.flagedu.com/api/v1/affiliate/public/exness/signup/";
     //console log formdata2
     console.log(`Endpoint 2: ${endpoint2}`);
-    console.log('FormData2:', formData2);
+    console.log("FormData2:", formData2);
     const response1 = await axios.post(endpoint2, {
       ...formData2,
-    })
-    
+    });
 
     return new Response(
-      JSON.stringify({ success: true, responses: [response1.data] ,formData2:formData2}),
+      JSON.stringify({
+        success: true,
+        responses: [response1.data],
+        formData2: formData2,
+      }),
       { status: 200 }
     );
   } catch (error: any) {
-      // Log formData2 and error in case of an error
-      console.error('Error occurred:', error.message);
-      console.error('FormData2:', formData2);
+    // Log formData2 and error in case of an error
+    console.error("Error occurred:", error.message);
+    console.error("FormData2:", formData2);
     return new Response(
-      JSON.stringify({ success: false, error: error.message,formData2: formData2 }),
+      JSON.stringify({
+        success: false,
+        error: error.message,
+        formData2: formData2,
+      }),
       { status: 500 }
     );
   }

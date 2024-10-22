@@ -6,8 +6,9 @@
     <!-- SVG and other elements remain the same -->
     <div class="mx-auto max-w-screen-2xl px-4 md:px-8 relative">
       <img
+        loading="lazy"
         src="https://res.cloudinary.com/dt9k74vof/image/upload/v1709787333/download_kg6b0b.png"
-        class="absolute top-10 right-0 z-0"
+        class="hidden md:block absolute top-10 right-0 z-0"
         alt="bg-form"
       />
       <div
@@ -15,12 +16,15 @@
       >
         <div class="mb-4 sm:mb-8 lg:mb-0">
           <h3
-            class="text-center text-xl font-bold sm:text-2xl lg:text-3xl dark:text-white mb-4 text-emerald-800 bg-inherit"
+            class="text-center text-md md:text-xl font-bold lg:text-3xl dark:text-white mb-4 text-emerald-800 bg-inherit"
             dir="rtl"
           >
             {{ "أحصل علي قائمة بأفضل الوسطاء" }}
           </h3>
-          <p class="text-center text-white dark:text-gray-100" dir="rtl">
+          <p
+            class="text-center text-md md:text-lg text-white dark:text-gray-100"
+            dir="rtl"
+          >
             {{ "اترك بريدك لتحصل علي القائمة الخاصة بك" }}
           </p>
         </div>
@@ -98,7 +102,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import { useToast } from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
 

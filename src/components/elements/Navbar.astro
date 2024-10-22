@@ -1,7 +1,6 @@
 ---
 import BtnLink2 from "../shared/BtnLink2.astro";
 import Container from "../shared/Container.astro";
-import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
 ---
 
 <header class=" inset-x-0 top-0 z-[999] py-6 bg-emerald-600/90 dark:bg-emerald-900 fixed">
@@ -11,17 +10,17 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
             <div class="max-w-[200px] md:max-w-[150px] inline-flex relative">
                 <a href="/" class="relative flex items-center w-full  gap-2">
                     <div class="relative  mr-4 md:w-60 w-full  flex ">
-                        <img src="https://res.cloudinary.com/dt9k74vof/image/upload/v1716360516/copy/cards/ikazgtckezhn6h8askic.webp" alt="CouponsCopy"  class="w-full h-full">
+                        <img loading="lazy" src="https://res.cloudinary.com/dz2tulh9p/image/upload/v1729501659/image_xgxnha.webp" alt="CouponsCopy"  class="w-full h-full">
                     </div>  
                 </a>
             </div>
 
             <div data-nav-overlay aria-hidden="true" class="fixed hidden inset-0 lg:!hidden bg-box-bg bg-opacity-50 backdrop-filter backdrop-blur-xl"></div>
-            <div data-navbar class="overflow-hidden overflow-visible flex h-0 lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-10 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 lg:bg-transparent border-x border-x-box-border lg:border-x-0">
+            <div data-navbar class="overflow-hidden md:overflow-visible flex h-0 lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-10 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 lg:bg-transparent border-x border-x-box-border lg:border-x-0">
                 <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-5 text-xs text-heading-2 w-full lg:justify-center lg:items-center mt-3">
                     <li><a href="/" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-md">الرئيسية</a></li>
                     <li><a href="/brokers" class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-md">الوسطاء</a></li>
-                    <li id="dropdwon-button"><a  class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-xs">افضل الوسطاء </a>
+                    <li id="dropdwon-button"><span  class="Download-button duration-300 font-medium ease-linear hover:text-emerald-200 py-3  md:text-xs lg:text-xs">افضل الوسطاء </span>
                         <div id="dropdown" class="divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                             <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                               <li>
@@ -48,11 +47,10 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
                 <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
                     <BtnLink2 text="ابدأ الآن " href="https://wa.me/201063588999" className="flex justify-center w-full sm:w-max" variant="primary"/>
                 </div>
-            </div>
-            
+            </div>     
 
             <div class="min-w-max flex items-center gap-x-3">
-                <button data-switch-theme class="outline-none flex relative text-heading-2 rounded-full p-2 lg:p-3 border border-box-border ">
+                <!-- <button data-switch-theme class="outline-none flex relative text-heading-2 rounded-full p-2 lg:p-3 border border-box-border ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:flex hidden">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                       </svg>
@@ -62,7 +60,7 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
                                     
                     <span class="sr-only">switch theme</span>
                 </button>
-                
+                 -->
                 <button data-toggle-nav data-open-nav="false" class="lg:hidden lg:invisible outline-none w-7 h-auto flex flex-col relative">
                     <span id="line1" class="w-6 h-0.5 rounded-full bg-heading-2 transition-all duration-300 ease-linear"></span> 
                     <span id="line2" class="w-6 origin-center  mt-1 h-0.5 rounded-ful bg-heading-2 transition-all duration-300 ease-linear"></span> 
@@ -215,7 +213,7 @@ import ListbestBroker from "../Brokers/ListBestBrokers.jsx";
     #dropdown{
     position: absolute;
     width: 25%;
-    right: 19%;
+    right: 21%;
     z-index: 99999;
     display: none;    
     background-color: rgb(52 211 153);

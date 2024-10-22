@@ -9,11 +9,11 @@ const BestBroker = ({ broker }) => {
     <div className=" bg-[#f8f8f8] p-5 my-5 rounded-md md:rounded-b-3xl shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center ">
       <div className="mb-5 text-center flex flex-col lg:flex-row-reverse items-center">
         <div className="text-center lg:text-right lg:ml-4 w-full lg:w-1/2">
-          <h3 className="text-2xl text-[#333]">
+          <h3 className="text-lg md:text-2xl text-[#333]">
             تقييم شركة {broker.title}هو
             <span className="font-bold"> {broker.total_rate}</span>
           </h3>
-          <p className="text-sm text-[#666] mt-3">
+          <p className="hidden md:block text-sm text-[#666] mt-3">
             بناءً على تقييم خبراء موقع كوبون كوبي تُبين أن الشركة موثوقة ومرخصة
             بأكثر من سبع تراخيص مالية علمية. وتقدم منصات تداول متنوعة تلبّي
             احتياجات المتداولين. تلتزم بمعايير تنظيمية صارمة وتوفر عدد عملاء ضخم
@@ -22,15 +22,17 @@ const BestBroker = ({ broker }) => {
           </p>
         </div>
         <div className="rating-summary flex flex-col lg:flex-row lg:justify-around my-3">
-          <div className=" mb-4 text-lg lg:text-5xl text-[#333] text-center">
+          <div className=" m-3 text-sm md:text-md  text-[#333] text-center">
             <span className="border-r-solid border-r-2	border-emerald-500 mx-2 px-4 text-xl font-bold">
               {broker.total_rate}
             </span>
-            <span className="text-xl ">نتيجة التقييم</span>
+            <span>نتيجة التقييم</span>
           </div>
           <div className="rating-details grid grid-cols-2 gap-2.5">
             <div className="rating-item bg-white p-4 rounded-md shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center">
-              <p className="text-sm text-[#333] mb-3">تنوع منصات التداول</p>
+              <p className="text-xs md:text-md text-[#333] mb-3">
+                تنوع منصات التداول
+              </p>
               <div className="rating-stars flex justify-center">
                 <span className="mr-1 text-xl font-bold">
                   {broker.trading_platforms * 5}
@@ -52,7 +54,7 @@ const BestBroker = ({ broker }) => {
               </div>
             </div>
             <div className="rating-item bg-white p-4 rounded-md shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center">
-              <p className="text-sm text-[#333] mb-3">
+              <p className="text-xs md:text-md text-[#333] mb-3">
                 الامان والتراخيص المالية
               </p>
               <div className="rating-stars flex justify-center">
@@ -76,7 +78,9 @@ const BestBroker = ({ broker }) => {
               </div>
             </div>
             <div className="rating-item bg-white p-4 rounded-md shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center">
-              <p className="text-sm text-[#333] mb-3">الرسوم المتاحة للتداول</p>
+              <p className="text-xs md:text-md text-[#333] mb-3">
+                الرسوم المتاحة للتداول
+              </p>
               <div className="rating-stars flex justify-center">
                 <span className="mr-1 text-xl font-bold">
                   {broker.fees * 5}
@@ -98,7 +102,9 @@ const BestBroker = ({ broker }) => {
               </div>
             </div>
             <div className="rating-item bg-white p-4 rounded-md shadow-[0px 0px 5px rgba(0, 0, 0, 0.1)] text-center">
-              <p className="text-sm text-[#333] mb-3">الأصول المتاحة للتداول</p>
+              <p className="text-xs md:text-md text-[#333] mb-3">
+                الأصول المتاحة للتداول
+              </p>
               <div className="rating-stars flex justify-center">
                 <span className="mr-1 text-xl font-bold">
                   {broker.assets * 5}
