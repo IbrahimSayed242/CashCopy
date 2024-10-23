@@ -1,14 +1,10 @@
 import React, { Fragment } from "react";
-// import { useStore } from "../../utils/Store.jsx"; // Import zustand store
 import BestBroker from "../../components/Brokers/BestBroker.jsx";
 import ContentBroker from "./ContentBroker.jsx";
 import Button from "./Button.jsx";
-import CompanyService from "../../components/CompanyService.jsx";
+import CompanyService from "./CompanyService.jsx";
 
 const BrokerList = ({ name, brokers }) => {
-  // Accessing `message` and `data` from the zustand store
-  // const { data } = useStore();
-
   // Handle loading state
   if (brokers.length === 0) {
     return <p>Loading broker Details from CRM Sytem...</p>;
@@ -25,8 +21,6 @@ const BrokerList = ({ name, brokers }) => {
       <div>
         {brokers[0]["Brokers"].map((broker, index) => {
           if (broker.title === name) {
-            // Replace the source link for image
-
             // Return a JSX element with the updated source
             return (
               <div key={index}>
@@ -35,7 +29,7 @@ const BrokerList = ({ name, brokers }) => {
                     style={{ backgroundColor: "#ddd" }}
                     className="lg:rounded-full rounded-b-3xl"
                   >
-                    <div className="main-company flex flex-col  p-12 md:flex-row-reverse justify-between  items-center ">
+                    <div className="main-company flex flex-col  p-12 md:flex-row-reverse justify-between  items-center">
                       <div className="company-img md:min-w-16 w-1/2 md:w-1/6 mb-6">
                         <img
                           fetchpriority="high"
@@ -56,7 +50,7 @@ const BrokerList = ({ name, brokers }) => {
                         <div className="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
                           <Button
                             href={`${broker.affiliate_link}`}
-                            className="flex justify-center w-full min-w-42 sm:w-max"
+                            className="flex justify-center lg:min-w-48 w-44"
                             variant="primary"
                             text="فتح حساب"
                           />
@@ -68,7 +62,7 @@ const BrokerList = ({ name, brokers }) => {
                 <BestBroker broker={broker} />
                 <CompanyService nameBroker={name} />
                 {broker.text_editor_jtjm !== null && (
-                  <ContentBroker broker={broker} />
+                  <ContentBroker broker={broker} client:only />
                 )}
               </div>
             );

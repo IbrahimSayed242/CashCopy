@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 
 import About_card1 from "../../components/sections/About_card1.astro";
-import CTA from "../../components/sections/CTA.astro";
 import Coupn1 from "../../components/sections/Coupn1.astro";
+import Form from "../../components/vue/Form.vue";
 
 
 ---
@@ -17,12 +17,9 @@ import Coupn1 from "../../components/sections/Coupn1.astro";
 <About_card1/>
 
 
+<Form client:only="vue" />
 
-<CTA />
-
-
-
-   
+ 
 </Layout>
 
 

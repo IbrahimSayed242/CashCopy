@@ -3,10 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/shared/Container.astro";
 import Paragaph from "../components/shared/Paragraph.astro";
 
+//astro URL
+const path = Astro.url.href
 ---
 
 
-<Layout title="الشروط والأحكام" description="">
+<Layout title="الشروط والأحكام" path={path} description="">
     <div class="my-20  " dir="rtl"> 
         <main class="flex flex-col gap-y-4 overflow-hidden dark:text-white ">
 

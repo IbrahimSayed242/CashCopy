@@ -90,9 +90,6 @@
                   </button>
                 </div>
               </form>
-              <p v-if="responseMessage" class="mt-4 text-red-500">
-                {{ responseMessage }}
-              </p>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import About_card3 from "../components/sections/About_card3.astro";
-import CTA from "../components/sections/CTA.astro";
 import HeroCoupon3 from "../components/sections/HeroCoupon3.astro";
 import Coupn3 from "../components/sections/Coupn3.astro";
+import CouponForm from "../components/vue/CouponForm.vue";
 
 
 // Canonical URL
@@ -21,8 +21,7 @@ const path = Astro.url.href
 <Coupn3/>
 
 
-<CTA />
-
+<CouponForm client:only="vue" />
 
 
    

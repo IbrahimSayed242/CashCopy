@@ -83,7 +83,6 @@ a {
 
 a:hover {
   color: var(--teal-700);
-  text-decoration: underline;
 }
 
 img {
@@ -148,4 +147,8 @@ th {
   color: white;
   padding: 2px 5px;
   border-radius: 3px;
+}
+#index a:hover {
+  background-color: #ddd;
+  text-decoration: dotted;
 }

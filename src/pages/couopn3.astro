@@ -1,16 +1,14 @@
 ---
 import Layout2 from "../layouts/Layout.astro";
-import Hero3 from "../components/sections/Hero3.astro";
-
 import About_card2 from "../components/sections/About_card2.astro";
-import CTA from "../components/sections/CTA.astro";
-
 import Coupn2 from "../components/sections/Coupn2.astro";
+import CouponForm from "../components/vue/CouponForm.vue";
 
-
+//astro url
+const path = Astro.url.href
 ---
 
-<Layout2 title="CouponsCopy">
+<Layout2 title="CouponsCopy" path={path} description="">
     <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
            
        
@@ -94,8 +92,7 @@ import Coupn2 from "../components/sections/Coupn2.astro";
 
 
 
-<CTA />
-
+<CouponForm client:only="vue" />
 
 
    

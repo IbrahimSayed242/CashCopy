@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 //import content styles
 import "../../../public/css/contentbroker.css";
 
@@ -15,46 +15,51 @@ const ContentBroker = ({ broker }) => {
     borderButton: "1px solid #ddd",
   };
   // function to create index for article
-  // function addLink() {
-  //   if (Object.keys(broker).length > 0) {
-  //     const h2Contaienr = document.querySelectorAll("h2");
-  //     const indexHeads = document.getElementById("index");
 
-  //     h2Contaienr.forEach((h2, index) => {
-  //       h2.setAttribute("id", index);
+  useEffect(() => {
+    addLink();
+  }, []);
 
-  //       const a = document.createElement("a");
+  function addLink() {
+    if (Object.keys(broker).length > 0) {
+      const h2Contaienr = document.querySelectorAll("h2");
+      const indexHeads = document.getElementById("index");
 
-  //       a.setAttribute("href", `#${index}`);
-  //       a.style = "display: block";
-  //       a.style.padding = "10px";
-  //       a.innerText = h2.innerText;
-  //       indexHeads.appendChild(a);
-  //     });
-  //   }
-  // }
+      h2Contaienr.forEach((h2, index) => {
+        h2.setAttribute("id", index);
 
-  // setTimeout(() => {
-  //   addLink();
-  // }, 0);
+        const a = document.createElement("a");
+
+        a.setAttribute("href", `#${index}`);
+        a.style = "display: block";
+        a.style.padding = "15px";
+        a.innerText = h2.innerText;
+        indexHeads.appendChild(a);
+
+        a.onclick = () => {
+          window.scrollY = window.scrollY - 140;
+        };
+      });
+    }
+  }
 
   return (
     <Fragment>
       {/* Render broker.text_editor_jtjm as HTML content */}
       <div className="flex flex-col md:flex-row-reverse ">
-        {/* <div
+        <div
           dir="rtl"
           id="index"
-          className="lg:mr-0 md:w-1/4 h-max align-top mt-32 hidden md:block dark:text-white"
+          className="lg:mr-0 md:w-1/4 h-max align-top mt-24 hidden md:block dark:text-white"
           style={indexStyle}
         >
           <span
-            className="m-0 text-center text-md md:text-lx lg:text-2xl block"
+            className="m-0 text-center text-md md:text-lx lg:text-2xl block border-b-2 border-emerald-500"
             style={indesDesgin}
           >
             الفهرس
           </span>
-        </div> */}
+        </div>
         <div
           className="px-3 lg:px-5 md:w-3/4 m-auto"
           dangerouslySetInnerHTML={{
