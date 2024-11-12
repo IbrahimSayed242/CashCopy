@@ -60,7 +60,7 @@ const BrokerList = ({ name, brokers }) => {
                   </div>
                 </div>
                 <BestBroker broker={broker} />
-                <CompanyService nameBroker={name} />
+                <CompanyService nameBroker={name} broker={broker} />
                 {broker.text_editor_jtjm !== null && (
                   <ContentBroker broker={broker} client:only />
                 )}

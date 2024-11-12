@@ -44,11 +44,11 @@ const CardCompany = ({ brokers }) => {
                     <ul className="mt-3 flex flex-col space-y-2">
                       <li className="flex">
                         {broker.minimum_deposit ? (
-                          <span className="material-symbols-outlined ml-2">
+                          <span className="material-symbols-outlined ml-2 text-emerald-600">
                             check_circle
                           </span>
                         ) : (
-                          <span className="material-symbols-outlined ml-2">
+                          <span className="material-symbols-outlined ml-2 text-red-600">
                             cancel
                           </span>
                         )}
@@ -59,11 +59,11 @@ const CardCompany = ({ brokers }) => {
                       </li>
                       <li className="flex">
                         {broker.demo_account ? (
-                          <span className="material-symbols-outlined ml-2">
+                          <span className="material-symbols-outlined ml-2 text-emerald-600">
                             check_circle
                           </span>
                         ) : (
-                          <span className="material-symbols-outlined ml-2">
+                          <span className="material-symbols-outlined ml-2 text-red-600">
                             cancel
                           </span>
                         )}
@@ -73,11 +73,11 @@ const CardCompany = ({ brokers }) => {
                       </li>
                       <li className="flex">
                         {broker.islamic_account ? (
-                          <span className="material-symbols-outlined ml-2">
+                          <span className="material-symbols-outlined ml-2 text-emerald-600">
                             check_circle
                           </span>
                         ) : (
-                          <span className="material-symbols-outlined ml-2">
+                          <span className="material-symbols-outlined ml-2 text-red-600">
                             cancel
                           </span>
                         )}

@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
 
-const CompanyService = ({ nameBroker }) => {
+const CompanyService = ({ nameBroker, broker }) => {
   const detailsStyle = {
     padding: "0",
     alignItems: "center",
   };
-
   const tradeButtonStyle = {
     minWidth: "100px",
-    height: "30px",
+    lineHeight: "32px",
     border: "none",
     borderRadius: "10px",
     backgroundColor: "#ddd",
@@ -34,6 +33,7 @@ const CompanyService = ({ nameBroker }) => {
     marginLeft: "8px",
   };
 
+  console.log(broker);
   return (
     <Fragment>
       <div className="company-info w-11/12 m-auto dark:text-white">
@@ -50,24 +50,22 @@ const CompanyService = ({ nameBroker }) => {
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
+            {/* {broker.platforms.map((platform) => {
+              <button style={tradeButtonStyle}>{platform}</button>;
+            })} */}
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
           <div className="flex justify-center md:justify-end p-7 w-full md:w-1/3 lg:w-1/5">
-            <span>منتجات التداول</span>
+            <span>الاصول المتاحة للتداول</span>
             <span className="material-symbols-outlined" style={iconStyle}>
               currency_pound
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
+            {/* {broker.available_assets_for_trading.map((assets, index) => (
+              <span key={index} style={tradeButtonStyle}>{assets}</span>
+            ))} */}
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
@@ -92,10 +90,7 @@ const CompanyService = ({ nameBroker }) => {
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
+            <span style={tradeButtonStyle}>{broker.minimum_deposit}</span>
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">

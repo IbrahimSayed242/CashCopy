@@ -6,7 +6,7 @@ interface Broker {
 }
 
 const API_URL =
-  "https://alltargeting.com/api/method/heero.flagedu.doctype.brokers.brokers.get_brokers";
+  "https://alltargeting.com/api/method/heero.flagedu.doctype.brokers.brokers.get_brokers_data";
 
 // Cache mechanism
 let cachedData: {

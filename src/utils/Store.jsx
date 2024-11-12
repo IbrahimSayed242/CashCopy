@@ -19,7 +19,7 @@ async function fetchData() {
     if (response.ok) {
       const result = await response.json();
       useStore.getState().setData([result.message] || []); // Update store with fetched data
-      // console.log('Fetched data:', result.message);
+      console.log("Fetched data:", result.message);
     } else {
       window.location.href = "/error500";
       console.error(`Failed to fetch data: ${response.status}`);
@@ -30,6 +30,6 @@ async function fetchData() {
 }
 
 // Immediately call the fetchData function
-// fetchData();
+fetchData();
 
 // export { useStore };

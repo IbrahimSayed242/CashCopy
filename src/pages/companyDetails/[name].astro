@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro"
 import BrokerList from "../../components/React/BrokerList.jsx"
 import Form from "../../components/vue/Form.vue"
+import ScrollToEndButton from "../../components/elements/ScrollButton.astro"
 
 // Type definitions
 interface Broker {
@@ -68,4 +69,5 @@ if (!matchingBroker) {
   <!-- start section form -->
   <Form client:only="vue" />
   <!-- end section form -->
+  <ScrollToEndButton />
 </Layout>

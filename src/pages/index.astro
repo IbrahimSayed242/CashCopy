@@ -6,7 +6,7 @@ import SimpleCard from "../components/cards/SimpleCard.astro";
 import BtnLink2 from "../components/shared/BtnLink2.astro";
 import Form from "../components/vue/Form.vue";
 
-
+import ScrollToEndButton from "../components/elements/ScrollButton.astro"
 // Fetch data before rendering the page
 import { getBrokers } from "../utils/StoreData"
 
@@ -148,7 +148,9 @@ const path = Astro.url.href
     
       <Form client:only="vue" />
       <!-- <Form2 /> -->
-     </section>
+
+    </section>
+    <ScrollToEndButton />
   </Layout> 
 <!--Start Css Section -->
 <style>

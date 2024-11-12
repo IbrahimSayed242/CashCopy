@@ -1,0 +1,40 @@
+---
+
+
+
+---
+
+<div>
+  <button
+  id="button"
+    style="position: fixed; text-2xl z-index: 9999; bottom: 20px; left: 20px; padding: 10px 10px; background-color: #1ea078; color: white; border: none; border-radius: 5px; cursor: pointer;"
+  >
+  <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+  </svg>
+  
+  </button>
+</div>
+
+<script>
+
+const button:any = document.getElementById("button");
+ button.style.display = "none"
+window.onscroll = () => {
+
+  //appare the button when scroll = 900px
+ if(window.scrollY >= 900) {
+
+    button.style.display = "block"
+ }else{
+    button.style.display = "none"
+ }
+}
+
+ // add function to scroll to top
+button.addEventListener('click', () => {
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+   
+  });
+</script>
