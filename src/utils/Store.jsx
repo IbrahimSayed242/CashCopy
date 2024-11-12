@@ -30,6 +30,6 @@ async function fetchData() {
 }
 
 // Immediately call the fetchData function
-fetchData();
+// fetchData();
 
 // export { useStore };
