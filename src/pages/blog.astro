@@ -5,7 +5,7 @@ const res = await fetch("https://arabporsa.com/wp-json/wp/v2/posts?categories=1"
 const posts = await res.json();
 
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <Layout title="المدونة" path={path} description="صفحة المقالات يتم عرض فيها جميع المواضيع الخاصة بالتداول">

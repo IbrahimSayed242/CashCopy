@@ -10,6 +10,7 @@ const { geoip_api } = loadEnv(process.env.geoip_api, process.cwd(), "");
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), vue()],
+  site: "https://couponscopy.com/",
   // outDir: "../astrobuild/",
   // publicDir: "../astrobuild/media/",
   // trailingSlash: "always",

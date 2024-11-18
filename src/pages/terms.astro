@@ -4,7 +4,7 @@ import Container from "../components/shared/Container.astro";
 import Paragaph from "../components/shared/Paragraph.astro";
 
 //astro URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 

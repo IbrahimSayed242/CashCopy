@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Back from "../components/sections/Back.astro";
 
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <Layout title="CouponsCopy" path={path} description="">

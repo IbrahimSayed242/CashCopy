@@ -15,8 +15,8 @@ const CardCompany = ({ brokers }) => {
 
   return (
     <Fragment>
-      {brokers[0]["Brokers"].length > 0
-        ? brokers[0]["Brokers"].map(
+      {brokers.length > 0
+        ? brokers.map(
             (broker, index) =>
               broker.site === "coupons" && (
                 <div

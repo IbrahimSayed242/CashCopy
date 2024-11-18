@@ -6,7 +6,7 @@ import HeroCoupon4 from "../components/sections/HeroCoupon4.astro";
 import CouponForm from "../components/vue/CouponForm.vue";
 
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 
 ---
 

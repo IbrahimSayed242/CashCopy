@@ -7,11 +7,14 @@ const CompanyService = ({ nameBroker, broker }) => {
   };
   const tradeButtonStyle = {
     minWidth: "100px",
+    fontSize: "14px",
+    padding: "5px",
     lineHeight: "32px",
     border: "none",
     borderRadius: "10px",
     backgroundColor: "#ddd",
     color: "#222",
+    fontWeight: "bold",
     marginRight: "15px",
     marginBottom: "15px",
     transition: "all 0.3s ease-in-out",
@@ -33,7 +36,6 @@ const CompanyService = ({ nameBroker, broker }) => {
     marginLeft: "8px",
   };
 
-  console.log(broker);
   return (
     <Fragment>
       <div className="company-info w-11/12 m-auto dark:text-white">
@@ -50,9 +52,11 @@ const CompanyService = ({ nameBroker, broker }) => {
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            {/* {broker.platforms.map((platform) => {
-              <button style={tradeButtonStyle}>{platform}</button>;
-            })} */}
+            {broker["PTBS"].map((platform, index) => (
+              <button key={index} style={tradeButtonStyle}>
+                {platform.platforms_trading}
+              </button>
+            ))}
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
@@ -63,9 +67,11 @@ const CompanyService = ({ nameBroker, broker }) => {
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            {/* {broker.available_assets_for_trading.map((assets, index) => (
-              <span key={index} style={tradeButtonStyle}>{assets}</span>
-            ))} */}
+            {broker["AssetsBroker"].map((assets, index) => (
+              <span key={index} style={tradeButtonStyle}>
+                {assets.name}
+              </span>
+            ))}
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
@@ -76,10 +82,11 @@ const CompanyService = ({ nameBroker, broker }) => {
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
+            {broker["Deposits"].map((deposits, index) => (
+              <span key={index} style={tradeButtonStyle}>
+                {deposits.name}
+              </span>
+            ))}
           </div>
         </div>
         <div style={detailsStyle} className="flex flex-col md:flex-row-reverse">
@@ -101,10 +108,11 @@ const CompanyService = ({ nameBroker, broker }) => {
             </span>
           </div>
           <div className="trade text-center mb-3 lg:mb-0 flex justify-around flex-wrap">
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
-            <button style={tradeButtonStyle}>Ava Option</button>
+            {broker["Licenses"].map((license, index) => (
+              <span key={index} style={tradeButtonStyle}>
+                {license.licenses}
+              </span>
+            ))}
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import Coupn2 from "../components/sections/Coupn2.astro";
 import CouponForm from "../components/vue/CouponForm.vue";
 
 //astro url
-const path = Astro.url.href
+const path =new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <Layout2 title="CouponsCopy" path={path} description="">

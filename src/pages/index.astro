@@ -9,20 +9,15 @@ import Form from "../components/vue/Form.vue";
 import ScrollToEndButton from "../components/elements/ScrollButton.astro"
 // Fetch data before rendering the page
 import { getBrokers } from "../utils/StoreData"
-
 // Fetch the data
 const { data: brokers, error, isLoading } = await getBrokers();
- 
 const allData = [{...brokers}]
-
-
-// Canonical URL
-const path = Astro.url.href
-
-
+const myBrokers = allData[0]["Brokers"] || []
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
-  <Layout title="CouponsCopy" path={path} description={"!كوبونز كوبي شريكك الموثوق للاستثمار والتعلم المالي . احصل علي مراجعات الوسطاء الغير متحيزة والتعلم من رؤى الخبراء انضم إلينا اليوم وابدأ رحلتك نحو النجاح ..."}> 
+  <Layout title="CouponsCopy" path={canonicalURL} description={"!كوبونز كوبي شريكك الموثوق للاستثمار والتعلم المالي . احصل علي مراجعات الوسطاء الغير متحيزة والتعلم من رؤى الخبراء انضم إلينا اليوم وابدأ رحلتك نحو النجاح ..."}> 
+    
     <section class="home-brokers lg:text-2xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 h-40  md:h-60 mt-[67px] lg:mt-[88px]">
       <div class="overload flex flex-col lg:flex-row-reverse py-10 bg-emerald-300">
         <div class="home-brokers-content lg:w-1/2 m-auto px-2 text-center lg:px-10">
@@ -40,7 +35,7 @@ const path = Astro.url.href
     <section class="best-brokers flex-col justify-center items-bet text-center md:flex-row">
       <h2 class="text-emerald-700 text-xs md:text-xl lg:text-3xl text-center font-bold dark:text-white">أفضل شركات تداول مرخصة لعام 2024</h2>
       <div class="cards flex flex-col items-center">
-        {allData[0]["Brokers"].length > 0 && allData[0]["Brokers"].map((broker:any) => (
+        {myBrokers.length > 0 && myBrokers.map((broker:any) => (
          
          broker.site === 'coupons' && broker.best_broker ? <CardCompany2 broker={broker} /> : ""
           
@@ -53,7 +48,7 @@ const path = Astro.url.href
     <section class="company-trust mt-10 py-20 text-center">
       <h4 class="mb-20 lg:text-4xl font-bold lg:text-emerald-700 dark:text-white">شركات التداول الأكثر ثقة</h4>
       <div class="cards flex flex-col md:flex-row items-center justify-around mb-5 flex-wrap">
-        {allData[0]["Brokers"].length > 0 && allData[0]["Brokers"].map((broker:any) => (
+        {myBrokers.length > 0 && myBrokers.map((broker:any) => (
         
         broker.site === 'coupons' && broker.best_broker ? <SimpleCard broker={broker} /> : ""
         
@@ -253,5 +248,5 @@ const path = Astro.url.href
     }
 }
 </style>
-
 <script>
+</script>

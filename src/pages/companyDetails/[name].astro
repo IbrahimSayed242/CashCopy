@@ -19,8 +19,9 @@ const { data: brokers, error, isLoading } = await getBrokers();
  
 const allData = [{...brokers}]
 
+const myBrokers = allData[0]["Brokers"] || []
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 
 const {name} = Astro.params;
 
@@ -52,7 +53,7 @@ const {name} = Astro.params;
 // await fetchData();
 
 // Find the matching broker
-const matchingBroker = allData[0]['Brokers'].find(
+const matchingBroker = myBrokers.find(
   (broker: Broker) => broker.title === name 
 );
 
@@ -64,7 +65,7 @@ if (!matchingBroker) {
 
 <Layout title={matchingBroker.title || name} path={path} description={matchingBroker.meta_description}>
   <div class="article-1 text-right m-auto container">  
-    <BrokerList name={name} brokers = {allData} client:load />
+    <BrokerList name={name} brokers = {myBrokers} client:load />
   </div>
   <!-- start section form -->
   <Form client:only="vue" />

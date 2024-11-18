@@ -11,7 +11,7 @@ import Form from "../../components/vue/Form.vue";
 import CTA from "../../components/vue/CouponForm.vue";
 
 //Atro params
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <Layout title="CouponsCopy" path={path} description="">

@@ -10,7 +10,7 @@ import NewFetuer from "../components/lp/NewFetuer.astro";
 import Hero5 from "../components/lp/Hero5.astro";
 
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <Layout title="CouponCopy- كوبونز كوبي لنسخ الارباح" path={path} description="">

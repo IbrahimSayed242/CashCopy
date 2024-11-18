@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import BtnLink2 from "../../components/shared/BtnLink2.astro";
 
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 
 const { slug } = Astro.params;
 

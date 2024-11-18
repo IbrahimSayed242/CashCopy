@@ -19,7 +19,7 @@ const BrokerList = ({ name, brokers }) => {
   return (
     <Fragment>
       <div>
-        {brokers[0]["Brokers"].map((broker, index) => {
+        {brokers.map((broker, index) => {
           if (broker.title === name) {
             // Return a JSX element with the updated source
             return (

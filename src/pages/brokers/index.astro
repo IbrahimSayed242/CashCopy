@@ -11,8 +11,9 @@ const { data: brokers, error, isLoading } = await getBrokers();
  
 const allData = [{...brokers}]
 
+const myBrokers = allData[0]["Brokers"] || []
 // Canonical URL
-const path = Astro.url.href
+const path = new URL(Astro.url.pathname, Astro.site).href;
 
 
 ---
@@ -33,7 +34,7 @@ const path = Astro.url.href
             <div class="">
                 
               <div class="flex justify-around flex-col md:flex-row flex-wrap">
-                  <CardCompany brokers = {allData} client:load/>
+                  <CardCompany brokers = {myBrokers} client:load/>
                 </div>
             </div>
         </div>
