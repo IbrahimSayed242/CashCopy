@@ -1,8 +1,6 @@
 import React from "react";
 
-const Rate = ({ broker }) => {
-  let rateing = broker.total_rate;
-
+const Rate = ({ rateing }) => {
   const starStyle = {
     fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24",
   };
@@ -63,7 +61,7 @@ const Rate = ({ broker }) => {
             <span
               key={i}
               style={starHalfStyle}
-              class="material-symbols-outlined"
+              className="material-symbols-outlined"
             >
               star_half
             </span>

@@ -1,12 +1,7 @@
 ---
-import React from "react";
 import Rate from "../elements/Rate"
-// const data = useContext(DataContext)
+
 const { broker } = Astro.props; // Get the passed data
-interface data {
-    id: number;
-    name: string;
-}
 ---
   
   
@@ -31,7 +26,7 @@ interface data {
                 </span>
                 
                     <!-- Start Commponent Rate Star -->
-                <Rate broker = {broker} />
+                <Rate rateing = {broker.total_rate} />
                 
                 <span class="border-left mx-2 px-2">السبريد : {broker.spread}</span>       
                 <span class="border-left mx-2 px-2">الرافعة المالية  : {broker.leverage}</span>       

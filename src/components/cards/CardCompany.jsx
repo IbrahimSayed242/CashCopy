@@ -21,11 +21,10 @@ const CardCompany = ({ brokers }) => {
               broker.site === "coupons" && (
                 <div
                   key={index}
-                  className="text-white w-auto flex flex-col items-center sm:flex-col rounded-lg bg-emerald-400 border border-3 my-5 mx-auto p-3 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 shadow-md"
+                  className="m-2 text-white w-auto flex flex-col items-center sm:flex-col rounded-lg bg-emerald-400 border border-3 my-5 p-3 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 shadow-md"
                   dir="rtl"
                 >
-                  <div className="flex justify-center flex-col m-2">
-                    <div></div>
+                  <div className="flex justify-center flex-col">
                     <img
                       className="w-full h-20 rounded-full shadow-md m-auto"
                       src={`https://alltargeting.com/${broker.logo}`}
@@ -36,7 +35,7 @@ const CardCompany = ({ brokers }) => {
                         <p className="text-center pt-2 lg:text-xl">
                           تقييم الشركة
                         </p>
-                        <Rate broker={broker} />
+                        <Rate rateing={broker.total_rate} />
                       </div>
                     </div>
                   </div>

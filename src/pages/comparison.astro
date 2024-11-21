@@ -1,0 +1,262 @@
+---
+import Layout from "../layouts/Layout.astro";
+import '../../public/css/comparison.css'
+// import Rate from "../components/elements/Rate";
+// Canonical URL
+const path = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<Layout title="comparison" path={path} description="تحتاج للمقارنة بين شركات التداول الى معلومات دقيقة وغير حيادية , في موق كوبونز نوفر لك العديد من الخيارات للمقارنة بين شركات التداول">
+    
+    <div dir="rtl" class="container m-auto my-[200px]">
+
+        <h1 class="mb-4 text-xl font-bold text-emerald-700">قارن بين شركات التداول </h1>
+
+        <button id="addColumnButton" class="add-column-btn hidden lg:block">أضف شركة</button>
+
+        <div class="services">
+            <h3 class="lg:text-lg font-bold mb-2">خدمات المقارنة:</h3>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="total_rate" id="metric1" value="التقييم العام" data-type="">
+                    <label for="metric1">التقييم العام</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="islamic_account" id="metric2" value="حساب اسلامي" data-type="boolean">
+                    <label for="metric2">حساب اسلامي</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="demo_account" id="metric3" value="حساب تجريبي" data-type="boolean">
+                    <label for="metric3">حساب تجريبي</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="minimum_deposit" id="metric4" value="الحد الادنى للايداع" data-type="">
+                    <label for="metric4">الحد الادنى للايداع</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="leverage" id="metric5" value="الرافعة المالية" data-type="">
+                    <label for="metric5">الرافعة المالية</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="spread" id="metric6" value="السبريد" data-type="">
+                    <label for="metric6">السبريد</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="security" id="metric7" value="الحماية" data-type="rate">
+                    <label for="metric7">الحماية</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="PTBS" id="metric8" value="منصات التداول" data-type="">
+                    <label for="metric8">منصات التداول</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="AssetsBroker" id="metric9" value="السوق والاصول" data-type="">
+                    <label for="metric9">السوق والاصول</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="research_and_development" id="metric10" value="البحث والتنمية" data-type="rate">
+                    <label for="metric10">البحث والتنمية</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="main_branch" id="metric11" value="المقر الرئيسي" data-type="">
+                    <label for="metric11">المقر الرئيسي</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="fees" id="metric12" value="الرسوم و المصاريف" data-type="rate">
+                    <label for="metric12">الرسوم و المصاريف</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="customer_service1" id="metric13" value="خدمة العملاء" data-type="rate">
+                    <label for="metric13">خدمة العملاء</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="Deposits" id="metric14" value="طرق السحب والايداع" data-type="">
+                    <label for="metric14">طرق السحب والايداع</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="year_of_establishment" id="metric15" value="سنة التأسيس" data-type="">
+                    <label for="metric15">سنة التأسيس</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="app" id="metric16" value="موبايل ابلكيشن" data-type="rate">
+                    <label for="metric16">موبايل ابلكيشن</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="w-[20px] h-[20px]" type="checkbox" name="education" id="metric17" value="التدريب على التداول" data-type="rate">
+                    <label for="metric17">التدريب على التداول</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="lg:w-[20px] lg:h-[20px]" type="checkbox" name="features_tab" id="metric19" value="المميزات" data-type="">
+                    <label for="metric19">المميزات</label>
+                </div>
+                <div class="checkbox-item">
+                    <input class="lg:w-[20px] lg:h-[20px]" type="checkbox" name="disadvantages" id="metric20" value="العيوب" data-type="">
+                    <label for="metric20">العيوب</label>
+                </div>
+            </div>
+        </div>
+
+        <table id="comparisonTable">
+            <thead>
+                <tr id="headerRow">
+                    <th class="header-cell">خدمات</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody" class="text-center"></tbody>
+        </table>
+    </div>
+</Layout>
+
+<script>
+
+            //import brokers
+            import { getBrokers } from "../utils/StoreData.js"
+
+            const { data: brokers} :any = await getBrokers()
+            const addColumnButton = document.getElementById('addColumnButton')
+
+            //get all companise and put them in companies array
+            let companies : any = [];
+            brokers["Brokers"].forEach((broker: { title: any; logo: any}) => {
+                companies.push({
+                    title: broker.title,
+                    logo: broker.logo
+                })
+        
+            })
+        function createCompanySelector() {
+                const select = document.createElement('select');
+                select.innerHTML = '<option value="">أختر شركة</option>' +
+                    companies.map((company: any) => `<option value="${company.title}">${company.title} </option>`).join('');
+                select.addEventListener('change', updateTable);
+                return select;
+        }
+
+        function addColumn() {
+                const headerRow : any = document.getElementById('headerRow');
+                const headRow = Array.from(headerRow.children);
+                headRow.push(headerRow)
+                //stop adding companies
+                if((headRow.length - 1 ) === 6) return;
+
+                const th = document.createElement('th');
+                th.className = 'header-cell';
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.innerHTML = 'X';
+                removeBtn.className = 'remove-column';
+                removeBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    const index = Array.from(headerRow.children).indexOf(th);
+                    removeColumn(index);
+                };
+                
+                th.appendChild(createCompanySelector());
+                th.appendChild(removeBtn);
+                headerRow.appendChild(th);
+                updateTable();
+        }
+
+        
+            // Add initial columns
+            addColumn();
+            addColumn();
+
+        function removeColumn(index: number) {
+            const table :any = document.getElementById('comparisonTable');
+            const rows = table.getElementsByTagName('tr');
+            
+            for (let row of rows) {
+                if (row.cells[index]) {
+                    row.deleteCell(index);
+                }
+            }
+        }
+
+        function updateTable() {
+                const tableBody :any = document.getElementById('tableBody');
+                tableBody.innerHTML = ''; // Clear existing table content
+                
+                // Get all checked services
+                const checkedServices = Array.from(document.querySelectorAll('.checkbox-group input:checked'))
+                .map((checkbox:any) => ({
+                name: checkbox.name,
+                value: checkbox.value,
+                datatype: checkbox.dataset.type,
+            }));
+        // Get all selected companies from the header
+        const selectedCompanies = Array.from(document.querySelectorAll('#headerRow select'))
+            .map((select:any) => select.value)
+            .filter(value => value !== ""); // Filter out empty selections
+
+            // If no services or companies selected, return
+            if (checkedServices.length === 0 || selectedCompanies.length === 0) return;
+
+            // Create rows for each service
+            checkedServices.forEach(service => {
+                const row = tableBody.insertRow();
+                
+            // Add service name in the first column
+            const serviceCell = row.insertCell();
+            serviceCell.textContent = service.value;
+            serviceCell.className = 'service-name';
+
+            // Add data for each selected company
+            selectedCompanies.forEach(companyName => {
+                const cell = row.insertCell();
+                
+                // Find the broker data for this company
+                const brokerData = brokers["Brokers"].find((broker:any) => broker.title === companyName);
+                
+                if (brokerData) {
+                    // Get the service value for this broker
+                    const serviceValue = brokerData[service.name];
+                    if(Array.isArray(serviceValue)){
+                        serviceValue.map(ser => {
+                            cell.textContent += `${ser[`${Object.keys(ser)}`]} ` || "-";
+                        })
+                    }else{
+                        cell.textContent = serviceValue || '-';
+                    }
+                
+                    switch (service.datatype) {
+                        case "boolean" :
+                            if(serviceValue === 1) {
+
+                                    cell.textContent = "نعم"
+                                }else{
+                                    cell.textContent = "لا"
+                                }
+                        break;
+                        case "rate" :
+                        cell.innerHTML = `${serviceValue * 5} / 5`
+                    }
+                } else {
+                    cell.textContent = '-';
+                }
+            });
+        });
+    }
+
+            function setupEventListeners() {
+        // Listen for checkbox changes
+        document.querySelectorAll('.checkbox-group input').forEach(checkbox => {
+            checkbox.addEventListener('change', updateTable);
+                });
+
+                // Listen for company selection changes
+                document.querySelectorAll('#headerRow select').forEach(select => {
+                    select.addEventListener('change', updateTable);
+                });
+            }
+            setupEventListeners()
+                    addColumnButton?.addEventListener('click', () => {
+                        addColumn()
+                    })
+
+
+
+                    
+    </script>
+
+    
