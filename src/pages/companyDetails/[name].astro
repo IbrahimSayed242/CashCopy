@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro"
 import BrokerList from "../../components/React/BrokerList.jsx"
 import Form from "../../components/vue/Form.vue"
+import Loading from "../../components/Loading"
 import ScrollToEndButton from "../../components/elements/ScrollButton.astro"
-
 // Type definitions
 interface Broker {
   name: string;
@@ -64,6 +64,10 @@ if (!matchingBroker) {
 ---
 
 <Layout title={matchingBroker.title || name} path={path} description={matchingBroker.meta_description}>
+  <div id="loading">
+    <Loading client:load />
+  </div>
+
   <div class="article-1 text-right m-auto container">  
     <BrokerList name={name} brokers = {myBrokers} client:load />
   </div>
@@ -72,3 +76,13 @@ if (!matchingBroker) {
   <!-- end section form -->
   <ScrollToEndButton />
 </Layout>
+
+<script>
+  window.onload = () => {
+    const loadingElement = document.getElementById('loading');
+    const contentElement = document.getElementById('content');
+    
+  loadingElement?.classList.add('hidden');
+    contentElement?.classList.remove('hidden');
+  };
+</script>

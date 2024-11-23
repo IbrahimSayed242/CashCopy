@@ -114,23 +114,101 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
 
             const { data: brokers} :any = await getBrokers()
             const addColumnButton = document.getElementById('addColumnButton')
-
             //get all companise and put them in companies array
             let companies : any = [];
             brokers["Brokers"].forEach((broker: { title: any; logo: any}) => {
                 companies.push({
                     title: broker.title,
-                    logo: broker.logo
+                    logo: `https://alltargeting.com/${broker.logo}`
                 })
         
             })
-        function createCompanySelector() {
-                const select = document.createElement('select');
-                select.innerHTML = '<option value="">أختر شركة</option>' +
-                    companies.map((company: any) => `<option value="${company.title}">${company.title} </option>`).join('');
-                select.addEventListener('change', updateTable);
-                return select;
-        }
+            function createCompanySelector() {
+    // Create main wrapper
+    const dropdownWrapper = document.createElement('div');
+    dropdownWrapper.className = 'custom-dropdown-wrapper';
+
+    // Create selected display
+    const selectedDisplay = document.createElement('div');
+    selectedDisplay.setAttribute('value', " ")
+    selectedDisplay.className = 'selected-display';
+    selectedDisplay.textContent = 'أختر شركة';
+
+    // Create dropdown container
+    const dropdownContainer = document.createElement('div');
+    dropdownContainer.className = 'dropdown-container';
+
+    // Create default option
+    const defaultOption = document.createElement('div');
+    defaultOption.className = 'dropdown-option';
+    defaultOption.textContent = 'أختر شركة';
+    dropdownContainer.appendChild(defaultOption);
+
+    // Create and add company options
+    companies.forEach((company: any) => {
+        const option = document.createElement('div');
+        option.className = 'dropdown-option';
+        
+        const img = document.createElement('img');
+        img.src = company.logo;
+        img.alt = company.title;
+        
+        const text = document.createElement('span');
+        text.textContent = company.title;
+        
+        option.appendChild(img);
+        option.appendChild(text);
+        
+        // Add click event for option
+        option.addEventListener('click', () => {
+            // Update display
+            selectedDisplay.innerHTML = '';
+            const selectedImg = img.cloneNode(true);
+            const selectedText = document.createElement('span');
+            selectedText.textContent = company.title;
+            selectedDisplay.setAttribute('value', company.title)
+            selectedDisplay.appendChild(selectedImg);
+            selectedDisplay.appendChild(selectedText);
+            
+            // Hide dropdown
+            dropdownContainer.style.display = 'none';
+            
+            // Trigger change event similar to select
+            const changeEvent = new CustomEvent('change', {
+                detail: { value: company.title }
+            });
+            dropdownWrapper.dispatchEvent(changeEvent);
+        });
+        
+        dropdownContainer.appendChild(option);
+    });
+
+    // Toggle dropdown
+    selectedDisplay.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isVisible = dropdownContainer.style.display === 'block';
+        dropdownContainer.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        dropdownContainer.style.display = 'none';
+    });
+
+    // Prevent closing when clicking inside dropdown
+    dropdownContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Add components to wrapper
+    dropdownWrapper.appendChild(selectedDisplay);
+    dropdownWrapper.appendChild(dropdownContainer);
+
+    // Add original change event listener
+    dropdownWrapper.addEventListener('change', updateTable);
+
+    return dropdownWrapper;
+}
 
         function addColumn() {
                 const headerRow : any = document.getElementById('headerRow');
@@ -174,68 +252,68 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
         }
 
         function updateTable() {
-                const tableBody :any = document.getElementById('tableBody');
-                tableBody.innerHTML = ''; // Clear existing table content
-                
-                // Get all checked services
-                const checkedServices = Array.from(document.querySelectorAll('.checkbox-group input:checked'))
-                .map((checkbox:any) => ({
-                name: checkbox.name,
-                value: checkbox.value,
-                datatype: checkbox.dataset.type,
-            }));
-        // Get all selected companies from the header
-        const selectedCompanies = Array.from(document.querySelectorAll('#headerRow select'))
-            .map((select:any) => select.value)
-            .filter(value => value !== ""); // Filter out empty selections
+                    const tableBody :any = document.getElementById('tableBody');
+                    tableBody.innerHTML = ''; // Clear existing table content
+                    
+                    // Get all checked services
+                    const checkedServices = Array.from(document.querySelectorAll('.checkbox-group input:checked'))
+                    .map((checkbox:any) => ({
+                    name: checkbox.name,
+                    value: checkbox.value,
+                    datatype: checkbox.dataset.type,
+                }));
+            // Get all selected companies from the header
+            const selectedCompanies = Array.from(document.querySelectorAll('#headerRow .custom-dropdown-wrapper .selected-display'))
+                .map((select:any) => select.innerText)
+                .filter(value => value !== ""); // Filter out empty selections
 
-            // If no services or companies selected, return
-            if (checkedServices.length === 0 || selectedCompanies.length === 0) return;
+                // If no services or companies selected, return
+                if (checkedServices.length === 0 || selectedCompanies.length === 0) return;
 
-            // Create rows for each service
-            checkedServices.forEach(service => {
-                const row = tableBody.insertRow();
-                
-            // Add service name in the first column
-            const serviceCell = row.insertCell();
-            serviceCell.textContent = service.value;
-            serviceCell.className = 'service-name';
+                // Create rows for each service
+                checkedServices.forEach(service => {
+                    const row = tableBody.insertRow();
+                    
+                // Add service name in the first column
+                const serviceCell = row.insertCell();
+                serviceCell.textContent = service.value;
+                serviceCell.className = 'service-name';
 
-            // Add data for each selected company
-            selectedCompanies.forEach(companyName => {
-                const cell = row.insertCell();
-                
-                // Find the broker data for this company
-                const brokerData = brokers["Brokers"].find((broker:any) => broker.title === companyName);
-                
-                if (brokerData) {
-                    // Get the service value for this broker
-                    const serviceValue = brokerData[service.name];
-                    if(Array.isArray(serviceValue)){
-                        serviceValue.map(ser => {
-                            cell.textContent += `${ser[`${Object.keys(ser)}`]} ` || "-";
-                        })
-                    }else{
-                        cell.textContent = serviceValue || '-';
+                // Add data for each selected company
+                selectedCompanies.forEach(companyName => {
+                    const cell = row.insertCell();
+                    
+                    // Find the broker data for this company
+                    const brokerData = brokers["Brokers"].find((broker:any) => broker.title === companyName);
+                    
+                    if (brokerData) {
+                        // Get the service value for this broker
+                        const serviceValue = brokerData[service.name];
+                        if(Array.isArray(serviceValue)){
+                            serviceValue.map(ser => {
+                                cell.textContent += `${ser[`${Object.keys(ser)}`]} ` || "-";
+                            })
+                        }else{
+                            cell.textContent = serviceValue || '-';
+                        }
+                    
+                        switch (service.datatype) {
+                            case "boolean" :
+                                if(serviceValue === 1) {
+
+                                        cell.textContent = "نعم"
+                                    }else{
+                                        cell.textContent = "لا"
+                                    }
+                            break;
+                            case "rate" :
+                            cell.innerHTML = `5 / ${serviceValue * 5}`
+                        }
+                    } else {
+                        cell.textContent = '-';
                     }
-                
-                    switch (service.datatype) {
-                        case "boolean" :
-                            if(serviceValue === 1) {
-
-                                    cell.textContent = "نعم"
-                                }else{
-                                    cell.textContent = "لا"
-                                }
-                        break;
-                        case "rate" :
-                        cell.innerHTML = `${serviceValue * 5} / 5`
-                    }
-                } else {
-                    cell.textContent = '-';
-                }
+                });
             });
-        });
     }
 
             function setupEventListeners() {

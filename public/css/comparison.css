@@ -46,22 +46,9 @@ tr:hover {
   background-color: #f5f5f5;
 }
 
-select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: white;
-}
 .header-cell {
-  min-width: 50px;
+  min-width: 70px;
   color: #219a52;
-}
-@media (min-width: 567px) {
-  .header-cell {
-    min-width: 150px;
-  }
 }
 
 .add-column-btn {
@@ -79,6 +66,7 @@ select {
 }
 
 .remove-column {
+  display: none;
   position: absolute;
   top: 4px;
   right: 4px;
@@ -90,7 +78,6 @@ select {
   height: 20px;
   font-size: 12px;
   cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -104,4 +91,87 @@ select {
 #tableBody tr {
   border-bottom: 1px solid #2c3e50;
   padding: 10px;
+}
+.custom-dropdown-wrapper {
+  position: relative;
+  width: 100%;
+  font-family: inherit;
+}
+.selected-display {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+}
+
+.dropdown-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 4px;
+  background: white;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dropdown-option {
+  padding: 2px 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dropdown-option:hover {
+  background-color: #f5f5f5;
+}
+.dropdown-option img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.selected-display img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+span {
+  font-size: 14px;
+}
+/* Media Query for mediam and larg screens*/
+@media (min-width: 567px) {
+  /* .header-cell {
+    min-width: 150px;
+  } */
+}
+@media (min-width: 567px) {
+  .custom-dropdown-wrapper {
+    max-width: 200px;
+  }
+  .selected-display {
+    padding: 8px 12px;
+  }
+  .dropdown-option img {
+    width: 16px;
+    height: 16px;
+  }
+  .selected-display img {
+    width: 24px;
+    height: 24px;
+  }
+  span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .remove-column {
+    display: flex;
+  }
 }

@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ecf0f1;
+  overflow: hidden; /* Prevent scrolling while loading */
+}
+
+.container-load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Slight background overlay */
+  z-index: 9999; /* Ensures it's on top of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load {
+  /* Change these sizes to fit your project */
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.load hr {
+  border: 0;
+  margin: 0;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+
+.load :first-child {
+  background: #19a68c;
+  animation-delay: -1.5s;
+}
+
+.load :nth-child(2) {
+  background: #f63d3a;
+  animation-delay: -1s;
+}
+
+.load :nth-child(3) {
+  background: #fda543;
+  animation-delay: -0.5s;
+}
+
+.load :last-child {
+  background: #193b48;
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
+}
