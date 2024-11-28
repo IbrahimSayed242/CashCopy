@@ -11,8 +11,9 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
     <div dir="rtl" class="container m-auto my-[200px]">
 
         <h1 class="mb-4 text-xl font-bold text-emerald-700">قارن بين شركات التداول </h1>
-
-        <button id="addColumnButton" class="add-column-btn hidden lg:block">أضف شركة</button>
+        <p class="text-lg">قارن بين عشرات شركات الوساطة، واعثر بنفسك على الوسيط الانسب لك من بينها.</p>
+        <p class="text-lg">ختلف شركات الوساطة فيما بينهم من حيث درجة الأمان المتمثلة في التراخيص، وأنواع الحسابات التي يقدمها كل منهم، توفير الحساب التجريبي والإسلامي، والحد الادنى للايداع، وكذلك حجم الرافعة المالية، والمنصات التي يمكنك التداول من خلالها، وبالطبع، المصاريف التي يفرضها كل وسيط</p>
+        <button id="addColumnButton" class="add-column-btn hidden lg:block my-5">أضف شركة</button>
 
         <div class="services">
             <h3 class="lg:text-lg font-bold mb-2">خدمات المقارنة:</h3>
@@ -86,11 +87,11 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
                     <label for="metric17">التدريب على التداول</label>
                 </div>
                 <div class="checkbox-item">
-                    <input class="lg:w-[20px] lg:h-[20px]" type="checkbox" name="features_tab" id="metric19" value="المميزات" data-type="">
+                    <input class="lg:w-[20px] lg:h-[20px]" type="checkbox" name="features" id="metric19" value="المميزات" data-type="compare">
                     <label for="metric19">المميزات</label>
                 </div>
                 <div class="checkbox-item">
-                    <input class="lg:w-[20px] lg:h-[20px]" type="checkbox" name="disadvantages" id="metric20" value="العيوب" data-type="">
+                    <input class="lg:w-[20px] lg:h-[20px]" type="checkbox" name="disfeatures" id="metric20" value="العيوب" data-type="compare">
                     <label for="metric20">العيوب</label>
                 </div>
             </div>
@@ -110,9 +111,10 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
 <script>
 
             //import brokers
-            import { getBrokers } from "../utils/StoreData.js"
+    import { getBrokers } from "../utils/StoreData.js"
 
             const { data: brokers} :any = await getBrokers()
+            console.log(brokers)
             const addColumnButton = document.getElementById('addColumnButton')
             //get all companise and put them in companies array
             let companies : any = [];
@@ -263,7 +265,7 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
                     datatype: checkbox.dataset.type,
                 }));
             // Get all selected companies from the header
-            const selectedCompanies = Array.from(document.querySelectorAll('#headerRow .custom-dropdown-wrapper .selected-display'))
+                const selectedCompanies = Array.from(document.querySelectorAll('#headerRow .custom-dropdown-wrapper .selected-display'))
                 .map((select:any) => select.innerText)
                 .filter(value => value !== ""); // Filter out empty selections
 
@@ -289,14 +291,16 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
                     if (brokerData) {
                         // Get the service value for this broker
                         const serviceValue = brokerData[service.name];
+                       
                         if(Array.isArray(serviceValue)){
                             serviceValue.map(ser => {
-                                cell.textContent += `${ser[`${Object.keys(ser)}`]} ` || "-";
+                                
+                                cell.textContent += `-${ser[`${Object.keys(ser)}`]} ` || "-";
                             })
                         }else{
                             cell.textContent = serviceValue || '-';
                         }
-                    
+                        
                         switch (service.datatype) {
                             case "boolean" :
                                 if(serviceValue === 1) {
@@ -307,7 +311,21 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
                                     }
                             break;
                             case "rate" :
-                            cell.innerHTML = `5 / ${serviceValue * 5}`
+                                cell.innerHTML = `${serviceValue * 5}`
+                            break;
+                            case "compare" :
+                                if(service.name === "features") {
+                                    cell.textContent = ""
+                                    serviceValue.map((s:any) => {
+                                        cell.textContent += ` - ${s.feature}`
+                                    })   
+                                }
+                                if(service.name === "disfeatures") {
+                                    cell.textContent = ""
+                                    serviceValue.map((s:any) => {
+                                       cell.textContent += ` - ${s.disfeatures}`
+                                    })   
+                                }
                         }
                     } else {
                         cell.textContent = '-';
@@ -331,8 +349,6 @@ const path = new URL(Astro.url.pathname, Astro.site).href;
                     addColumnButton?.addEventListener('click', () => {
                         addColumn()
                     })
-
-
 
                     
     </script>
