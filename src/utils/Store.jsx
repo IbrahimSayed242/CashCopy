@@ -12,7 +12,7 @@ async function fetchData() {
     const response = await fetch(API_URL, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "token  ",
+        Authorization: "token 2cbd2ea5bec2a9d:b96c0c190c9097e ",
       },
     });
 
