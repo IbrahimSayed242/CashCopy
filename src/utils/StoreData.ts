@@ -38,7 +38,7 @@ export async function getBrokers() {
     const response = await fetch(API_URL, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: " ",
+        Authorization: " token 2cbd2ea5bec2a9d:b96c0c190c9097e",
       },
     });
 
